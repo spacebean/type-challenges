@@ -1,14 +1,16 @@
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { PickByType } from './template';
 
 interface Model {
-  name: string
-  count: number
-  isReadonly: boolean
-  isEnable: boolean
+  name: string;
+  count: number;
+  isReadonly: boolean;
+  isEnable: boolean;
 }
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<PickByType<Model, boolean>, { isReadonly: boolean; isEnable: boolean }>>,
   Expect<Equal<PickByType<Model, string>, { name: string }>>,
-  Expect<Equal<PickByType<Model, number>, { count: number }>>,
-]
+  Expect<Equal<PickByType<Model, number>, { count: number }>>
+];

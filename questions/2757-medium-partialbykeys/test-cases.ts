@@ -1,26 +1,28 @@
-import { Equal, Expect, ExpectFalse, NotEqual } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { PartialByKeys } from './template';
 
 interface User {
-  name: string
-  age: number
-  address: string
+  name: string;
+  age: number;
+  address: string;
 }
 
 interface UserPartialName {
-  name?: string
-  age: number
-  address: string 
+  name?: string;
+  age: number;
+  address: string;
 }
 
 interface UserPartialNameAndAge {
-  name?: string
-  age?: number
-  address: string 
+  name?: string;
+  age?: number;
+  address: string;
 }
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<PartialByKeys<User, 'name'>, UserPartialName>>,
   Expect<Equal<PartialByKeys<User, 'name' | 'unknown'>, UserPartialName>>,
   Expect<Equal<PartialByKeys<User, 'name' | 'age'>, UserPartialNameAndAge>>,
-  Expect<Equal<PartialByKeys<User>, Partial<User>>>,
-]
+  Expect<Equal<PartialByKeys<User>, Partial<User>>>
+];

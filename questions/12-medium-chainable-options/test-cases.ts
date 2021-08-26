@@ -1,21 +1,17 @@
-import { Alike, Expect } from '@type-challenges/utils'
+import { Alike, Expect } from '@type-challenges/utils';
+import { Chainable } from './template';
 
-declare const a: Chainable
+declare const a: Chainable;
 
-const result = a
-  .option('foo', 123)
-  .option('bar', { value: 'Hello World' })
-  .option('name', 'type-challenges')
-  .get()
-
-type cases = [
-  Expect<Alike<typeof result, Expected>>
-]
+const result = a.option('foo', 123).option('bar', { value: 'Hello World' }).option('name', 'type-challenges').get();
 
 type Expected = {
-  foo: number
+  foo: number;
   bar: {
-    value: string
-  }
-  name: string
-}
+    value: string;
+  };
+  name: string;
+};
+
+// noinspection JSUnusedLocalSymbols
+type cases = [Expect<Alike<typeof result, Expected>>];

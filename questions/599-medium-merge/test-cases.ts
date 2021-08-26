@@ -1,4 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { Merge } from './template';
 
 type Foo = {
   a: number;
@@ -8,9 +9,15 @@ type Bar = {
   b: number;
 };
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
-  Expect<Equal<Merge<Foo, Bar>, {
-	a: number;
-	b: number;
-  }>>
-]
+  Expect<
+    Equal<
+      Merge<Foo, Bar>,
+      {
+        a: number;
+        b: number;
+      }
+    >
+  >
+];
