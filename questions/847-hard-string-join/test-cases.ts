@@ -1,4 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { join } from './template';
 
 // Edge cases
 const noCharsOutput = join('-')();
@@ -11,12 +12,13 @@ const hashOutput = join('#')('a', 'b', 'c');
 const twoCharOutput = join('-')('a', 'b');
 const longOutput = join('-')('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h');
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
-    Expect<Equal<typeof noCharsOutput, ''>>,
-    Expect<Equal<typeof oneCharOutput, 'a'>>,
-    Expect<Equal<typeof noDelimiterOutput, 'abc'>>,
-    Expect<Equal<typeof twoCharOutput, 'a-b'>>,
-    Expect<Equal<typeof hyphenOutput, 'a-b-c'>>,
-    Expect<Equal<typeof hashOutput, 'a#b#c'>>,
-    Expect<Equal<typeof longOutput, 'a-b-c-d-e-f-g-h'>>,
-]
+  Expect<Equal<typeof noCharsOutput, ''>>,
+  Expect<Equal<typeof oneCharOutput, 'a'>>,
+  Expect<Equal<typeof noDelimiterOutput, 'abc'>>,
+  Expect<Equal<typeof twoCharOutput, 'a-b'>>,
+  Expect<Equal<typeof hyphenOutput, 'a-b-c'>>,
+  Expect<Equal<typeof hashOutput, 'a#b#c'>>,
+  Expect<Equal<typeof longOutput, 'a-b-c-d-e-f-g-h'>>
+];
