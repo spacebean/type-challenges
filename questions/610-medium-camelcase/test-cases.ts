@@ -1,5 +1,7 @@
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { CamelCase } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<CamelCase<'foo-bar-baz'>, 'fooBarBaz'>>,
   Expect<Equal<CamelCase<'foo-Bar-Baz'>, 'foo-Bar-Baz'>>,
@@ -11,5 +13,5 @@ type cases = [
   Expect<Equal<CamelCase<'ABC'>, 'ABC'>>,
   Expect<Equal<CamelCase<'-'>, '-'>>,
   Expect<Equal<CamelCase<''>, ''>>,
-  Expect<Equal<CamelCase<'😎'>, '😎'>>,
-]
+  Expect<Equal<CamelCase<'😎'>, '😎'>>
+];

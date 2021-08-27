@@ -1,4 +1,14 @@
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { MyReturnType } from './template';
+
+type ComplexObject = {
+  a: [12, 'foo'];
+  bar: 'hello';
+  prev(): number;
+};
+
+const fn = (v: boolean) => (v ? 1 : 2);
+const fn1 = (v: boolean, _w: any) => (v ? 1 : 2);
 
 type cases = [
   Expect<Equal<string, MyReturnType<() => string>>>,
@@ -7,14 +17,5 @@ type cases = [
   Expect<Equal<Promise<boolean>, MyReturnType<() => Promise<boolean>>>>,
   Expect<Equal<() => 'foo', MyReturnType<() => () => 'foo'>>>,
   Expect<Equal<1 | 2, MyReturnType<typeof fn>>>,
-  Expect<Equal<1 | 2, MyReturnType<typeof fn1>>>,
-]
-
-type ComplexObject = {
-  a: [12, 'foo']
-  bar: 'hello'
-  prev(): number
-}
-
-const fn = (v: boolean) => v ? 1 : 2
-const fn1 = (v: boolean, w: any) => v ? 1 : 2
+  Expect<Equal<1 | 2, MyReturnType<typeof fn1>>>
+];

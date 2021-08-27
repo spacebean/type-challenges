@@ -1,1 +1,1 @@
-type Capitalize<S extends string> = any
+export type Capitalize<S extends string> = intrinsic;
