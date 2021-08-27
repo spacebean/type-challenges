@@ -1,2 +1,11 @@
+type InferComputed<T extends Record<string, any>> = {
+  [K in keyof T]: ReturnType<T[K]>;
+};
 
-declare function SimpleVue(options: any): any
+type Options<D, C, M> = {
+  data(this: undefined): D;
+  computed: C & ThisType<D>;
+  methods: M & ThisType<InferComputed<C> & M>;
+};
+
+export declare function SimpleVue<D, C, M>(options: Options<D, C, M>): any;

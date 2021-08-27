@@ -1,1 +1,3 @@
-type CamelCase<S extends string> = any
+export type CamelCase<S extends string> = S extends `${infer First}_${infer Second}${infer Rest}`
+  ? `${Lowercase<First>}${Capitalize<Second>}${CamelCase<Rest>}`
+  : Lowercase<S>;

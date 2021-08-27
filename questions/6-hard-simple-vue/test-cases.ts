@@ -1,39 +1,40 @@
-
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { SimpleVue } from './template';
 
 SimpleVue({
   data() {
     // @ts-expect-error
-    this.firstname
+    this.firstname;
     // @ts-expect-error
-    this.getRandom()
+    this.getRandom();
     // @ts-expect-error
-    this.data()
+    this.data();
 
     return {
       firstname: 'Type',
       lastname: 'Challenges',
       amount: 10,
-    }
+    };
   },
   computed: {
     fullname() {
-      return `${this.firstname} ${this.lastname}`
+      return `${this.firstname} ${this.lastname}`;
     },
   },
   methods: {
     getRandom() {
-      return Math.random()
+      return Math.random();
     },
     hi() {
-      alert(this.fullname.toLowerCase())
-      alert(this.getRandom())
+      alert(this.fullname.toLowerCase());
+      alert(this.getRandom());
     },
     test() {
-      const fullname = this.fullname
-      const cases: [
-        Expect<Equal<typeof fullname, string>>,
-      ] = [] as any
+      const fullname = this.fullname;
+      // noinspection JSUnusedLocalSymbols
+      const cases: [Expect<Equal<typeof fullname, string>>] = [] as any;
     },
   },
-})
+});
+
+function alert(_: any) {}
