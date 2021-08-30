@@ -7,17 +7,14 @@ type Foo = {
 };
 type Bar = {
   b: number;
+  c: boolean;
 };
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
-  Expect<
-    Equal<
-      Merge<Foo, Bar>,
-      {
-        a: number;
-        b: number;
-      }
-    >
-  >
-];
+  Expect<Equal<Merge<Foo, Bar>, {
+	a: number;
+	b: number;
+	c: boolean;
+  }>>
+]
