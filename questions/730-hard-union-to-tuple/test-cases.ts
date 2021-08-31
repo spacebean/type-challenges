@@ -5,6 +5,7 @@ type ExtractValuesOfTuple<T extends any[]> = T[keyof T & number];
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
+  Expect<Equal<UnionToTuple<0 | 1 | 2 | 3>, [0, 1, 2, 3]>>,
   Expect<Equal<ExtractValuesOfTuple<UnionToTuple<'a' | 'b'>>, 'a' | 'b'>>,
   Expect<Equal<ExtractValuesOfTuple<UnionToTuple<'a'>>, 'a'>>,
   Expect<Equal<ExtractValuesOfTuple<UnionToTuple<any>>, any>>,
