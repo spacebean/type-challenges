@@ -1,4 +1,4 @@
-import { DigitsToTuples, Longer, ProcessSum, Tuple09, TuplesToNumber } from '../476-extreme-sum/template';
+import { DigitsToTuples, Longer, ProcessSum, Tuple0_9, TuplesToNumber } from '../476-extreme-sum/template';
 
 type IsArray<T> = T extends any[] ? T : never;
 
@@ -6,7 +6,7 @@ type SingleMultiply<X extends any[], Y extends any[], Result extends any[] = []>
   ? SingleMultiply<X, Rest, [...X, ...Result]>
   : Result;
 
-type SplitSingleMultiply<T extends any[], Temp extends any[] = []> = T extends [...infer Reminder, any, ...Tuple09[9]]
+type SplitSingleMultiply<T extends any[], Temp extends any[] = []> = T extends [...infer Reminder, any, ...Tuple0_9[9]]
   ? SplitSingleMultiply<Reminder, [any, ...Temp]>
   : [Temp, T];
 

@@ -1,4 +1,4 @@
-export type Tuple09 = [
+export type Tuple0_9 = [
   [],
   [any],
   [any, any],
@@ -12,13 +12,13 @@ export type Tuple09 = [
 ];
 
 type Digits = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-type Tuple09Index = `${Digits}`;
-type DigitToTuple<Index extends Tuple09Index> = Tuple09[Index];
+type Tuple0_9Index = `${Digits}`;
+type DigitToTuple<Index extends Tuple0_9Index> = Tuple0_9[Index];
 
 type IsArray<T> = T extends any[] ? T : never;
 
 export type DigitsToTuples<S extends string> = S extends `${infer First}${infer Rest}`
-  ? First extends Tuple09Index
+  ? First extends Tuple0_9Index
     ? [DigitToTuple<First>, ...DigitsToTuples<Rest>]
     : never
   : [];
@@ -31,9 +31,9 @@ export type Longer<A extends string, B extends string> = StringToTuple<A> extend
 
 type SingleSum<X extends any[], Y extends any[]> = [...X, ...Y];
 
-type SplitSingleSum<T extends any[]> = T extends [any, ...Tuple09[9]]
+type SplitSingleSum<T extends any[]> = T extends [any, ...Tuple0_9[9]]
   ? [[any], []]
-  : T extends [...infer Reminder, any, ...Tuple09[9]]
+  : T extends [...infer Reminder, any, ...Tuple0_9[9]]
   ? [[any], Reminder]
   : [[], T];
 
