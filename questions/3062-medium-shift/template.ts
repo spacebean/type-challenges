@@ -1,1 +1,1 @@
-type Shift<T> = any
+export type Shift<T> = T extends [any, ...infer Rest] ? Rest : [];
