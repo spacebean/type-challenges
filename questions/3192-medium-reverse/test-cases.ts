@@ -1,6 +1,5 @@
-import { Equal, Expect, ExpectFalse, NotEqual } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
+import { Reverse } from './template';
 
-type cases = [
-  Expect<Equal<Reverse<['a', 'b']>, ['b', 'a']>>,
-  Expect<Equal<Reverse<['a', 'b', 'c']>, ['c', 'b', 'a']>>
-]
+// noinspection JSUnusedLocalSymbols
+type cases = [Expect<Equal<Reverse<['a', 'b']>, ['b', 'a']>>, Expect<Equal<Reverse<['a', 'b', 'c']>, ['c', 'b', 'a']>>];
