@@ -12,7 +12,7 @@
     "utils:release": "pnpm -C utils release"
   },
   "devDependencies": {
-    "@antfu/eslint-config-ts": "^0.8.1",
+    "@antfu/eslint-config-ts": "^0.8.2",
     "@type-challenges/utils": "workspace:*",
     "@types/fs-extra": "^9.0.12",
     "@types/js-yaml": "^4.0.3",
