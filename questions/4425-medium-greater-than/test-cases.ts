@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils'
+import {GreaterThan} from "./template";
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<GreaterThan<1, 0>, true>>,
   Expect<Equal<GreaterThan<5, 4>, true>>,
