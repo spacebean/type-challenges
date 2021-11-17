@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils'
+import {Zip} from "./template";
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Zip<[], []>, []>>,
   Expect<Equal<Zip<[1, 2], [true, false]>, [[1, true], [2, false]]>>,
