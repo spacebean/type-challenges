@@ -1,6 +1,6 @@
 // noinspection JSUnusedLocalSymbols
 
-import { Equal, Expect, IsAny, Debug } from '@type-challenges/utils';
+import { Debug, Equal, Expect, IsAny } from '@type-challenges/utils';
 import { VueBasicProps } from './template';
 
 class ClassA {}

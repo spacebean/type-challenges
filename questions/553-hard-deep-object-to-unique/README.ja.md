@@ -1,6 +1,7 @@
 <!--info-header-start--><h1>Deep object to unique <img src="https://img.shields.io/badge/-%E4%B8%8A%E7%B4%9A-de3d37" alt="上級"/> <img src="https://img.shields.io/badge/-%23deep-999" alt="#deep"/></h1><blockquote><p>by null <a href="https://github.com/uid11" target="_blank">@uid11</a></p></blockquote><p><a href="https://tsch.js.org/553/play/ja" target="_blank"><img src="https://img.shields.io/badge/-%E6%8C%91%E6%88%A6%E3%81%99%E3%82%8B-3178c6?logo=typescript&logoColor=white" alt="挑戦する"/></a> &nbsp;&nbsp;&nbsp;<a href="./README.md" target="_blank"><img src="https://img.shields.io/badge/-English-gray" alt="English"/></a> </p><!--info-header-end-->
 
-TypeScript は構造的型システムを持っていますが、場合によっては(公称型システムのように)あらかじめ定義されたユニークなオブジェクトだけを受け入れ、required なフィールドを持つオブジェクトは受け入れないようにしたいこともあるでしょう。
+TypeScript は構造的型システムを持っていますが、場合によっては(公称型システムのように)あらかじめ定義されたユニークなオブジェクトだけを受け入れ、required
+なフィールドを持つオブジェクトは受け入れないようにしたいこともあるでしょう。
 
 引数にオブジェクトを受け取り、引数に含まれる全てのオブジェクトの文字列と数値のキー、およびこれらのキーの値のプロパティーを保持しながら、引数のオブジェクトとそれに含まれるネストしたオブジェクト全てをユニークにする型を実装します。
 

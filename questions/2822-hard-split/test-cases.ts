@@ -1,5 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Split } from './template';
+import {Equal, Expect} from '@type-challenges/utils';
+import {Split} from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

@@ -2,7 +2,7 @@
 
 > 由谷歌自动翻译，欢迎 PR 改进翻译质量。
 
->在此挑战中建议使用TypeScript 4.0
+> 在此挑战中建议使用TypeScript 4.0
 
 [Currying]（https://en.wikipedia.org/wiki/Currying）是一种将带有多个参数的函数转换为每个带有一个参数的函数序列的技术。
 

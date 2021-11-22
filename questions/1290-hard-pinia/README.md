@@ -1,6 +1,7 @@
 <!--info-header-start--><h1>Pinia <img src="https://img.shields.io/badge/-hard-de3d37" alt="hard"/> <img src="https://img.shields.io/badge/-%23this-999" alt="#this"/> <img src="https://img.shields.io/badge/-%23vue-999" alt="#vue"/></h1><blockquote><p>by Pig Fang <a href="https://github.com/g-plane" target="_blank">@g-plane</a></p></blockquote><p><a href="https://tsch.js.org/1290/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> </p><!--info-header-end-->
 
-Create a type-level function whose types is similar to [Pinia](https://github.com/posva/pinia) library. You don't need to implement function actually, just adding types.
+Create a type-level function whose types is similar to [Pinia](https://github.com/posva/pinia) library. You don't need
+to implement function actually, just adding types.
 
 ### Overview
 
@@ -8,7 +9,8 @@ This function receive only one parameter whose type is an object. The object con
 
 - `id` - just a string (required)
 - `state` - a function which will return an object as store's state (required)
-- `getters` - an object with methods which is similar to Vue's computed values or Vuex's getters, and details are below (optional)
+- `getters` - an object with methods which is similar to Vue's computed values or Vuex's getters, and details are
+  below (optional)
 - `actions` - an object with methods which can do side effects and mutate state, and details are below (optional)
 
 ### Getters

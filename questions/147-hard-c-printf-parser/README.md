@@ -6,7 +6,8 @@ There is a function in C language: `printf`. This function allows us to print so
 printf("The result is %d.", 42);
 ```
 
-This challenge requires you to parse the input string and extract the format placeholders like `%d` and `%f`. For example, if the input string is `"The result is %d."`, the parsed result is a tuple `['dec']`.
+This challenge requires you to parse the input string and extract the format placeholders like `%d` and `%f`. For
+example, if the input string is `"The result is %d."`, the parsed result is a tuple `['dec']`.
 
 Here is the mapping:
 
@@ -21,6 +22,5 @@ type ControlsMap = {
   p: 'pointer',
 }
 ```
-
 
 <!--info-footer-start--><br><a href="../../README.md" target="_blank"><img src="https://img.shields.io/badge/-Back-grey" alt="Back"/></a> <a href="https://tsch.js.org/147/answer" target="_blank"><img src="https://img.shields.io/badge/-Share%20your%20Solutions-teal" alt="Share your Solutions"/></a> <a href="https://tsch.js.org/147/solutions" target="_blank"><img src="https://img.shields.io/badge/-Check%20out%20Solutions-de5a77?logo=awesome-lists&logoColor=white" alt="Check out Solutions"/></a> <!--info-footer-end-->

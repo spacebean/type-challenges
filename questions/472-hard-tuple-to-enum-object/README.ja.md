@@ -11,8 +11,7 @@ let OperatingSystem;
 })(OperatingSystem || (OperatingSystem = {}));
 ```
 
-この問題では、文字列のタプルを enum と同じようなオブジェクトに変換する型を実装します。
-さらに、enum のプロパティはパスカルケースであることが好ましいです。
+この問題では、文字列のタプルを enum と同じようなオブジェクトに変換する型を実装します。 さらに、enum のプロパティはパスカルケースであることが好ましいです。
 
 ```ts
 Enum<["macOS", "Windows", "Linux"]>

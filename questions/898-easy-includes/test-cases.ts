@@ -1,5 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Includes } from './template';
+import {Equal, Expect} from '@type-challenges/utils';
+import {Includes} from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
@@ -15,4 +15,4 @@ type cases = [
   Expect<Equal<Includes<[false, 2, 3, 5, 6, 7], false>, true>>,
   Expect<Equal<Includes<[{ a: 'A' }], { readonly a: 'A' }>, false>>,
   Expect<Equal<Includes<[{ readonly a: 'A' }], { a: 'A' }>, false>>
-]
+];
