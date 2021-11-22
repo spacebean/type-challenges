@@ -10,6 +10,7 @@ type ComplexObject = {
 const fn = (v: boolean) => (v ? 1 : 2);
 const fn1 = (v: boolean, _w: any) => (v ? 1 : 2);
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<string, MyReturnType<() => string>>>,
   Expect<Equal<123, MyReturnType<() => 123>>>,
