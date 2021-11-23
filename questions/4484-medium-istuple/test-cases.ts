@@ -1,5 +1,5 @@
-import {Equal, Expect} from '@type-challenges/utils';
-import {IsTuple} from './template';
+import { Equal, Expect } from '@type-challenges/utils';
+import { IsTuple } from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

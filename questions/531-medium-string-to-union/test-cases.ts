@@ -1,5 +1,5 @@
-import {Equal, Expect} from '@type-challenges/utils';
-import {StringToUnion} from './template';
+import { Equal, Expect } from '@type-challenges/utils';
+import { StringToUnion } from './template';
 
 // noinspection JSUnusedLocalSymbols, TypeScriptDuplicateUnionOrIntersectionType
 type cases = [

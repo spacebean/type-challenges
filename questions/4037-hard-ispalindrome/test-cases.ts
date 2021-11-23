@@ -1,5 +1,5 @@
-import {Equal, Expect} from '@type-challenges/utils';
-import {IsPalindrome} from './template'; // noinspection JSUnusedLocalSymbols
+import { Equal, Expect } from '@type-challenges/utils';
+import { IsPalindrome } from './template'; // noinspection JSUnusedLocalSymbols
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

@@ -1,5 +1,5 @@
-import {Equal, IsTrue} from '@type-challenges/utils';
-import {LengthOfString} from './template';
+import { Equal, IsTrue } from '@type-challenges/utils';
+import { LengthOfString } from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
