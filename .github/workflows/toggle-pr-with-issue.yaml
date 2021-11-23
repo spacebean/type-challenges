@@ -2,7 +2,7 @@ name: Toggle PR With Issue
 
 on:
   issues:
-    types: [closed, reopened]
+    types: [ closed, reopened ]
 
 jobs:
   start:

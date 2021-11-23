@@ -1,7 +1,5 @@
 ---
-name: Discussion
-about: General discussions.
-title: ""
+name: Discussion about: General discussions. title: ""
 labels: discussion
 ---
 

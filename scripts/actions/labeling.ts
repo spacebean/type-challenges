@@ -1,24 +1,20 @@
-import { Action } from '../types'
+import { Action } from '../types';
 
-const action: Action = async(github, context, core) => {
-  const payload = context.payload
-  const issue = payload.issue
+const action: Action = async (github, context, core) => {
+  const payload = context.payload;
+  const issue = payload.issue;
 
-  if (!issue)
-    return
+  if (!issue) return;
 
-  const labels: string[] = (issue.labels || [])
-    .map((i: any) => i && i.name)
-    .filter(Boolean)
+  const labels: string[] = (issue.labels || []).map((i: any) => i && i.name).filter(Boolean);
 
   if (labels.includes('answer')) {
-    const match = issue.title.match(/^(\d+) - /)
+    const match = issue.title.match(/^(\d+) - /);
     if (match && match[1]) {
-      const no = Number(match[1])
-      if (isNaN(no))
-        return
+      const no = Number(match[1]);
+      if (isNaN(no)) return;
 
-      const name = no.toString()
+      const name = no.toString();
 
       if (labels.includes('trigger-bot')) {
         await github.issues.removeLabel({
@@ -26,26 +22,24 @@ const action: Action = async(github, context, core) => {
           owner: context.repo.owner,
           repo: context.repo.repo,
           name: 'trigger-bot',
-        })
+        });
       }
 
-      if (labels.includes(name))
-        return
+      if (labels.includes(name)) return;
 
       try {
         await github.issues.getLabel({
           owner: context.repo.owner,
           repo: context.repo.repo,
           name,
-        })
-      }
-      catch {
+        });
+      } catch {
         await github.issues.createLabel({
           owner: context.repo.owner,
           repo: context.repo.repo,
           name,
           color: 'ffffff',
-        })
+        });
       }
 
       await github.issues.addLabels({
@@ -53,12 +47,11 @@ const action: Action = async(github, context, core) => {
         owner: context.repo.owner,
         repo: context.repo.repo,
         labels: [name],
-      })
+      });
     }
+  } else {
+    core.info('No matched labels, skipped');
   }
-  else {
-    core.info('No matched labels, skipped')
-  }
-}
+};
 
-export default action
+export default action;

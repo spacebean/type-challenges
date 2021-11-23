@@ -1,7 +1,5 @@
 ---
-name: Help
-about: I have a question/demand, I would need some help.
-title: ""
+name: Help about: I have a question/demand, I would need some help. title: ""
 labels: help
 ---
 

@@ -2,7 +2,7 @@ name: Issue to Pull Request
 
 on:
   issues:
-    types: [opened, edited]
+    types: [ opened, edited ]
 
 jobs:
   start:
