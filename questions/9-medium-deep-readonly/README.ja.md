@@ -7,20 +7,20 @@
 例えば
 
 ```ts
-type X = { 
-  x: { 
-    a: 1
-    b: 'hi'
-  }
-  y: 'hey'
+type X = {
+    x: {
+        a: 1
+        b: 'hi'
+    }
+    y: 'hey'
 }
 
-type Expected = { 
-  readonly x: { 
-    readonly a: 1
-    readonly b: 'hi'
-  }
-  readonly y: 'hey' 
+type Expected = {
+    readonly x: {
+        readonly a: 1
+        readonly b: 'hi'
+    }
+    readonly y: 'hey'
 }
 
 const todo: DeepReadonly<X> // should be same as `Expected`
