@@ -33,4 +33,4 @@ type cases = [
   Expect<Equal<Capitalize<'x'>, 'X'>>,
   Expect<Equal<Capitalize<'y'>, 'Y'>>,
   Expect<Equal<Capitalize<'z'>, 'Z'>>
-]
+];

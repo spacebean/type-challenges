@@ -12,7 +12,4 @@ type Bar = {
 };
 
 // noinspection JSUnusedLocalSymbols
-type cases = [
-  Expect<Equal<Diff<Foo, Bar>, { gender: number }>>,
-  Expect<Equal<Diff<Bar,Foo>, { gender: number }>>
-]
+type cases = [Expect<Equal<Diff<Foo, Bar>, { gender: number }>>, Expect<Equal<Diff<Bar, Foo>, { gender: number }>>];
