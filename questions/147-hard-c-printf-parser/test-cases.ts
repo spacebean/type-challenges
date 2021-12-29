@@ -1,5 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { ParsePrintFormat } from './template';
+import { Equal, Expect } from '@type-challenges/utils'
+import { ParsePrintFormat } from './template' // noinspection JSUnusedLocalSymbols
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

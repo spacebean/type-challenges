@@ -1,7 +1,7 @@
 // noinspection DuplicatedCode, JSSuspiciousNameCombination, JSUnusedAssignment
 
-import { Equal, Expect, IsTrue } from '@type-challenges/utils';
-import { GetTags, HasExactTags, HasTag, HasTags, Tag, UnTag } from './template';
+import { Equal, Expect, IsTrue } from '@type-challenges/utils'
+import { GetTags, HasExactTags, HasTag, HasTags, Tag, UnTag } from './template'
 
 /**
  * Tests of assignable of tagged variables.

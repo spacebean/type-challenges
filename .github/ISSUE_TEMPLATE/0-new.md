@@ -39,7 +39,7 @@ type YourType = any
 Provide some test cases for your challenge, you can use some utils from `@type-challenges/utils` for asserting.
 
 ```ts
-import {Equal, Expect, ExpectFalse, NotEqual} from '@type-challenges/utils'
+import { Equal, Expect, ExpectFalse, NotEqual } from '@type-challenges/utils'
 
 type cases = [
     Expect<Equal<true, true>>

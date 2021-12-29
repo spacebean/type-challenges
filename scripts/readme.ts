@@ -90,10 +90,12 @@ async function insertInfoReadme(filepath: string, quiz: Quiz, locale: SupportedL
   let text = await fs.readFile(filepath, 'utf-8');
   /* eslint-disable prefer-template */
 
-  if (!text.match(/<!--info-header-start-->[\s\S]*<!--info-header-end-->/))
+  if (!text.match(/<!--info-header-start-->[\s\S]*<!--info-header-end-->/)) {
     text = `<!--info-header-start--><!--info-header-end-->\n\n${text}`;
-  if (!text.match(/<!--info-footer-start-->[\s\S]*<!--info-footer-end-->/))
+  }
+  if (!text.match(/<!--info-footer-start-->[\s\S]*<!--info-footer-end-->/)) {
     text = `${text}\n\n<!--info-footer-start--><!--info-footer-end-->`;
+  }
 
   const info = resolveInfo(quiz, locale);
 
@@ -164,12 +166,13 @@ async function updateIndexREADME(quizes: Quiz[]) {
     );
 
     for (const quiz of quizesByDifficulty) {
-      if (prev !== quiz.difficulty)
+      if (prev !== quiz.difficulty) {
         challengesREADME += `${prev ? '<br><br>' : ''}${toDifficultyBadgeInverted(
           quiz.difficulty,
           locale,
           quizesByDifficulty.filter((q) => q.difficulty === quiz.difficulty).length
         )}<br>`;
+      }
 
       challengesREADME += quizToBadge(quiz, locale);
 
