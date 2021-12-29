@@ -1,12 +1,12 @@
-import path from "path";
-import fs from "fs-extra";
-import fg from "fast-glob";
-import YAML from "js-yaml";
-import { Quiz, QuizMetaInfo } from "./types";
-import { defaultLocale, supportedLocales } from "./locales";
+import path from 'path';
+import fs from 'fs-extra';
+import fg from 'fast-glob';
+import YAML from 'js-yaml';
+import { Quiz, QuizMetaInfo } from './types';
+import { defaultLocale, supportedLocales } from './locales';
 
 export async function loadFile(filepath: string) {
-  if (fs.existsSync(filepath)) return await fs.readFile(filepath, "utf-8");
+  if (fs.existsSync(filepath)) return await fs.readFile(filepath, 'utf-8');
   return undefined;
 }
 
@@ -70,9 +70,7 @@ export async function loadQuizes(): Promise<Quiz[]> {
     cwd: QUIZ_ROOT,
   });
 
-  const quizes = await Promise.all(folders.map(async (dir) => loadQuiz(dir)));
-
-  return quizes;
+  return await Promise.all(folders.map(async(dir) => loadQuiz(dir)));
 }
 
 export async function loadQuiz(dir: string): Promise<Quiz> {
