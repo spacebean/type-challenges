@@ -3,15 +3,31 @@ import { Chainable } from './template';
 
 declare const a: Chainable;
 
-const result = a.option('foo', 123).option('bar', { value: 'Hello World' }).option('name', 'type-challenges').get();
+const result1 = a
+  .option('foo', 123)
+  .option('bar', { value: 'Hello World' })
+  .option('name', 'type-challenges')
+  .get();
 
-type Expected = {
-  foo: number;
+const result2 = a
+  .option('name', 'another name')
+  // @ts-expect-error
+  .option('name', 'last name')
+  .get();
+
+type cases = [
+  Expect<Alike<typeof result1, Expected1>>,
+  Expect<Alike<typeof result2, Expected2>>,
+];
+
+type Expected1 = {
+  foo: number
   bar: {
-    value: string;
-  };
-  name: string;
+    value: string
+  }
+  name: string
 };
 
-// noinspection JSUnusedLocalSymbols
-type cases = [Expect<Alike<typeof result, Expected>>];
+type Expected2 = {
+  name: string
+};
