@@ -26,6 +26,7 @@ SimpleVue({
       return Math.random();
     },
     hi() {
+      alert(this.amount);
       alert(this.fullname.toLowerCase());
       alert(this.getRandom());
     },
