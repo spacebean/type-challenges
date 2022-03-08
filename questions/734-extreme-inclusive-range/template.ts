@@ -23,4 +23,6 @@ export type InclusiveRange<
   Higher extends number,
   LowerTuple = Repeat<Lower>,
   HigherTuple = Repeat<Higher>
-> = HigherTuple extends [...IsArray<LowerTuple>, ...infer R] ? [Last<IsArray<LowerTuple>>, ...R] : [];
+> = HigherTuple extends [...IsArray<LowerTuple>, ...infer R]
+  ? [Last<IsArray<LowerTuple>>, ...R]
+  : [];

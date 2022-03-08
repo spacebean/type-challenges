@@ -24,13 +24,18 @@ type ContainsTag<A extends readonly string[], S extends string> = A extends read
     : ContainsTag<Rest<A>, S>
   : false;
 
-type ContainsTags<A extends readonly string[], B extends readonly string[]> = A extends readonly [any, ...any]
+type ContainsTags<A extends readonly string[], B extends readonly string[]> = A extends readonly [
+  any,
+  ...any
+]
   ? A extends [...B, ...any]
     ? true
     : ContainsTags<Rest<A>, B>
   : false;
 
-type ContainsExactTags<A extends readonly string[], B extends readonly string[]> = A extends B ? true : false;
+type ContainsExactTags<A extends readonly string[], B extends readonly string[]> = A extends B
+  ? true
+  : false;
 
 type IsTuple<T> = T extends readonly any[] ? T : never;
 
@@ -48,7 +53,9 @@ export type Tag<T, S extends string> = SetTags<UnTag<T>, [...GetTags<T>, S]>;
 
 export type UnTag<T> = T extends any ? (T extends Tags<infer R, any> ? R : T) : never;
 
-export type HasTag<T, S extends string, U = GetTags<T>> = IsUnion<U> extends true ? false : ContainsTag<IsTuple<U>, S>;
+export type HasTag<T, S extends string, U = GetTags<T>> = IsUnion<U> extends true
+  ? false
+  : ContainsTag<IsTuple<U>, S>;
 
 export type HasTags<T, A extends readonly string[], U = GetTags<T>> = IsUnion<U> extends true
   ? false

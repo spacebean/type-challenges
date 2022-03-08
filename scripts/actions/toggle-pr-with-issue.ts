@@ -21,7 +21,7 @@ const action: Action = async (github, context, core) => {
   // action: closed
 
   // find pull request
-  const { data: pulls } = await github.pulls.list({
+  const { data: pulls } = await github.rest.pulls.list({
     owner: context.repo.owner,
     repo: context.repo.repo,
     state: action === 'closed' ? 'open' : 'closed',
@@ -30,7 +30,9 @@ const action: Action = async (github, context, core) => {
   core.info(`pulls.length ${pulls.length}`);
   core.info(JSON.stringify(pulls));
 
-  const existing_pull = pulls.find((i) => i.user.login === 'github-actions[bot]' && i.title.startsWith(`#${no} `));
+  const existing_pull = pulls.find(
+    (i) => i.user?.login === 'github-actions[bot]' && i.title.startsWith(`#${no} `)
+  );
 
   if (!existing_pull) {
     core.info('existing_pull not exist');
@@ -40,14 +42,14 @@ const action: Action = async (github, context, core) => {
   core.info(JSON.stringify(context));
 
   if (context.payload.action === 'reopened') {
-    await github.pulls.update({
+    await github.rest.pulls.update({
       ...context.repo,
       pull_number: existing_pull.number,
       state: 'open',
     });
   } else {
     // close
-    await github.pulls.update({
+    await github.rest.pulls.update({
       ...context.repo,
       pull_number: existing_pull.number,
       state: 'closed',

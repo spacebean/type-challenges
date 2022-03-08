@@ -6,7 +6,9 @@ export enum Comparison {
   Lower,
 }
 
-type StringToTuple<S extends string> = S extends `${any}${infer Rest}` ? [any, ...StringToTuple<Rest>] : [];
+type StringToTuple<S extends string> = S extends `${any}${infer Rest}`
+  ? [any, ...StringToTuple<Rest>]
+  : [];
 
 type CharToTuple<S extends string, Result extends any[] = []> = `${Result['length']}` extends S
   ? Result

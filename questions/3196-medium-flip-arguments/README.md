@@ -2,8 +2,8 @@
 
 Implement the type version of lodash's ```_.flip```.
 
-Type ```FlipArguments<T>``` requires function type ```T``` and returns a new function type which has the same return
-type of T but reversed parameters.
+Type ```FlipArguments<T>``` requires function type ```T``` and returns a new function type which has
+the same return type of T but reversed parameters.
 
 For example:
 

@@ -1,4 +1,8 @@
-type Or<X extends boolean, Y extends boolean> = X extends true ? true : Y extends true ? true : false;
+type Or<X extends boolean, Y extends boolean> = X extends true
+  ? true
+  : Y extends true
+  ? true
+  : false;
 
 type Fill<
   T extends unknown[],

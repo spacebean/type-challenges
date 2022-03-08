@@ -1,7 +1,7 @@
 <!--info-header-start--><h1>AllCombinations <img src="https://img.shields.io/badge/-medium-d9901a" alt="medium"/> </h1><blockquote><p>by 蛭子屋双六 <a href="https://github.com/sugoroku-y" target="_blank">@sugoroku-y</a></p></blockquote><p><a href="https://tsch.js.org/4260/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> &nbsp;&nbsp;&nbsp;<a href="./README.ja.md" target="_blank"><img src="https://img.shields.io/badge/-%E6%97%A5%E6%9C%AC%E8%AA%9E-gray" alt="日本語"/></a> </p><!--info-header-end-->
 
-Implement type ```AllCombinations<S>``` that return all combinations of strings which use characters from ```S``` at
-most once.
+Implement type ```AllCombinations<S>``` that return all combinations of strings which use characters
+from ```S``` at most once.
 
 For example:
 

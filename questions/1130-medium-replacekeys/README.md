@@ -1,7 +1,7 @@
 <!--info-header-start--><h1>ReplaceKeys <img src="https://img.shields.io/badge/-medium-d9901a" alt="medium"/> </h1><blockquote><p>by 贱贱 <a href="https://github.com/lullabyjune" target="_blank">@lullabyjune</a></p></blockquote><p><a href="https://tsch.js.org/1130/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> </p><!--info-header-end-->
 
-Implement a type ReplaceKeys, that replace keys in union types, if some type has not this key, just skip replacing, A
-type takes three arguments.
+Implement a type ReplaceKeys, that replace keys in union types, if some type has not this key, just
+skip replacing, A type takes three arguments.
 
 For example:
 

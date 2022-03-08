@@ -1,6 +1,7 @@
 <!--info-header-start--><h1>Unique <img src="https://img.shields.io/badge/-medium-d9901a" alt="medium"/> <img src="https://img.shields.io/badge/-%23array-999" alt="#array"/></h1><blockquote><p>by Pineapple <a href="https://github.com/Pineapple0919" target="_blank">@Pineapple0919</a></p></blockquote><p><a href="https://tsch.js.org/5360/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> </p><!--info-header-end-->
 
-Implement the type version of Lodash.uniq, Unique<T> takes an Array T, returns the Array T without repeated values.
+Implement the type version of Lodash.uniq, Unique<T> takes an Array T, returns the Array T without
+repeated values.
 
 ```ts
 type Res = Unique<[1, 1, 2, 2, 3, 3]>; // expected to be [1, 2, 3]

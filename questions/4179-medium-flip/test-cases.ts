@@ -1,5 +1,5 @@
-import { Equal, Expect, NotEqual } from '@type-challenges/utils'
-import { Flip } from './template'
+import {Equal, Expect, NotEqual} from '@type-challenges/utils'
+import {Flip} from './template' // noinspection JSUnusedLocalSymbols
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

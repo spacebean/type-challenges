@@ -57,7 +57,11 @@ export async function build() {
   await fs.remove(dist);
   await fs.ensureDir(dist);
 
-  await fs.writeFileSync(path.join(dist, '_redirects'), redirects.map((i) => i.join('\t')).join('\n'), 'utf-8');
+  await fs.writeFileSync(
+    path.join(dist, '_redirects'),
+    redirects.map((i) => i.join('\t')).join('\n'),
+    'utf-8'
+  );
 }
 
 build();

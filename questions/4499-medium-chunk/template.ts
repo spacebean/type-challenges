@@ -1,4 +1,8 @@
-type SplitAt<T extends any[], N extends number, R extends [any[], any[]] = [[], []]> = R[1]['length'] extends N
+type SplitAt<
+  T extends any[],
+  N extends number,
+  R extends [any[], any[]] = [[], []]
+> = R[1]['length'] extends N
   ? R
   : T extends [infer First, ...infer Rest]
   ? SplitAt<Rest, N, [Rest, [...R[1], First]]>

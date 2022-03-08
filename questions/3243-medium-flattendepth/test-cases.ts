@@ -1,5 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils'
-import { FlattenDepth } from './template'
+import {Equal, Expect} from '@type-challenges/utils';
+import {FlattenDepth} from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

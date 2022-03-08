@@ -2,7 +2,18 @@ import { Equal, Expect } from '@type-challenges/utils';
 import { Enum } from './template';
 
 const OperatingSystem = ['macOS', 'Windows', 'Linux'] as const;
-const Command = ['echo', 'grep', 'sed', 'awk', 'cut', 'uniq', 'head', 'tail', 'xargs', 'shift'] as const;
+const Command = [
+  'echo',
+  'grep',
+  'sed',
+  'awk',
+  'cut',
+  'uniq',
+  'head',
+  'tail',
+  'xargs',
+  'shift',
+] as const;
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

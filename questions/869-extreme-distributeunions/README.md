@@ -1,8 +1,8 @@
 <!--info-header-start--><h1>DistributeUnions <img src="https://img.shields.io/badge/-extreme-b11b8d" alt="extreme"/> </h1><blockquote><p>by Gabriel Vergnaud <a href="https://github.com/gvergnaud" target="_blank">@gvergnaud</a></p></blockquote><p><a href="https://tsch.js.org/869/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> </p><!--info-header-end-->
 
-Implement a type `Distribute Unions`, that turns a type of data structure containing union types into a union of all
-possible types of permitted data structures that don't contain any union. The data structure can be any combination of
-objects and tuples on any level of nesting.
+Implement a type `Distribute Unions`, that turns a type of data structure containing union types
+into a union of all possible types of permitted data structures that don't contain any union. The
+data structure can be any combination of objects and tuples on any level of nesting.
 
 For example:
 

@@ -35,11 +35,15 @@ export function toRawREADME(quiz: Quiz, locale?: string) {
 
 export function toQuestionsRawREADME(locale?: string) {
   const provider = 'https://cdn.jsdelivr.net/gh/type-challenges/type-challenges';
-  return locale && locale !== defaultLocale ? `${provider}/README.${locale}.md` : `${provider}/README.md`;
+  return locale && locale !== defaultLocale
+    ? `${provider}/README.${locale}.md`
+    : `${provider}/README.md`;
 }
 
 export function toNearborREADME(quiz: Quiz, locale?: string) {
-  return locale && locale !== defaultLocale && quiz.readme[locale] ? `./README.${locale}.md` : './README.md';
+  return locale && locale !== defaultLocale && quiz.readme[locale]
+    ? `./README.${locale}.md`
+    : './README.md';
 }
 
 export function toShareAnswerFull(quiz: Quiz, locale: string = defaultLocale) {

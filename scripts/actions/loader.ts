@@ -9,7 +9,6 @@ async function main(): Promise<void> {
   const token = process.argv[2];
   const fnName = process.argv[3];
   const github = getOctokit(token);
-
   const fn = require(`./${fnName}.ts`);
   fn.default(github, context, core, io);
 }

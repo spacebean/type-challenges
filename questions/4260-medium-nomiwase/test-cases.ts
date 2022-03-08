@@ -7,7 +7,22 @@ type cases = [
   Expect<
     Equal<
       AllCombinations<'ABC'>,
-      '' | 'A' | 'B' | 'C' | 'AB' | 'AC' | 'BA' | 'BC' | 'CA' | 'CB' | 'ABC' | 'ACB' | 'BAC' | 'BCA' | 'CAB' | 'CBA'
+      | ''
+      | 'A'
+      | 'B'
+      | 'C'
+      | 'AB'
+      | 'AC'
+      | 'BA'
+      | 'BC'
+      | 'CA'
+      | 'CB'
+      | 'ABC'
+      | 'ACB'
+      | 'BAC'
+      | 'BCA'
+      | 'CAB'
+      | 'CBA'
     >
   >,
   Expect<

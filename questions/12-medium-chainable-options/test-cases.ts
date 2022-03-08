@@ -15,7 +15,11 @@ type Expected2 = {
   name: string;
 };
 
-const result1 = a.option('foo', 123).option('bar', { value: 'Hello World' }).option('name', 'type-challenges').get();
+const result1 = a
+  .option('foo', 123)
+  .option('bar', { value: 'Hello World' })
+  .option('name', 'type-challenges')
+  .get();
 
 const result2 = a.option('name', 'another name').option('name', 'last name').get();
 

@@ -5,7 +5,9 @@
             Code;font-weight:500;}.cls-3{fill:none;stroke:#e84433;stroke-miterlimit:10;stroke-width:3px;}
         </style>
     </defs>
-    <text class="cls-1" transform="matrix(1, 0, 0, 1, -4.51, 63.83)">&lt;<tspan class="cls-2" x="34.59" y="0">T</tspan>
+    <text class="cls-1" transform="matrix(1, 0, 0, 1, -4.51, 63.83)">&lt;<tspan class="cls-2"
+                                                                                x="34.59" y="0">T
+    </tspan>
         <tspan x="69.18" y="0">&gt;</tspan>
     </text>
     <path class="cls-3"

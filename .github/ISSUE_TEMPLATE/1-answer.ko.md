@@ -1,7 +1,5 @@
 ---
-name: 문제풀이
-about: 풀이 공유하기/문제의 풀이
-title: "no - "
+name: 문제풀이 about: 풀이 공유하기/문제의 풀이 title: "no - "
 labels: answer, ko
 ---
 

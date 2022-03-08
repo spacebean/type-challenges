@@ -21,4 +21,6 @@ type Options<P, D, C, M, Props> = {
   methods: M & ThisType<InferComputed<C> & M & Props>;
 };
 
-export declare function VueBasicProps<P, D, C, M, Props = InferProps<P>>(options: Options<P, D, C, M, Props>): any;
+export declare function VueBasicProps<P, D, C, M, Props = InferProps<P>>(
+  options: Options<P, D, C, M, Props>
+): any;

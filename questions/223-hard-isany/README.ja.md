@@ -1,7 +1,7 @@
 <!--info-header-start--><h1>IsAny <img src="https://img.shields.io/badge/-%E4%B8%8A%E7%B4%9A-de3d37" alt="上級"/> <img src="https://img.shields.io/badge/-%23utils-999" alt="#utils"/></h1><blockquote><p>by Pavel Glushkov <a href="https://github.com/pashutk" target="_blank">@pashutk</a></p></blockquote><p><a href="https://tsch.js.org/223/play/ja" target="_blank"><img src="https://img.shields.io/badge/-%E6%8C%91%E6%88%A6%E3%81%99%E3%82%8B-3178c6?logo=typescript&logoColor=white" alt="挑戦する"/></a> &nbsp;&nbsp;&nbsp;<a href="./README.md" target="_blank"><img src="https://img.shields.io/badge/-English-gray" alt="English"/></a> </p><!--info-header-end-->
 
-`any`型の値を持っているかを検出することが便利な場合があります。これは、モジュール API で`any`型の値をエクスポート可能なサードーパーティーの TypeScript モジュールを使用する際に
-特に便利です。また、implicitAny チェックを抑制する際に`any`型について知ることは良いことです。
+`any`型の値を持っているかを検出することが便利な場合があります。これは、モジュール API で`any`型の値をエクスポート可能なサードーパーティーの TypeScript
+モジュールを使用する際に 特に便利です。また、implicitAny チェックを抑制する際に`any`型について知ることは良いことです。
 
 そこで、型`T`を受け取るユーティリティ型`IsAny<T>`を書いてみましょう。`T`が`any`型であれば`true`を返し、そうでなければ`false`を返します。
 

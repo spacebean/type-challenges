@@ -76,7 +76,7 @@ const action: Action = async (github, context, core) => {
       return;
     }
 
-    const { data: user } = await github.users.getByUsername({
+    const { data: user } = await github.rest.users.getByUsername({
       username: issue.user.login,
     });
 
@@ -109,17 +109,22 @@ const action: Action = async (github, context, core) => {
     core.info('-----Parsed-----');
     core.info(JSON.stringify(quiz, null, 2));
 
-    const { data: pulls } = await github.pulls.list({
+    const { data: pulls } = await github.rest.pulls.list({
       owner: context.repo.owner,
       repo: context.repo.repo,
       state: 'open',
     });
 
-    const existing_pull = pulls.find((i) => i.user.login === 'github-actions[bot]' && i.title.startsWith(`#${no} `));
+    const existing_pull = pulls.find(
+      (i) => i.user?.login === 'github-actions[bot]' && i.title.startsWith(`#${no} `)
+    );
 
-    const dir = `questions/${no}-${info.difficulty}-${slug(info.title.replace(/\./g, '-').replace(/<.*>/g, ''), {
-      tone: false,
-    })}`;
+    const dir = `questions/${no}-${info.difficulty}-${slug(
+      info.title.replace(/\./g, '-').replace(/<.*>/g, ''),
+      {
+        tone: false,
+      }
+    )}`;
     const userEmail = `${user.id}+${user.login}@users.noreply.github.com`;
 
     const files: Record<string, string> = {
@@ -138,6 +143,7 @@ const action: Action = async (github, context, core) => {
         files,
         commit: `feat(question): add #${no} - ${info.title}`,
         author: {
+          // @ts-ignore
           name: user.name || user.login,
           email: userEmail,
         },
@@ -166,7 +172,7 @@ const action: Action = async (github, context, core) => {
       await updateComment(github, context, createMessageBody(existing_pull.number));
     } else {
       core.info('-----Creating PR-----');
-      const { data: pr } = await github.pulls.create({
+      const { data: pr } = await github.rest.pulls.create({
         owner: context.repo.owner,
         repo: context.repo.repo,
         base: 'master',
@@ -176,7 +182,7 @@ const action: Action = async (github, context, core) => {
         labels: ['auto-generated'],
       });
 
-      await github.issues.addLabels({
+      await github.rest.issues.addLabels({
         owner: context.repo.owner,
         repo: context.repo.repo,
         issue_number: pr.number,
@@ -196,16 +202,16 @@ const action: Action = async (github, context, core) => {
 };
 
 async function updateComment(github: Github, context: Context, body: string) {
-  const { data: comments } = await github.issues.listComments({
+  const { data: comments } = await github.rest.issues.listComments({
     issue_number: context.issue.number,
     owner: context.repo.owner,
     repo: context.repo.repo,
   });
 
-  const existing_comment = comments.find((i) => i.user.login === 'github-actions[bot]');
+  const existing_comment = comments.find((i) => i.user?.login === 'github-actions[bot]');
 
   if (existing_comment) {
-    return await github.issues.updateComment({
+    return await github.rest.issues.updateComment({
       comment_id: existing_comment.id,
       issue_number: context.issue.number,
       owner: context.repo.owner,
@@ -213,7 +219,7 @@ async function updateComment(github: Github, context: Context, body: string) {
       body,
     });
   } else {
-    return await github.issues.createComment({
+    return await github.rest.issues.createComment({
       issue_number: context.issue.number,
       owner: context.repo.owner,
       repo: context.repo.repo,

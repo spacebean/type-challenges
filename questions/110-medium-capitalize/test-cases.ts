@@ -1,4 +1,4 @@
-import { Equal, Expect } from '@type-challenges/utils'
+import { Equal, Expect } from '@type-challenges/utils';
 
 type cases = [
   Expect<Equal<MyCapitalize<'foobar'>, 'Foobar'>>,
@@ -30,5 +30,5 @@ type cases = [
   Expect<Equal<MyCapitalize<'w'>, 'W'>>,
   Expect<Equal<MyCapitalize<'x'>, 'X'>>,
   Expect<Equal<MyCapitalize<'y'>, 'Y'>>,
-  Expect<Equal<MyCapitalize<'z'>, 'Z'>>,
-]
+  Expect<Equal<MyCapitalize<'z'>, 'Z'>>
+];

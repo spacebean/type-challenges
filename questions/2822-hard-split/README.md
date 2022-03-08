@@ -1,7 +1,8 @@
 <!--info-header-start--><h1>Split <img src="https://img.shields.io/badge/-hard-de3d37" alt="hard"/> <img src="https://img.shields.io/badge/-%23string-999" alt="#string"/> <img src="https://img.shields.io/badge/-%23split-999" alt="#split"/> <img src="https://img.shields.io/badge/-%23array-999" alt="#array"/> <img src="https://img.shields.io/badge/-%23tuple-999" alt="#tuple"/></h1><blockquote><p>by Andrea Simone Costa <a href="https://github.com/jfet97" target="_blank">@jfet97</a></p></blockquote><p><a href="https://tsch.js.org/2822/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> </p><!--info-header-end-->
 
-The well known `split()` method splits a string into an array of substrings by looking for a separator, and returns the
-new array. The goal of this challenge is to split a string, by using a separator, but in the type system!
+The well known `split()` method splits a string into an array of substrings by looking for a
+separator, and returns the new array. The goal of this challenge is to split a string, by using a
+separator, but in the type system!
 
 For example:
 

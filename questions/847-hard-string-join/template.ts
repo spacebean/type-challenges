@@ -6,4 +6,6 @@ type Join<T extends string[], D extends string> = T extends [any]
     : never
   : '';
 
-export declare function join<D extends string>(delimiter: D): <T extends string[]>(...parts: T) => Join<T, D>;
+export declare function join<D extends string>(
+  delimiter: D
+): <T extends string[]>(...parts: T) => Join<T, D>;

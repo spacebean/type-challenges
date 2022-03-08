@@ -1,7 +1,7 @@
 <!--info-header-start--><h1>Percentage Parser <img src="https://img.shields.io/badge/-medium-d9901a" alt="medium"/> </h1><blockquote><p>by SSShuai1999 <a href="https://github.com/SSShuai1999" target="_blank">@SSShuai1999</a></p></blockquote><p><a href="https://tsch.js.org/1978/play" target="_blank"><img src="https://img.shields.io/badge/-Take%20the%20Challenge-3178c6?logo=typescript&logoColor=white" alt="Take the Challenge"/></a> </p><!--info-header-end-->
 
-Implement PercentageParser<T extends string>. According to the `/^(\+|\-)?(\d*)?(\%)?$/` regularity to match T and get
-three matches.
+Implement PercentageParser<T extends string>. According to the `/^(\+|\-)?(\d*)?(\%)?$/` regularity
+to match T and get three matches.
 
 The structure should be: [`plus or minus`, `number`, `unit`]
 If it is not captured, the default is an empty string.

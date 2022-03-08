@@ -23,9 +23,15 @@ export type DigitsToTuples<S extends string> = S extends `${infer First}${infer 
     : never
   : [];
 
-type StringToTuple<S extends string> = S extends `${any}${infer Rest}` ? [any, ...StringToTuple<Rest>] : [];
+type StringToTuple<S extends string> = S extends `${any}${infer Rest}`
+  ? [any, ...StringToTuple<Rest>]
+  : [];
 
-export type Longer<A extends string, B extends string> = StringToTuple<A> extends [any, ...any, StringToTuple<B>]
+export type Longer<A extends string, B extends string> = StringToTuple<A> extends [
+  any,
+  ...any,
+  StringToTuple<B>
+]
   ? true
   : false;
 

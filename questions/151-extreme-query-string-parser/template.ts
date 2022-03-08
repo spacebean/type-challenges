@@ -1,8 +1,9 @@
 import { Equal } from '@type-challenges/utils';
 
-type Split<S extends string, Separator extends string> = S extends `${infer First}${Separator}${infer Rest}`
-  ? [First, ...Split<Rest, Separator>]
-  : [S];
+type Split<
+  S extends string,
+  Separator extends string
+> = S extends `${infer First}${Separator}${infer Rest}` ? [First, ...Split<Rest, Separator>] : [S];
 
 type Contains<T extends any[], S extends string> = T extends [infer First, ...infer Rest]
   ? Equal<First, S> extends true
@@ -42,4 +43,6 @@ type Merges<T extends any[], Result extends object = {}> = T extends [any, ...in
   ? Merges<Rest, Merge<Result, T[0]>>
   : Result;
 
-export type ParseQueryString<S extends string> = S extends '' ? {} : Merges<StringsToObjects<Uniq<Split<S, '&'>>>>;
+export type ParseQueryString<S extends string> = S extends ''
+  ? {}
+  : Merges<StringsToObjects<Uniq<Split<S, '&'>>>>;

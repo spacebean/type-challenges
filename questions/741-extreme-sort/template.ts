@@ -1,6 +1,8 @@
 import { Comparator, Comparison } from '../274-extreme-integers-comparator/template';
 
-type Greater<X extends number, Y extends number> = Comparator<X, Y> extends Comparison.Greater ? true : false;
+type Greater<X extends number, Y extends number> = Comparator<X, Y> extends Comparison.Greater
+  ? true
+  : false;
 
 type IsNumber<T> = T extends number ? T : never;
 

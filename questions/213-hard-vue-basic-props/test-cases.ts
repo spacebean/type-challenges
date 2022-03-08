@@ -54,7 +54,10 @@ VueBasicProps({
     test() {
       const fullname = this.fullname;
       const propE = this.propE;
-      type cases = [Expect<Equal<typeof fullname, string>>, Expect<Equal<typeof propE, string | number>>];
+      type cases = [
+        Expect<Equal<typeof fullname, string>>,
+        Expect<Equal<typeof propE, string | number>>
+      ];
     },
   },
 });

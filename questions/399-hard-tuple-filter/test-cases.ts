@@ -1,5 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils'
-import { FilterOut } from './template'
+import {Equal, Expect} from '@type-challenges/utils';
+import {FilterOut} from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
@@ -7,6 +7,16 @@ type cases = [
   Expect<Equal<FilterOut<[never], never>, []>>,
   Expect<Equal<FilterOut<['a', never], never>, ['a']>>,
   Expect<Equal<FilterOut<[1, never, 'a'], never>, [1, 'a']>>,
-  Expect<Equal<FilterOut<[never, 1, 'a', undefined, false, null], never | null | undefined>, [1, 'a', false]>>,
-  Expect<Equal<FilterOut<[number | null | undefined, never], never | null | undefined>, [number | null | undefined]>>
+  Expect<
+    Equal<
+      FilterOut<[never, 1, 'a', undefined, false, null], never | null | undefined>,
+      [1, 'a', false]
+    >
+  >,
+  Expect<
+    Equal<
+      FilterOut<[number | null | undefined, never], never | null | undefined>,
+      [number | null | undefined]
+    >
+  >
 ];

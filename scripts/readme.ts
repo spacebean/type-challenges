@@ -2,7 +2,13 @@ import path from 'path';
 import fs from 'fs-extra';
 import { defaultLocale, f, SupportedLocale, supportedLocales, t } from './locales';
 import { loadQuizes, resolveInfo } from './loader';
-import { toAnswerShort, toNearborREADME, toPlayShort, toQuizREADME, toSolutionsShort } from './toUrl';
+import {
+  toAnswerShort,
+  toNearborREADME,
+  toPlayShort,
+  toQuizREADME,
+  toSolutionsShort,
+} from './toUrl';
 import { Quiz, QuizMetaInfo } from './types';
 
 const DifficultyColors: Record<string, string> = {
@@ -25,9 +31,9 @@ function escapeHtml(unsafe: string) {
 }
 
 function toBadgeURL(label: string, text: string, color: string, args = '') {
-  return `https://img.shields.io/badge/${encodeURIComponent(label.replace(/-/g, '--'))}-${encodeURIComponent(
-    text.replace(/-/g, '--')
-  )}-${color}${args}`;
+  return `https://img.shields.io/badge/${encodeURIComponent(
+    label.replace(/-/g, '--')
+  )}-${encodeURIComponent(text.replace(/-/g, '--'))}-${color}${args}`;
 }
 
 function toBadge(label: string, text: string, color: string, args = '') {
@@ -40,7 +46,9 @@ export function toBadgeLink(url: string, label: string, text: string, color: str
 
 function toAuthorInfo(author: Partial<QuizMetaInfo['author']> = {}) {
   return `by ${author.name}${
-    author.github ? ` <a href="https://github.com/${author.github}" target="_blank">@${author.github}</a>` : ''
+    author.github
+      ? ` <a href="https://github.com/${author.github}" target="_blank">@${author.github}</a>`
+      : ''
   }`;
 }
 
@@ -49,7 +57,11 @@ function toDifficultyBadge(difficulty: string, locale: SupportedLocale) {
 }
 
 function toDifficultyBadgeInverted(difficulty: string, locale: SupportedLocale, count: number) {
-  return toBadge(t(locale, `difficulty.${difficulty}`), count.toString(), DifficultyColors[difficulty]);
+  return toBadge(
+    t(locale, `difficulty.${difficulty}`),
+    count.toString(),
+    DifficultyColors[difficulty]
+  );
 }
 
 function quizToBadge(quiz: Quiz, locale: string, absolute = false) {
@@ -61,7 +73,12 @@ function quizToBadge(quiz: Quiz, locale: string, absolute = false) {
   );
 }
 
-function quizNoToBadges(ids: (string | number)[], quizes: Quiz[], locale: string, absolute = false) {
+function quizNoToBadges(
+  ids: (string | number)[],
+  quizes: Quiz[],
+  locale: string,
+  absolute = false
+) {
   return ids
     .map((i) => quizes.find((q) => q.no === Number(i)))
     .filter(Boolean)
@@ -85,7 +102,12 @@ function getQuizesByTag(quizes: Quiz[], locale: string, tag: string) {
   });
 }
 
-async function insertInfoReadme(filepath: string, quiz: Quiz, locale: SupportedLocale, quizes: Quiz[]) {
+async function insertInfoReadme(
+  filepath: string,
+  quiz: Quiz,
+  locale: SupportedLocale,
+  quizes: Quiz[]
+) {
   if (!fs.existsSync(filepath)) return;
   let text = await fs.readFile(filepath, 'utf-8');
   /* eslint-disable prefer-template */
@@ -99,13 +121,17 @@ async function insertInfoReadme(filepath: string, quiz: Quiz, locale: SupportedL
 
   const info = resolveInfo(quiz, locale);
 
-  const availableLocales = supportedLocales.filter((l) => l !== locale).filter((l) => !!quiz.readme[l]);
+  const availableLocales = supportedLocales
+    .filter((l) => l !== locale)
+    .filter((l) => !!quiz.readme[l]);
 
   text = text
     .replace(
       /<!--info-header-start-->[\s\S]*<!--info-header-end-->/,
       '<!--info-header-start-->' +
-        `<h1>${escapeHtml(info.title || '')} ${toDifficultyBadge(quiz.difficulty, locale)} ${(info.tags || [])
+        `<h1>${escapeHtml(info.title || '')} ${toDifficultyBadge(quiz.difficulty, locale)} ${(
+          info.tags || []
+        )
           .map((i) => toBadge('', `#${i}`, '999'))
           .join(' ')}</h1>` +
         `<blockquote><p>${toAuthorInfo(info.author)}</p></blockquote>` +
@@ -119,7 +145,9 @@ async function insertInfoReadme(filepath: string, quiz: Quiz, locale: SupportedL
         ) +
         (availableLocales.length
           ? '&nbsp;&nbsp;&nbsp;' +
-            availableLocales.map((l) => toBadgeLink(toNearborREADME(quiz, l), '', t(l, 'display'), 'gray')).join(' ')
+            availableLocales
+              .map((l) => toBadgeLink(toNearborREADME(quiz, l), '', t(l, 'display'), 'gray'))
+              .join(' ')
           : '') +
         '</p>' +
         '<!--info-header-end-->'
@@ -128,7 +156,12 @@ async function insertInfoReadme(filepath: string, quiz: Quiz, locale: SupportedL
       /<!--info-footer-start-->[\s\S]*<!--info-footer-end-->/,
       '<!--info-footer-start--><br>' +
         toBadgeLink(`../../${f('README', locale, 'md')}`, '', t(locale, 'badge.back'), 'grey') +
-        toBadgeLink(toAnswerShort(quiz.no, locale), '', t(locale, 'badge.share-your-solutions'), 'teal') +
+        toBadgeLink(
+          toAnswerShort(quiz.no, locale),
+          '',
+          t(locale, 'badge.share-your-solutions'),
+          'teal'
+        ) +
         toBadgeLink(
           toSolutionsShort(quiz.no),
           '',
@@ -207,7 +240,12 @@ async function updateQuestionsREADME(quizes: Quiz[]) {
   // update each questions' readme
   for (const quiz of quizes) {
     for (const locale of supportedLocales) {
-      await insertInfoReadme(path.join(questionsDir, quiz.path, f('README', locale, 'md')), quiz, locale, quizes);
+      await insertInfoReadme(
+        path.join(questionsDir, quiz.path, f('README', locale, 'md')),
+        quiz,
+        locale,
+        quizes
+      );
     }
   }
 }

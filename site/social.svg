@@ -1,7 +1,9 @@
-<svg xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" data-name="Layer 1"
+     xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 640 320">
     <defs>
-        <style>.cls-1,.cls-6{fill:none;}.cls-2{font-size:20.13px;fill:#808284;font-family:Helvetica-Light,
+        <style>
+            .cls-1,.cls-6{fill:none;}.cls-2{font-size:20.13px;fill:#808284;font-family:Helvetica-Light,
             Helvetica;font-weight:300;letter-spacing:-0.01em;}.cls-3{font-size:39.17px;fill:#284e80;font-family:FiraCode-Regular,
             Fira Code;}.cls-4{fill:#221e1f;}.cls-5{fill:#4165af;font-family:FiraCode-Retina, Fira
             Code;}.cls-6{stroke:#e84433;stroke-miterlimit:10;stroke-width:2px;}.cls-7{clip-path:url(#clip-path);}.cls-8{fill:#90bc3e;}.cls-9{fill:url(#linear-gradient);}.cls-10{isolation:isolate;font-size:11px;fill:#fff;font-family:Verdana;}.cls-11{letter-spacing:-0.02em;}.cls-12,.cls-13,.cls-19,.cls-25{font-family:KozGoPr6N-Regular-83pv-RKSJ-H,
@@ -12,7 +14,8 @@
             <rect class="cls-1" x="168.2" y="221.55" width="89" height="20" rx="3"/>
         </clipPath>
         <linearGradient id="linear-gradient" x1="-256.19" y1="421.64" x2="-256.19" y2="420.64"
-                        gradientTransform="matrix(89, 0, 0, -20, 23014, 8654.41)" gradientUnits="userSpaceOnUse">
+                        gradientTransform="matrix(89, 0, 0, -20, 23014, 8654.41)"
+                        gradientUnits="userSpaceOnUse">
             <stop offset="0" stop-color="#bbb" stop-opacity="0.1"/>
             <stop offset="1" stop-color="#000101" stop-opacity="0.1"/>
         </linearGradient>
@@ -20,14 +23,18 @@
             <rect class="cls-1" x="261.59" y="221.55" width="111" height="20" rx="3"/>
         </clipPath>
         <linearGradient id="linear-gradient-2" x1="-256.31" y1="421.64" x2="-256.31" y2="420.64"
-                        gradientTransform="matrix(111, 0, 0, -20, 28767.5, 8654.41)" xlink:href="#linear-gradient"/>
+                        gradientTransform="matrix(111, 0, 0, -20, 28767.5, 8654.41)"
+                        xlink:href="#linear-gradient"/>
         <clipPath id="clip-path-3">
             <rect class="cls-1" x="376.8" y="221.55" width="93" height="20" rx="3"/>
         </clipPath>
         <linearGradient id="linear-gradient-3" x1="-254.16" y1="421.64" x2="-254.16" y2="420.64"
-                        gradientTransform="matrix(93, 0, 0, -20, 24060.09, 8654.41)" xlink:href="#linear-gradient"/>
+                        gradientTransform="matrix(93, 0, 0, -20, 24060.09, 8654.41)"
+                        xlink:href="#linear-gradient"/>
     </defs>
-    <text class="cls-2" transform="translate(109.62 177.83)">Collection of TypeScript type challenges with OJ</text>
+    <text class="cls-2" transform="translate(109.62 177.83)">Collection of TypeScript type
+        challenges with OJ
+    </text>
     <text class="cls-3" transform="translate(117.11 115.49)">Type
         <tspan class="cls-4" x="96.42" y="0">&lt;</tspan>
         <tspan class="cls-5" x="120.52" y="0">Challenge</tspan>
