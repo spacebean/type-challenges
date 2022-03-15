@@ -6,7 +6,7 @@ export enum Comparison {
   Lower,
 }
 
-type StringToTuple<S extends string> = S extends `${any}${infer Rest}`
+type StringToTuple<S extends string> = S extends `${string}${infer Rest}`
   ? [unknown, ...StringToTuple<Rest>]
   : [];
 
@@ -37,13 +37,13 @@ type Compare<
 
 type ComparatorImpl<A extends number, B extends number> = A extends B
   ? Comparison.Equal
-  : `${A}` extends `-${any}`
-  ? `${B}` extends `-${any}`
+  : `${A}` extends `-${string}`
+  ? `${B}` extends `-${string}`
     ? Compare<Absolute<A>, Absolute<B>> extends Comparison.Lower
       ? Comparison.Greater
       : Comparison.Lower
     : Comparison.Lower
-  : `${B}` extends `-${any}`
+  : `${B}` extends `-${string}`
   ? Comparison.Greater
   : Compare<`${A}`, `${B}`>;
 

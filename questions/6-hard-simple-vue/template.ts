@@ -1,5 +1,5 @@
-type InferComputed<T extends Record<string, any>> = {
-  [K in keyof T]: ReturnType<T[K]>;
+type InferComputed<T> = {
+  [K in keyof T]: T[K] extends (...args: keyof unknown) => unknown ? ReturnType<T[K]> : never;
 };
 
 type Options<D, C, M> = {

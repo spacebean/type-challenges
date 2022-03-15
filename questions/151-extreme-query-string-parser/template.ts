@@ -29,7 +29,7 @@ type Merge<X extends object, Y extends object> = {
   [K in keyof X | keyof Y]: K extends keyof X
     ? K extends keyof Y
       ? X[K] extends infer I
-        ? I extends any[]
+        ? I extends unknown[]
           ? [...I, Y[K]]
           : [I, Y[K]]
         : never

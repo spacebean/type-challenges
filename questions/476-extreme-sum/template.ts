@@ -23,7 +23,7 @@ export type DigitsToTuples<S extends string> = S extends `${infer First}${infer 
     : never
   : [];
 
-type StringToTuple<S extends string> = S extends `${any}${infer Rest}`
+type StringToTuple<S extends string> = S extends `${string}${infer Rest}`
   ? [any, ...StringToTuple<Rest>]
   : [];
 
@@ -39,7 +39,7 @@ type SingleSum<X extends unknown[], Y extends unknown[]> = [...X, ...Y];
 
 type SplitSingleSum<T extends unknown[]> = T extends [unknown, ...Tuple0_9[9]]
   ? [[unknown], []]
-  : T extends [...infer Reminder, any, ...Tuple0_9[9]]
+  : T extends [...infer Reminder, unknown, ...Tuple0_9[9]]
   ? [[unknown], Reminder]
   : [[], T];
 

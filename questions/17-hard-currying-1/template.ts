@@ -1,4 +1,4 @@
-type Curry<I extends any[], O extends boolean> = I extends [infer First, ...infer Rest]
+type Curry<I extends unknown[], O extends boolean> = I extends [infer First, ...infer Rest]
   ? (arg: First) => Curry<Rest, O>
   : O;
 

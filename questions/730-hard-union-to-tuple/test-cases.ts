@@ -1,7 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
 import { UnionToTuple } from './template';
 
-type ExtractValuesOfTuple<T extends any[]> = T[keyof T & number];
+type ExtractValuesOfTuple<T extends unknown[]> = T[keyof T & number];
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

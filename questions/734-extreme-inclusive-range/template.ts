@@ -1,6 +1,6 @@
 import { Last } from '../15-medium-last/template';
 
-type _Repeat<N extends number, T extends any[] = []> = T['length'] extends N
+type _Repeat<N extends number, T extends unknown[] = []> = T['length'] extends N
   ? [...T, T['length']]
   : { __rec: _Repeat<N, [...T, T['length']]> };
 
