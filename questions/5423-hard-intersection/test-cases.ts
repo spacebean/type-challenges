@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { Intersection } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Intersection<[[1, 2], [2, 3], [2, 2]]>, 2>>,
   Expect<Equal<Intersection<[[1, 2, 3], [2, 3, 4], [2, 2, 3]]>, 2 | 3>>,
