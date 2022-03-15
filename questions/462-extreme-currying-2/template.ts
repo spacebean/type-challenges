@@ -1,17 +1,20 @@
-type Remove<X extends any[], Y extends any[]> = Y extends [any, ...infer YS]
-  ? X extends [any, ...infer XS]
+type Remove<X extends unknown[], Y extends unknown[]> = Y extends [unknown, ...infer YS]
+  ? X extends [unknown, ...infer XS]
     ? Remove<XS, YS>
     : []
   : X;
 
-type PartialParameters<T extends any[]> = T extends [infer First, ...infer Rest]
+type PartialParameters<T extends unknown[]> = T extends [infer First, ...infer Rest]
   ? [] | [First] | [First, ...PartialParameters<Rest>]
   : [];
 
-type Curry<I extends any[], O> = I extends [infer First, ...infer Rest]
-  ? <P extends any[] = PartialParameters<Rest>>(arg: First, ..._: P) => Curry<Remove<Rest, P>, O>
+type Curry<I extends unknown[], O> = I extends [infer First, ...infer Rest]
+  ? <P extends unknown[] = PartialParameters<Rest>>(
+      arg: First,
+      ..._: P
+    ) => Curry<Remove<Rest, P>, O>
   : O;
 
-export declare function DynamicParamsCurrying<I extends any[], O>(
+export declare function DynamicParamsCurrying<I extends unknown[], O>(
   fn: (...args: I) => O
 ): Curry<I, O>;

@@ -1,3 +1,5 @@
-export type MyParameters<T extends (...args: any[]) => any> = T extends (...args: infer I) => any
+export type MyParameters<T extends (...args: any[]) => unknown> = T extends (
+  ...args: infer I
+) => unknown
   ? I
   : never;

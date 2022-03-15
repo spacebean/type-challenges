@@ -1,6 +1,6 @@
 export type LengthOfString<
   S extends string,
-  Temp extends any[] = []
+  Temp extends unknown[] = []
 > = S extends `${infer A}${infer B}${infer C}${infer D}${infer F}${infer E}${infer G}${infer H}`
   ? LengthOfString<H, [...Temp, A, B, C, D, F, E, G]>
   : S extends `${infer A}${infer B}${infer C}${infer D}${infer F}${infer E}${infer G}`

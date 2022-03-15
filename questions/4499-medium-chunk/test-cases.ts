@@ -1,4 +1,4 @@
-import {Equal, Expect} from '@type-challenges/utils' // noinspection JSUnusedLocalSymbols
+import { Equal, Expect } from '@type-challenges/utils';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

@@ -1,1 +1,1 @@
-export type TupleToUnion<T extends any[]> = T[number];
+export type TupleToUnion<T extends unknown[]> = T[number];

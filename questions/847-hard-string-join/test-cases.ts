@@ -1,5 +1,5 @@
-import {Equal, Expect} from '@type-challenges/utils';
-import {join} from './template';
+import { Equal, Expect } from '@type-challenges/utils';
+import { join } from './template';
 
 // Edge cases
 const noCharsOutput = join('-')();

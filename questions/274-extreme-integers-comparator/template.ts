@@ -7,18 +7,18 @@ export enum Comparison {
 }
 
 type StringToTuple<S extends string> = S extends `${any}${infer Rest}`
-  ? [any, ...StringToTuple<Rest>]
+  ? [unknown, ...StringToTuple<Rest>]
   : [];
 
-type CharToTuple<S extends string, Result extends any[] = []> = `${Result['length']}` extends S
+type CharToTuple<S extends string, Result extends unknown[] = []> = `${Result['length']}` extends S
   ? Result
-  : CharToTuple<S, [any, ...Result]>;
+  : CharToTuple<S, [unknown, ...Result]>;
 
 type CompareByDigits<A, B> = A extends `${infer X}${infer XS}`
   ? B extends `${infer Y}${infer YS}`
-    ? CharToTuple<X> extends [...any, ...CharToTuple<Y>]
+    ? CharToTuple<X> extends [...unknown[], ...CharToTuple<Y>]
       ? Comparison.Greater
-      : CharToTuple<Y> extends [...any, ...CharToTuple<X>]
+      : CharToTuple<Y> extends [...unknown[], ...CharToTuple<X>]
       ? Comparison.Lower
       : CompareByDigits<XS, YS>
     : never
@@ -27,11 +27,11 @@ type CompareByDigits<A, B> = A extends `${infer X}${infer XS}`
 type Compare<
   A extends string,
   B extends string,
-  X extends any[] = StringToTuple<A>,
-  Y extends any[] = StringToTuple<B>
-> = X extends [any, ...any, ...Y]
+  X extends unknown[] = StringToTuple<A>,
+  Y extends unknown[] = StringToTuple<B>
+> = X extends [unknown, ...unknown[], ...Y]
   ? Comparison.Lower
-  : Y extends [any, ...any, ...X]
+  : Y extends [unknown, ...unknown[], ...X]
   ? Comparison.Greater
   : CompareByDigits<A, B>;
 

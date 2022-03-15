@@ -1,16 +1,16 @@
 type CreateTuple10<T extends any[]> = [...T, ...T, ...T, ...T, ...T, ...T, ...T, ...T, ...T, ...T];
 
-type CreateTuple1<S extends string, Result extends any[] = []> = `${Result['length']}` extends S
+type CreateTuple1<S extends string, Result extends unknown[] = []> = `${Result['length']}` extends S
   ? Result
-  : CreateTuple1<S, [any, ...Result]>;
+  : CreateTuple1<S, [unknown, ...Result]>;
 
 type CreateTuple<
   S extends string,
-  Result extends any[] = []
+  Result extends unknown[] = []
 > = S extends `${infer First}${infer Rest}`
   ? CreateTuple<Rest, [...CreateTuple10<Result>, ...CreateTuple1<First>]>
   : Result;
 
-export type MinusOne<T extends number> = CreateTuple<`${T}`> extends [any, ...infer R]
+export type MinusOne<T extends number> = CreateTuple<`${T}`> extends [unknown, ...infer R]
   ? R['length']
   : never;

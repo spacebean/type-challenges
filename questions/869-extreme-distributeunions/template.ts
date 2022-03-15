@@ -12,7 +12,7 @@ type KeysUnion<T> = IsTuple<T> extends true ? DigitString & keyof T : string & k
 
 type Keys<T, Keys = UnionToTuple<KeysUnion<T>>> = IsTuple<Keys> extends true ? Keys : never;
 
-type SetValue<T, Key extends keyof any, Value> = Value extends any
+type SetValue<T, Key extends keyof any, Value> = Value extends unknown
   ? IsTuple<T> extends true
     ? {
         [K in keyof T]: K extends Key ? Value : T[K];
@@ -22,8 +22,8 @@ type SetValue<T, Key extends keyof any, Value> = Value extends any
       }
   : never;
 
-type Reduce<T, Keys extends Tuple> = T extends any
-  ? Keys extends [any, ...infer Rest]
+type Reduce<T, Keys extends Tuple> = T extends unknown
+  ? Keys extends [unknown, ...infer Rest]
     ? Reduce<SetValue<T, Keys[0], DistributeUnions<T[Keys[0]]>>, Rest>
     : T
   : never;

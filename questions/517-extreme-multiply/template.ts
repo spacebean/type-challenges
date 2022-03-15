@@ -8,30 +8,29 @@ import {
 
 type IsArray<T> = T extends any[] ? T : never;
 
-type SingleMultiply<X extends any[], Y extends any[], Result extends any[] = []> = Y extends [
-  any,
-  ...infer Rest
-]
-  ? SingleMultiply<X, Rest, [...X, ...Result]>
-  : Result;
+type SingleMultiply<
+  X extends unknown[],
+  Y extends unknown[],
+  Result extends unknown[] = []
+> = Y extends [unknown, ...infer Rest] ? SingleMultiply<X, Rest, [...X, ...Result]> : Result;
 
-type SplitSingleMultiply<T extends any[], Temp extends any[] = []> = T extends [
+type SplitSingleMultiply<T extends unknown[], Temp extends unknown[] = []> = T extends [
   ...infer Reminder,
-  any,
+  unknown,
   ...Tuple0_9[9]
 ]
-  ? SplitSingleMultiply<Reminder, [any, ...Temp]>
+  ? SplitSingleMultiply<Reminder, [unknown, ...Temp]>
   : [Temp, T];
 
 type MultipleWithSingleMultiply<
-  X extends any[],
-  Y extends any[],
-  Reminder extends any[] = [],
-  Temp extends any[] = []
+  X extends unknown[],
+  Y extends unknown[],
+  Reminder extends unknown[] = [],
+  Temp extends unknown[] = []
 > = Y extends []
   ? []
   : X extends [...infer Rest, infer Last]
-  ? Last extends any[]
+  ? Last extends unknown[]
     ? SplitSingleMultiply<[...SingleMultiply<Last, Y>, ...Reminder]> extends infer R
       ? MultipleWithSingleMultiply<Rest, Y, IsArray<R>[0], [IsArray<R>[1], ...Temp]>
       : never
@@ -41,10 +40,10 @@ type MultipleWithSingleMultiply<
   : [Reminder, ...Temp];
 
 type ListOfMultiplies<
-  X extends any[],
-  Y extends any[],
-  Zeroes extends any[] = [],
-  Result extends any[] = []
+  X extends unknown[],
+  Y extends unknown[],
+  Zeroes extends unknown[] = [],
+  Result extends unknown[] = []
 > = Y extends [...infer YS, infer Y0]
   ? Y0 extends []
     ? ListOfMultiplies<X, YS, [[], ...Zeroes], [[], ...Result]>
@@ -56,7 +55,7 @@ type ListOfMultiplies<
       >
   : Result;
 
-type ProcessMultiply<T extends any[], Result extends any[] = []> = T extends [
+type ProcessMultiply<T extends unknown[], Result extends unknown[] = []> = T extends [
   ...infer Rest,
   infer First
 ]

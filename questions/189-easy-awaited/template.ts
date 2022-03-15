@@ -1,5 +1,5 @@
-export type Awaited<T extends Promise<any>> = T extends Promise<infer R>
-  ? R extends Promise<any>
+export type Awaited<T extends Promise<unknown>> = T extends Promise<infer R>
+  ? R extends Promise<unknown>
     ? Awaited<R>
     : R
   : never;

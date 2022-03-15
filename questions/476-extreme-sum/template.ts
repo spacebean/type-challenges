@@ -1,14 +1,14 @@
 export type Tuple0_9 = [
   [],
-  [any],
-  [any, any],
-  [any, any, any],
-  [any, any, any, any],
-  [any, any, any, any, any],
-  [any, any, any, any, any, any],
-  [any, any, any, any, any, any, any],
-  [any, any, any, any, any, any, any, any],
-  [any, any, any, any, any, any, any, any, any]
+  [unknown],
+  [unknown, unknown],
+  [unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown]
 ];
 
 type Digits = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
@@ -28,24 +28,24 @@ type StringToTuple<S extends string> = S extends `${any}${infer Rest}`
   : [];
 
 export type Longer<A extends string, B extends string> = StringToTuple<A> extends [
-  any,
-  ...any,
+  unknown,
+  ...unknown[],
   StringToTuple<B>
 ]
   ? true
   : false;
 
-type SingleSum<X extends any[], Y extends any[]> = [...X, ...Y];
+type SingleSum<X extends unknown[], Y extends unknown[]> = [...X, ...Y];
 
-type SplitSingleSum<T extends any[]> = T extends [any, ...Tuple0_9[9]]
+type SplitSingleSum<T extends unknown[]> = T extends [unknown, ...Tuple0_9[9]]
   ? [[any], []]
   : T extends [...infer Reminder, any, ...Tuple0_9[9]]
-  ? [[any], Reminder]
+  ? [[unknown], Reminder]
   : [[], T];
 
 export type ProcessSum<
-  X extends any[],
-  Y extends any[],
+  X extends unknown[],
+  Y extends unknown[],
   Reminder extends any[] = [],
   Temp extends any[] = []
 > = Y extends [...infer YS, infer Y0]
@@ -62,7 +62,7 @@ export type ProcessSum<
   ? [...X, ...Temp]
   : ProcessSum<X, [Reminder], [], Temp>;
 
-export type TuplesToNumber<T extends any[]> = T extends [infer First, ...infer Rest]
+export type TuplesToNumber<T extends unknown[]> = T extends [infer First, ...infer Rest]
   ? `${IsArray<First>['length']}${TuplesToNumber<Rest>}`
   : '';
 

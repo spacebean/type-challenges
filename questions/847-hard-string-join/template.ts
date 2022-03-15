@@ -1,6 +1,6 @@
-type Join<T extends string[], D extends string> = T extends [any]
+type Join<T extends string[], D extends string> = T extends [unknown]
   ? T[0]
-  : T extends [any, ...infer Rest]
+  : T extends [unknown, ...infer Rest]
   ? Rest extends string[]
     ? `${T[0]}${D}${Join<Rest, D>}`
     : never

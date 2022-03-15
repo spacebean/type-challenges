@@ -8,7 +8,7 @@ type PropType<T> = TypeConstructor<T> | TypeConstructor<T>[];
 
 type Prop<T> = PropType<T> | { type: PropType<T> };
 
-type InferPropType<P> = P extends Prop<infer R> ? (unknown extends R ? any : R) : any;
+type InferPropType<P> = P extends Prop<infer R> ? (unknown extends R ? unknown : R) : any;
 
 type InferProps<P> = {
   [K in keyof P]: InferPropType<P[K]>;

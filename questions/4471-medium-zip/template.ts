@@ -1,4 +1,4 @@
-export type Zip<T, U, R extends any[] = []> = [T, U] extends [
+export type Zip<T, U, R extends unknown[] = []> = [T, U] extends [
   [infer H1, ...infer T1],
   [infer H2, ...infer T2]
 ]

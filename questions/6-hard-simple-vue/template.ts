@@ -8,4 +8,4 @@ type Options<D, C, M> = {
   methods: M & ThisType<InferComputed<D & C> & M>;
 };
 
-export declare function SimpleVue<D, C, M>(options: Options<D, C, M>): any;
+export declare function SimpleVue<D, C, M>(options: Options<D, C, M>): unknown;

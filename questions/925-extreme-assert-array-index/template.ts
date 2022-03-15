@@ -1,17 +1,17 @@
 type Tuple0_9 = [
   [],
-  [any],
-  [any, any],
-  [any, any, any],
-  [any, any, any, any],
-  [any, any, any, any, any],
-  [any, any, any, any, any, any],
-  [any, any, any, any, any, any, any],
-  [any, any, any, any, any, any, any, any],
-  [any, any, any, any, any, any, any, any, any]
+  [unknown],
+  [unknown, unknown],
+  [unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown],
+  [unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown]
 ];
 
-type Sum<X extends readonly any[], Y extends readonly any[]> = [...X, ...Y];
+type Sum<X extends readonly unknown[], Y extends readonly unknown[]> = [...X, ...Y];
 
 type Tuple10 = Sum<Tuple0_9[1], Tuple0_9[9]>;
 type Tuple30 = Sum<Tuple10, Sum<Tuple10, Tuple10>>;
@@ -46,7 +46,7 @@ type Code = {
   z: Sum<Tuple50, Tuple0_9[5]>;
 };
 
-type IsArray<T extends readonly any[]> = number extends T['length'] ? true : false;
+type IsArray<T extends readonly unknown[]> = number extends T['length'] ? true : false;
 
 type KeyToNumber<S extends string> = S extends `${infer First}${infer Rest}`
   ? First extends keyof Code
@@ -64,7 +64,7 @@ type WithIndex<Element, Key extends string, KeyCode extends number = KeyToNumber
 
 export type Index<Array extends { [CODE]: number }> = Array[typeof CODE];
 
-export function assertArrayIndex<T extends readonly any[], K extends string>(
+export function assertArrayIndex<T extends readonly unknown[], K extends string>(
   _array: IsArray<T> extends true ? T : never,
   _key: K
 ): asserts _array is IsArray<T> extends true ? T & WithIndex<T[number], K> : never {}

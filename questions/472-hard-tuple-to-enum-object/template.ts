@@ -1,4 +1,4 @@
-type Index<T extends readonly any[]> = T extends readonly [any, ...infer Rest]
+type Index<T extends readonly unknown[]> = T extends readonly [unknown, ...infer Rest]
   ? Index<Rest> | Rest['length']
   : 0;
 

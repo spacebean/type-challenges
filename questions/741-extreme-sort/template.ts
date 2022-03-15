@@ -6,7 +6,7 @@ type Greater<X extends number, Y extends number> = Comparator<X, Y> extends Comp
 
 type IsNumber<T> = T extends number ? T : never;
 
-type Exchange<T extends any[], P extends boolean, Temp extends any[] = []> = T extends [
+type Exchange<T extends unknown[], P extends boolean, Temp extends unknown[] = []> = T extends [
   ...infer Rest,
   infer PreLast,
   infer Last
@@ -16,11 +16,12 @@ type Exchange<T extends any[], P extends boolean, Temp extends any[] = []> = T e
     : [...T, ...Temp]
   : [...T, ...Temp];
 
-type InsertionSort<T extends any[], P extends boolean, Result extends any[] = []> = T extends [
-  infer First,
-  ...infer Rest
-]
+type InsertionSort<
+  T extends unknown[],
+  P extends boolean,
+  Result extends unknown[] = []
+> = T extends [infer First, ...infer Rest]
   ? InsertionSort<Rest, P, Exchange<[...Result, First], P>>
   : Result;
 
-export type Sort<T extends any[], P extends boolean = false> = InsertionSort<T, P>;
+export type Sort<T extends unknown[], P extends boolean = false> = InsertionSort<T, P>;

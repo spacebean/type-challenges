@@ -1,5 +1,5 @@
-import {Equal, Expect} from '@type-challenges/utils'
-import {Reverse} from './template' // noinspection JSUnusedLocalSymbols
+import { Equal, Expect } from '@type-challenges/utils';
+import { Reverse } from './template';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

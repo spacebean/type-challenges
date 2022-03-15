@@ -1,7 +1,7 @@
 type SplitAt<
-  T extends any[],
+  T extends unknown[],
   N extends number,
-  R extends [any[], any[]] = [[], []]
+  R extends [unknown[], unknown[]] = [[], []]
 > = R[1]['length'] extends N
   ? R
   : T extends [infer First, ...infer Rest]
@@ -9,14 +9,14 @@ type SplitAt<
   : R;
 
 type Chunk<
-  T extends any[],
+  T extends unknown[],
   N extends number,
-  R extends any[] = [],
-  Temp extends [any[], any[]] = SplitAt<T, N>
+  R extends unknown[] = [],
+  Temp extends [unknown[], unknown[]] = SplitAt<T, N>
 > = Temp extends [[], []]
   ? R
-  : Temp extends [[...any], [...any]]
+  : Temp extends [[...unknown[]], [...unknown[]]]
   ? Chunk<Temp[0], N, [...R, Temp[1]]>
-  : Temp extends [[], [...any]]
+  : Temp extends [[], [...unknown[]]]
   ? [...R, Temp[1]]
   : R;

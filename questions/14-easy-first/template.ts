@@ -1,1 +1,1 @@
-export type First<T extends any[]> = T extends [infer R, ...any] ? R : never;
+export type First<T extends unknown[]> = T extends [infer R, ...unknown[]] ? R : never;
