@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { Trunc } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Trunc<0.1>, '0'>>,
   Expect<Equal<Trunc<1.234>, '1'>>,
