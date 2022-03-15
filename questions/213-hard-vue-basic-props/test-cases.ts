@@ -62,4 +62,4 @@ VueBasicProps({
   },
 });
 
-function alert(_: any) {}
+function alert(_: unknown) {}

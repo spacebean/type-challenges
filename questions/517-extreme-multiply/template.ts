@@ -6,7 +6,7 @@ import {
   TuplesToNumber,
 } from '../476-extreme-sum/template';
 
-type IsArray<T> = T extends any[] ? T : never;
+type IsArray<T> = T extends unknown[] ? T : never;
 
 type SingleMultiply<
   X extends unknown[],
@@ -32,7 +32,9 @@ type MultipleWithSingleMultiply<
   : X extends [...infer Rest, infer Last]
   ? Last extends unknown[]
     ? SplitSingleMultiply<[...SingleMultiply<Last, Y>, ...Reminder]> extends infer R
-      ? MultipleWithSingleMultiply<Rest, Y, IsArray<R>[0], [IsArray<R>[1], ...Temp]>
+      ? R extends unknown[][]
+        ? MultipleWithSingleMultiply<Rest, Y, R[0], [R[1], ...Temp]>
+        : never
       : never
     : never
   : Reminder extends []

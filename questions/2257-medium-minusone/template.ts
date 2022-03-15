@@ -1,4 +1,15 @@
-type CreateTuple10<T extends any[]> = [...T, ...T, ...T, ...T, ...T, ...T, ...T, ...T, ...T, ...T];
+type CreateTuple10<T extends unknown[]> = [
+  ...T,
+  ...T,
+  ...T,
+  ...T,
+  ...T,
+  ...T,
+  ...T,
+  ...T,
+  ...T,
+  ...T
+];
 
 type CreateTuple1<S extends string, Result extends unknown[] = []> = `${Result['length']}` extends S
   ? Result

@@ -1,8 +1,8 @@
 type InferComputed<T extends Record<string, any>> = {
-  [K in keyof T]: ReturnType<T[K]>;
+  [K in keyof T]: T[K] extends (...args: keyof unknown) => unknown ? ReturnType<T[K]> : never;
 };
 
-type TypeConstructor<T> = (new (...args: any[]) => T & object) | (() => T);
+type TypeConstructor<T> = (new (...args: keyof unknown) => T & object) | (() => T);
 
 type PropType<T> = TypeConstructor<T> | TypeConstructor<T>[];
 
@@ -23,4 +23,4 @@ type Options<P, D, C, M, Props> = {
 
 export declare function VueBasicProps<P, D, C, M, Props = InferProps<P>>(
   options: Options<P, D, C, M, Props>
-): any;
+): unknown;

@@ -5,13 +5,13 @@ type Split<
   Separator extends string
 > = S extends `${infer First}${Separator}${infer Rest}` ? [First, ...Split<Rest, Separator>] : [S];
 
-type Contains<T extends any[], S extends string> = T extends [infer First, ...infer Rest]
+type Contains<T extends unknown[], S extends string> = T extends [infer First, ...infer Rest]
   ? Equal<First, S> extends true
     ? true
     : Contains<Rest, S>
   : false;
 
-type Uniq<T extends any[], Result extends any[] = []> = T extends [any, ...infer Rest]
+type Uniq<T extends unknown[], Result extends unknown[] = []> = T extends [string, ...infer Rest]
   ? Contains<Result, T[0]> extends true
     ? Uniq<Rest, Result>
     : Uniq<Rest, [...Result, T[0]]>
@@ -21,7 +21,7 @@ type StringToObject<S extends string> = S extends `${infer First}=${infer Rest}`
   ? { [_ in First]: Rest }
   : { [_ in S]: true };
 
-type StringsToObjects<T extends any[]> = T extends [any, ...infer Rest]
+type StringsToObjects<T extends unknown[]> = T extends [string, ...infer Rest]
   ? [StringToObject<T[0]>, ...StringsToObjects<Rest>]
   : [];
 
@@ -39,7 +39,7 @@ type Merge<X extends object, Y extends object> = {
     : never;
 };
 
-type Merges<T extends any[], Result extends object = {}> = T extends [any, ...infer Rest]
+type Merges<T extends unknown[], Result extends object = {}> = T extends [object, ...infer Rest]
   ? Merges<Rest, Merge<Result, T[0]>>
   : Result;
 

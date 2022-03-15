@@ -1,4 +1,4 @@
-export type Format<S extends string> = S extends `${any}%${infer First}${infer Rest}`
+export type Format<S extends string> = S extends `${string}%${infer First}${infer Rest}`
   ? First extends 's'
     ? (arg: string) => Format<Rest>
     : First extends 'd'

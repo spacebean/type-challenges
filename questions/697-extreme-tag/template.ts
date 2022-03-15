@@ -28,8 +28,8 @@ type ContainsTag<A extends readonly string[], S extends string> = A extends read
   : false;
 
 type ContainsTags<A extends readonly string[], B extends readonly string[]> = A extends readonly [
-  any,
-  ...any
+  unknown,
+  ...unknown[]
 ]
   ? A extends [...B, ...unknown[]]
     ? true
@@ -40,7 +40,7 @@ type ContainsExactTags<A extends readonly string[], B extends readonly string[]>
   ? true
   : false;
 
-type IsTuple<T> = T extends readonly any[] ? T : never;
+type IsTuple<T> = T extends readonly string[] ? T : never;
 
 export type GetTags<T> = IsNever<Exclude<T, GetTagged<T>>> extends true
   ? true extends IsNever<T> | IsAny<T>

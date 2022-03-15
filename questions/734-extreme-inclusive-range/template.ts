@@ -16,7 +16,7 @@ type Recurse<T> = T extends { __rec: unknown } ? Recurse<_Recurse<T>> : T;
 
 type Repeat<N extends number> = Recurse<_Repeat<N>>;
 
-type IsArray<T> = T extends any[] ? T : never;
+type IsArray<T> = T extends unknown[] ? T : never;
 
 export type InclusiveRange<
   Lower extends number,
