@@ -1,1 +1,1 @@
-type MyCapitalize<S extends string> = any;
+export type MyCapitalize<S extends string> = Capitalize<S>;
