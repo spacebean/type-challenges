@@ -8,3 +8,11 @@ type cases = [
   Expect<Equal<First<[]>, never>>,
   Expect<Equal<First<[undefined]>, undefined>>
 ];
+
+// noinspection JSUnusedLocalSymbols
+type errors = [
+  // @ts-expect-error
+  First<'notArray'>,
+  // @ts-expect-error
+  First<{ 0: 'arrayLike' }>
+]
