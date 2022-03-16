@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { MapTypes } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<
     Equal<
