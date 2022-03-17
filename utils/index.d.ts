@@ -24,8 +24,8 @@ export type ExpectValidArgs<
   ARGS extends any[]
 > = ARGS extends Parameters<FUNC> ? true : false;
 
-export type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
-  k: infer I
+export type UnionToIntersection<U> = (U extends any ? (_: U) => void : never) extends (
+  _: infer I
 ) => void
   ? I
   : never;
