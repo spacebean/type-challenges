@@ -458,8 +458,8 @@ packages:
     resolution: { integrity: sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA== }
     dev: true
 
-  /@types/json-schema/7.0.9:
-    resolution: { integrity: sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ== }
+  /@types/json-schema/7.0.10:
+    resolution: { integrity: sha512-BLO9bBq59vW3fxCpD4o0N4U+DXsvwvIcl+jofw0frQo/GrBFC+/jRZj1E7kgp6dvTyNmA4y6JCV5Id/r3mNP5A== }
     dev: true
 
   /@types/json5/0.0.29:
@@ -594,7 +594,7 @@ packages:
     peerDependencies:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      '@types/json-schema': 7.0.9
+      '@types/json-schema': 7.0.10
       '@typescript-eslint/scope-manager': 5.15.0
       '@typescript-eslint/types': 5.15.0
       '@typescript-eslint/typescript-estree': 5.15.0_typescript@4.6.2
