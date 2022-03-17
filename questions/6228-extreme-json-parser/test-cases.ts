@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { Parse } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<
     Equal<
