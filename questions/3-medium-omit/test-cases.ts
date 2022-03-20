@@ -1,9 +1,6 @@
 import { Equal, Expect } from '@type-challenges/utils';
 import { MyOmit } from './template';
 
-// @ts-expect-error
-type error = MyOmit<Todo, 'description' | 'invalid'>
-
 interface Todo {
   title: string;
   description: string;
@@ -18,6 +15,10 @@ interface Expected1 {
 interface Expected2 {
   title: string;
 }
+
+// @ts-expect-error
+// noinspection JSUnusedLocalSymbols
+type error = MyOmit<Todo, 'description' | 'invalid'>;
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
