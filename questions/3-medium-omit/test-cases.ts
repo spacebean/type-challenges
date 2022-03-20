@@ -1,6 +1,9 @@
 import { Equal, Expect } from '@type-challenges/utils';
 import { MyOmit } from './template';
 
+// @ts-expect-error
+type error = MyOmit<Todo, 'description' | 'invalid'>
+
 interface Todo {
   title: string;
   description: string;
