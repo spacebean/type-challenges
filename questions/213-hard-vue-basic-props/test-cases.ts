@@ -1,5 +1,3 @@
-// noinspection JSUnusedLocalSymbols
-
 import { Debug, Equal, Expect, IsAny } from '@type-challenges/utils';
 import { VueBasicProps } from './template';
 
@@ -16,6 +14,7 @@ VueBasicProps({
   },
   data(this) {
     type PropsType = Debug<typeof this>;
+    // noinspection JSUnusedLocalSymbols
     type cases = [
       Expect<IsAny<PropsType['propA']>>,
       Expect<Equal<PropsType['propB'], string>>,
@@ -54,6 +53,7 @@ VueBasicProps({
     test() {
       const fullname = this.fullname;
       const propE = this.propE;
+      // noinspection JSUnusedLocalSymbols
       type cases = [
         Expect<Equal<typeof fullname, string>>,
         Expect<Equal<typeof propE, string | number>>

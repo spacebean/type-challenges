@@ -1,5 +1,3 @@
-// noinspection JSUnusedLocalSymbols
-
 import { assertArrayIndex, Index } from './template';
 
 const matrix = [
@@ -16,6 +14,7 @@ for (let i = 0 as Index<typeof matrix>; i < matrix.length; i += 1) {
   const columns: number[] = matrix[i];
 
   // @ts-expect-error: number | undefined in not assignable to number
+  // noinspection JSUnusedLocalSymbols
   const x: number[] = matrix[0];
 
   assertArrayIndex(columns, 'columns');
@@ -24,12 +23,15 @@ for (let i = 0 as Index<typeof matrix>; i < matrix.length; i += 1) {
     sum += columns[j];
 
     // @ts-expect-error: number | undefined in not assignable to number
+    // noinspection JSUnusedLocalSymbols
     const y: number = columns[i];
 
     // @ts-expect-error: number | undefined in not assignable to number
+    // noinspection JSUnusedLocalSymbols
     const z: number = columns[0];
 
     // @ts-expect-error: number[] | undefined in not assignable to number[]
+    // noinspection JSUnusedLocalSymbols
     const u: number[] = matrix[j];
   }
 }
@@ -39,9 +41,11 @@ const a: string[] = [];
 assertArrayIndex(a, 'a');
 
 for (let p = 0 as Index<typeof a>; p < a.length; p += 1) {
+  // noinspection JSUnusedLocalSymbols
   const value: string = a[p];
 
   // @ts-expect-error: string | undefined is not assignable to string
+  // noinspection JSUnusedLocalSymbols
   const z: string = a[2];
 }
 
@@ -50,6 +54,7 @@ a.push('qux');
 a.push(3);
 
 for (const value of a) {
+  // noinspection JSUnusedLocalSymbols
   const other: string = value;
 }
 
@@ -59,6 +64,7 @@ assertArrayIndex(b, 'b');
 
 for (let p = 0 as Index<typeof a>; p < b.length; p += 1) {
   // @ts-expect-error: number | undefined is not assignable to string
+  // noinspection JSUnusedLocalSymbols
   const value: string = b[p];
 }
 
@@ -79,6 +85,7 @@ const d: readonly number[] = [];
 assertArrayIndex(d, 'd');
 
 for (let p = 0 as Index<typeof d>; p < d.length; p += 1) {
+  // noinspection JSUnusedLocalSymbols
   const value: number = d[p];
 
   // @ts-expect-error: only permits reading
