@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { BEM } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<BEM<'btn', ['price'], []>, 'btn__price'>>,
   Expect<
