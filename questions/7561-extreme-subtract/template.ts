@@ -1,2 +1,9 @@
 // M => minuend, S => subtrahend
-type Subtract<M extends number, S extends number> = any
+import { ConstructTuple } from '../7544-medium-construct-tuple/template';
+
+export type Subtract<M extends number, S extends number> = ConstructTuple<M> extends [
+  ...infer R,
+  ...ConstructTuple<S>
+]
+  ? R['length']
+  : never;
