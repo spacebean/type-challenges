@@ -1,5 +1,7 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { AllCombinations } from './template';
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<AllCombinations<''>, ''>>,
   Expect<Equal<AllCombinations<'A'>, '' | 'A'>>,
