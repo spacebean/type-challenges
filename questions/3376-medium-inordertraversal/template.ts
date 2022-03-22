@@ -4,4 +4,11 @@ interface TreeNode {
   right: TreeNode | null;
 }
 
-type InorderTraversal<T extends TreeNode | null> = any;
+export type InorderTraversal<
+  T extends TreeNode | null,
+  NT extends TreeNode = NonNullable<T>
+> = T extends null
+  ? []
+  : T extends TreeNode
+  ? [...InorderTraversal<NT['left']>, NT['val'], ...InorderTraversal<NT['right']>]
+  : never;

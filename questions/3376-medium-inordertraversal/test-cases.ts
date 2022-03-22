@@ -1,4 +1,5 @@
 import { Equal, Expect } from '@type-challenges/utils';
+import { InorderTraversal } from './template';
 
 const tree1 = {
   val: 1,
@@ -40,6 +41,7 @@ const tree4 = {
   },
 } as const;
 
+// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<InorderTraversal<null>, []>>,
   Expect<Equal<InorderTraversal<typeof tree1>, [1, 3, 2]>>,
