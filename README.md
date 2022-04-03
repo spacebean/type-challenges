@@ -241,6 +241,7 @@ Index</a> </li><li><a href="./questions/6228-extreme-json-parser/README.md" targ
 - [TypeType Examples](https://github.com/mistlog/typetype-examples)
 
 ### Books
+
 - [Effective TypeScript](https://effectivetypescript.com/)
 
 > TODO

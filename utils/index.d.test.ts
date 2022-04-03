@@ -1,4 +1,4 @@
-import { Alike, Equal, Expect, ExpectFalse, IsAny, NotEqual } from './index';
+import {Alike, Equal, Expect, ExpectFalse, IsAny, NotEqual} from './index';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
@@ -31,4 +31,4 @@ type cases = [
   /* Alike */
   Expect<Alike<{ a: 1 } & { b: 2 }, { a: 1; b: 2 }>>,
   ExpectFalse<Equal<{ a: 1 } & { b: 2 }, { a: 1; b: 2 }>>
-]
+];

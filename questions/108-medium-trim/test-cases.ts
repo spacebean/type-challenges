@@ -11,4 +11,4 @@ type cases = [
   Expect<Equal<Trim<'   \n\t foo bar \t'>, 'foo bar'>>,
   Expect<Equal<Trim<''>, ''>>,
   Expect<Equal<Trim<' \n\t '>, ''>>
-]
+];
