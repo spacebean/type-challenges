@@ -13,7 +13,8 @@ type X = {
           j: 'string';
         };
         k: 'hello';
-      };
+      },
+      l: ['hi'];
     };
   };
 };
@@ -30,7 +31,8 @@ type Expected = {
           readonly j: 'string';
         };
         readonly k: 'hello';
-      };
+      },
+      readonly l: ['hi'];
     };
   };
 };
