@@ -1,5 +1,7 @@
+import { Equal } from '@type-challenges/utils';
+
 type Contains<T, U extends unknown[]> = U extends [infer Head, ...infer Tail]
-  ? T extends Head
+  ? Equal<T, Head> extends true
     ? true
     : Contains<T, Tail>
   : false;
