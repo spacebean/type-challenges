@@ -1,11 +1,14 @@
 ---
-name: 🇨🇳 新题目 about: 新题目提案，PR 会根据 Issue 自动生成。 title: "新题目"
+name: 🇨🇳 新题目
+about: 新题目提案，PR 会根据 Issue 自动生成。
+title: "新题目"
 labels: new-challenge, zh-CN
 ---
 
 > 请按照以下的模版填充相应的内容，一个 PR 会自动生成并保持与本 Issue 的内容同步。
 
 > 你不需要提供详细的答案或教学，但请保证题目可解。
+
 
 ## 基本信息
 
@@ -17,7 +20,7 @@ difficulty: easy # medium / hard / extreme
 title: 你的题目
 
 # 题目标签
-#tags: union, array # separate by comma
+# tags: union, array # separate by comma
 ```
 
 ## 题目
@@ -41,9 +44,10 @@ type YourType = any
 请为你的题目提供一些判题测试，你可以使用 `@type-challenges/utils` 中提供的一些工具进行判断。
 
 ```ts
-import {Equal, Expect, ExpectFalse, NotEqual} from '@type-challenges/utils'
+import type { Equal, Expect } from '@type-challenges/utils'
+import { ExpectFalse, NotEqual } from '@type-challenges/utils'
 
 type cases = [
-    Expect<Equal<true, true>>
+  Expect<Equal<true, true>>
 ]
 ```

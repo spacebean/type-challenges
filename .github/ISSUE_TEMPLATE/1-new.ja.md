@@ -1,5 +1,7 @@
 ---
-name: 🇯🇵 新しい課題 about: 新しい課題の提案をするとPRが自動生成されます。 title: ""
+name: 🇯🇵 新しい課題
+about: 新しい課題の提案をするとPRが自動生成されます。
+title: ""
 labels: new-challenge, ja
 ---
 
@@ -17,7 +19,7 @@ difficulty: easy # medium / hard / extreme
 title: 課題のタイトル
 
 # タグ
-#tags: union, array # separate by comma
+# tags: union, array # separate by comma
 ```
 
 ## 質問
@@ -41,9 +43,10 @@ type YourType = any
 あなたの課題のテストケースです。`@type-challenges/utils`が提供するいくつかのアサーションを使うことが出来ます。
 
 ```ts
-import {Equal, Expect, ExpectFalse, NotEqual} from '@type-challenges/utils'
+import type { Equal, Expect } from '@type-challenges/utils'
+import { ExpectFalse, NotEqual } from '@type-challenges/utils'
 
 type cases = [
-    Expect<Equal<true, true>>
+  Expect<Equal<true, true>>
 ]
 ```

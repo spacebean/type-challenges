@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs-extra';
 import fg from 'fast-glob';
 import YAML from 'js-yaml';
-import { Quiz, QuizMetaInfo } from './types';
+import type { Quiz, QuizMetaInfo } from './types';
 import { defaultLocale, supportedLocales } from './locales';
 
 export async function loadFile(filepath: string) {
