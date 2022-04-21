@@ -119,7 +119,7 @@ const action: Action = async (github, context, core) => {
       (i) => i.user?.login === 'github-actions[bot]' && i.title.startsWith(`#${no} `)
     );
 
-    const dir = `questions/${no}-${info.difficulty}-${slug(
+    const dir = `questions/${String(no).padStart(5, '0')}-${info.difficulty}-${slug(
       info.title.replace(/\./g, '-').replace(/<.*>/g, ''),
       {
         tone: false,
@@ -137,14 +137,13 @@ const action: Action = async (github, context, core) => {
     await PushCommit(github, {
       owner: context.repo.owner,
       repo: context.repo.repo,
-      base: 'master',
+      base: 'main',
       head: `pulls/${no}`,
       changes: {
         files,
         commit: `feat(question): add #${no} - ${info.title}`,
         author: {
-          // @ts-ignore
-          name: user.name || user.login,
+          name: (user.name || user.id || user.login) as string,
           email: userEmail,
         },
       },
@@ -172,10 +171,10 @@ const action: Action = async (github, context, core) => {
       await updateComment(github, context, createMessageBody(existing_pull.number));
     } else {
       core.info('-----Creating PR-----');
-      const { data: pr } = await github.rest.pulls.create({
+      const { data: pr } = await github.pulls.create({
         owner: context.repo.owner,
         repo: context.repo.repo,
-        base: 'master',
+        base: 'main',
         head: `pulls/${no}`,
         title: `#${no} - ${info.title}`,
         body: `This is an auto-generated PR that auto reflect on #${no}, please go to #${no} for discussion or making changes.\n\nCloses #${no}`,
@@ -217,7 +216,7 @@ async function updateComment(github: Github, context: Context, body: string) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       body,
-    });
+    })
   } else {
     return await github.rest.issues.createComment({
       issue_number: context.issue.number,
