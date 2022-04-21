@@ -1,4 +1,4 @@
-import { Last } from '../15-medium-last/template';
+import { Last } from '../00015-medium-last/template';
 
 type _Repeat<N extends number, T extends unknown[] = []> = T['length'] extends N
   ? [...T, T['length']]

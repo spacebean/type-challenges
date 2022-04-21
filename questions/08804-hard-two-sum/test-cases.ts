@@ -1,4 +1,4 @@
-import type { Equal, Expect } from '@type-challenges/utils'
+import type { Equal, Expect } from '@type-challenges/utils';
 
 type cases = [
   Expect<Equal<TwoSum<[3, 3], 6>, true>>,
@@ -11,5 +11,5 @@ type cases = [
   Expect<Equal<TwoSum<[1, 2, 3], 3>, true>>,
   Expect<Equal<TwoSum<[1, 2, 3], 4>, true>>,
   Expect<Equal<TwoSum<[1, 2, 3], 5>, true>>,
-  Expect<Equal<TwoSum<[1, 2, 3], 6>, false>>,
-]
+  Expect<Equal<TwoSum<[1, 2, 3], 6>, false>>
+];

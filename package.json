@@ -44,5 +44,9 @@
       "no-alert": "off",
       "@typescript-eslint/consistent-type-definitions": "off"
     }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 100
   }
 }

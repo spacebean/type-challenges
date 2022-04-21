@@ -5,7 +5,7 @@ Implement type ```IsPalindrome<T>``` to check whether a string or number is pali
 For example:
 
 ```typescript
-IsPalindrome<'abc'> // false
+IsPalindrome < 'abc' > // false
 IsPalindrome<121> // true
 ```
 

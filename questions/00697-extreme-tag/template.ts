@@ -1,6 +1,6 @@
-import { IsNever } from '../1042-medium-isnever/template';
+import { IsNever } from '../01042-medium-isnever/template';
 import { Equal, IsAny } from '@type-challenges/utils';
-import { IsUnion } from '../1097-medium-isunion/template';
+import { IsUnion } from '../01097-medium-isunion/template';
 
 export type Tags<T, A extends readonly string[]> = () => [T, A];
 

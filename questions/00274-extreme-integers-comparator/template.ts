@@ -1,4 +1,4 @@
-import { Absolute } from '../529-medium-absolute/template';
+import { Absolute } from '../00529-medium-absolute/template';
 
 export enum Comparison {
   Greater,

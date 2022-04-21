@@ -2,7 +2,8 @@
 
 [lodash の get 関数](https://lodash.com/docs/4.17.15#get)は JavaScript
 でネストした値にアクセスする際にとても便利です。しかし、TypeScript でこのような関数を使うと型情報が失われてしまいます。 TypeScript4.1
-の機能である[Template Literal Types](https://devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/#template-literal-types)を使うと、`get`の適切な型付けが可能となります。
+の機能である[Template Literal Types](https://devblogs.microsoft.com/typescript/announcing-typescript-4-1-beta/#template-literal-types)
+を使うと、`get`の適切な型付けが可能となります。
 これを実装できるでしょうか?
 
 例えば、

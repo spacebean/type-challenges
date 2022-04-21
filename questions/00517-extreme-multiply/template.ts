@@ -4,7 +4,7 @@ import {
   ProcessSum,
   Tuple0_9,
   TuplesToNumber,
-} from '../476-extreme-sum/template';
+} from '../00476-extreme-sum/template';
 
 type IsArray<T> = T extends unknown[] ? T : never;
 

@@ -1,4 +1,4 @@
-import { Comparator, Comparison } from '../274-extreme-integers-comparator/template';
+import { Comparator, Comparison } from '../00274-extreme-integers-comparator/template';
 
 type Greater<X extends number, Y extends number> = Comparator<X, Y> extends Comparison.Greater
   ? true

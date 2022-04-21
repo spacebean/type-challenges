@@ -9,15 +9,15 @@ functions, and in the correct order:
 
 ```ts
 const doA = <T extends string>(x: T) => {
-  const result = x
+    const result = x
 
-  return result as Tag<typeof result, 'A'>
+    return result as Tag<typeof result, 'A'>
 }
 
 const doB = <T extends string>(x: T) => {
-  const result = x
+    const result = x
 
-  return result as Tag<typeof result, 'B'>
+    return result as Tag<typeof result, 'B'>
 };
 
 const a = doA('foo')

@@ -1,4 +1,4 @@
-import { UnionToTuple } from '../730-hard-union-to-tuple/template';
+import { UnionToTuple } from '../00730-hard-union-to-tuple/template';
 
 type Tuple = unknown[];
 

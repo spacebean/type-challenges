@@ -1,4 +1,4 @@
-import { MinusOne } from '../2257-medium-minusone/template';
+import { MinusOne } from '../02257-medium-minusone/template';
 
 export type Fibonacci<
   T extends number,
