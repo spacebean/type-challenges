@@ -3,7 +3,13 @@ import fs from 'fs-extra';
 import type { SupportedLocale } from './locales';
 import { defaultLocale, f, supportedLocales, t } from './locales';
 import { loadQuizes, resolveInfo } from './loader';
-import { toAnswerShort, toNearborREADME, toPlayShort, toQuizREADME, toSolutionsShort } from './toUrl';
+import {
+  toAnswerShort,
+  toNearborREADME,
+  toPlayShort,
+  toQuizREADME,
+  toSolutionsShort,
+} from './toUrl';
 import type { Quiz, QuizMetaInfo } from './types';
 
 const DifficultyColors: Record<string, string> = {

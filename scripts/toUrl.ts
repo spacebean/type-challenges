@@ -19,7 +19,7 @@ export function toSolutionsFull(no: number) {
 }
 
 export function toQuizREADME(quiz: Quiz, locale?: string, absolute = false) {
-  const prefix = absolute ? `${REPO}/blob/main` : '.'
+  const prefix = absolute ? `${REPO}/blob/main` : '.';
   return locale && locale !== defaultLocale && quiz.readme[locale]
     ? `${prefix}/questions/${quiz.path}/README.${locale}.md`
     : `${prefix}/questions/${quiz.path}/README.md`;

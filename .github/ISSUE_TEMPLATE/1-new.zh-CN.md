@@ -9,7 +9,6 @@ labels: new-challenge, zh-CN
 
 > 你不需要提供详细的答案或教学，但请保证题目可解。
 
-
 ## 基本信息
 
 ```yaml
@@ -44,10 +43,10 @@ type YourType = any
 请为你的题目提供一些判题测试，你可以使用 `@type-challenges/utils` 中提供的一些工具进行判断。
 
 ```ts
-import type { Equal, Expect } from '@type-challenges/utils'
-import { ExpectFalse, NotEqual } from '@type-challenges/utils'
+import type {Equal, Expect} from '@type-challenges/utils'
+import {ExpectFalse, NotEqual} from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<true, true>>
+    Expect<Equal<true, true>>
 ]
 ```

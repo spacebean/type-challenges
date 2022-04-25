@@ -1,15 +1,15 @@
-import YAML from 'js-yaml'
-import slug from 'limax'
-import { PushCommit } from '@type-challenges/octokit-create-pull-request'
-import type { Action, Context, Github, Quiz } from '../types'
-import { t } from '../locales'
-import { toPlaygroundUrl } from '../toUrl'
-import { toBadgeLink } from '../readme'
-import { resolveFilePath } from '../utils/resolve'
-import { formatToCode } from './utils/formatToCode'
+import YAML from 'js-yaml';
+import slug from 'limax';
+import { PushCommit } from '@type-challenges/octokit-create-pull-request';
+import type { Action, Context, Github, Quiz } from '../types';
+import { t } from '../locales';
+import { toPlaygroundUrl } from '../toUrl';
+import { toBadgeLink } from '../readme';
+import { resolveFilePath } from '../utils/resolve';
+import { formatToCode } from './utils/formatToCode';
 
 const Messages = {
-  'en': {
+  en: {
     info: 'Info',
     template: 'Template',
     tests: 'Test Cases',
@@ -27,7 +27,7 @@ const Messages = {
     issue_invalid_reply: 'Issue 格式不正确，请按照依照模版修正',
     pr_auto_translate_tips: '通过谷歌 API 自动翻译',
   },
-  'ja': {
+  ja: {
     info: '基本情報',
     template: 'テンプレート',
     tests: 'テストケース',
@@ -216,7 +216,7 @@ async function updateComment(github: Github, context: Context, body: string) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       body,
-    })
+    });
   } else {
     return await github.rest.issues.createComment({
       issue_number: context.issue.number,
@@ -228,20 +228,16 @@ async function updateComment(github: Github, context: Context, body: string) {
 }
 
 function getCodeBlock(text: string, title: string, lang = 'ts') {
-  const regex = new RegExp(
-      `## ${title}[\\s\\S]*?\`\`\`${lang}([\\s\\S]*?)\`\`\``,
-  );
+  const regex = new RegExp(`## ${title}[\\s\\S]*?\`\`\`${lang}([\\s\\S]*?)\`\`\``);
   const match = text.match(regex);
-  if (match && match[1])
-    return match[1].toString().trim();
+  if (match && match[1]) return match[1].toString().trim();
   return null;
 }
 
 function getCommentRange(text: string, key: string) {
   const regex = new RegExp(`<!--${key}-start-->([\\s\\S]*?)<!--${key}-end-->`);
   const match = text.match(regex);
-  if (match && match[1])
-    return match[1].toString().trim();
+  if (match && match[1]) return match[1].toString().trim();
   return null;
 }
 

@@ -43,10 +43,10 @@ type YourType = any
 あなたの課題のテストケースです。`@type-challenges/utils`が提供するいくつかのアサーションを使うことが出来ます。
 
 ```ts
-import type { Equal, Expect } from '@type-challenges/utils'
-import { ExpectFalse, NotEqual } from '@type-challenges/utils'
+import type {Equal, Expect} from '@type-challenges/utils'
+import {ExpectFalse, NotEqual} from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<true, true>>
+    Expect<Equal<true, true>>
 ]
 ```
