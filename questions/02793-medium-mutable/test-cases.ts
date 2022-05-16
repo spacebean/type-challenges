@@ -10,7 +10,7 @@ interface Todo1 {
   };
 }
 
-type List = [1, 2, 3]
+type List = [1, 2, 3];
 
 // noinspection JSUnusedLocalSymbols
 type cases = [

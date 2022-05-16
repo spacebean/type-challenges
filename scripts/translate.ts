@@ -1,7 +1,7 @@
 import path from 'path';
 import translate from 'google-translate-open-api';
 import fs from 'fs-extra';
-import { QUIZ_ROOT, loadQuizByNo, loadQuizes } from './loader';
+import { loadQuizByNo, loadQuizes, QUIZ_ROOT } from './loader';
 import { resolveFilePath } from './utils/resolve';
 import type { Quiz } from './types';
 import type { SupportedLocale } from './locales';

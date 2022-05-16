@@ -1,4 +1,4 @@
-import type { Alike, Equal, Expect, ExpectFalse, IsAny, NotEqual } from './index';
+import type {Alike, Equal, Expect, ExpectFalse, IsAny, NotEqual} from './index';
 
 // noinspection JSUnusedLocalSymbols
 type cases = [
