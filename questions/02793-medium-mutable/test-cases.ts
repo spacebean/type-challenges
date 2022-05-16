@@ -10,5 +10,18 @@ interface Todo1 {
   };
 }
 
+type List = [1, 2, 3]
+
 // noinspection JSUnusedLocalSymbols
-type cases = [Expect<Equal<Mutable<Readonly<Todo1>>, Todo1>>];
+type cases = [
+  Expect<Equal<Mutable<Readonly<Todo1>>, Todo1>>,
+  Expect<Equal<Mutable<Readonly<List>>, List>>
+];
+
+// noinspection JSUnusedLocalSymbols
+type errors = [
+  // @ts-expect-error
+  Mutable<'string'>,
+  // @ts-expect-error
+  Mutable<0>
+];

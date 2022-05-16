@@ -14,4 +14,3 @@ A list of TODOs for this project, PR welcome!
 
 - [ ] "Recent Challenges" section in the README
 
-- [ ] Contributors graph
