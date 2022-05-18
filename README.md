@@ -225,7 +225,8 @@ Parser</a> </li><li><a href="./questions/07561-extreme-subtract/README.md" targe
 ✨ [Upcoming challenges](https://github.com/type-challenges/type-challenges/issues?q=is%3Aissue+is%3Aopen+label%3Anew-challenge)
 
 > 🔥 Start the challenge
-> in [TypeScript Playground](https://www.typescriptlang.org/play?install-plugin=%40type-challenges%2Fplayground-plugin)
+>
+in [TypeScript Playground](https://www.typescriptlang.org/play?install-plugin=%40type-challenges%2Fplayground-plugin)
 
 > ⚡️ Start the challenge
 > in [VS Code](https://marketplace.visualstudio.com/items?itemName=YRM.type-challenges)
