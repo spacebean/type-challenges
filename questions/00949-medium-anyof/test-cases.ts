@@ -1,7 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { AnyOf } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<AnyOf<[1, 'test', true, [1], { name: 'test' }, { 1: 'test' }]>, true>>,
   Expect<Equal<AnyOf<[1, '', false, [], {}]>, true>>,
@@ -11,6 +9,6 @@ type cases = [
   Expect<Equal<AnyOf<[0, '', false, [], { name: 'test' }]>, true>>,
   Expect<Equal<AnyOf<[0, '', false, [], { 1: 'test' }]>, true>>,
   Expect<Equal<AnyOf<[0, '', false, [], { name: 'test' }, { 1: 'test' }]>, true>>,
-  Expect<Equal<AnyOf<[0, '', false, [], {}]>, false>>,
-  Expect<Equal<AnyOf<[]>, false>>
-];
+  Expect<Equal<AnyOf<[0, '', false, [], {}, undefined, null]>, false>>,
+  Expect<Equal<AnyOf<[]>, false>>,
+]

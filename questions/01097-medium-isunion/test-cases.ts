@@ -1,7 +1,5 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { IsUnion } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<IsUnion<string>, false>>,
   Expect<Equal<IsUnion<string | number>, true>>,
@@ -14,5 +12,6 @@ type cases = [
   Expect<Equal<IsUnion<string | never>, false>>,
   Expect<Equal<IsUnion<string | unknown>, false>>,
   Expect<Equal<IsUnion<string | any>, false>>,
-  Expect<Equal<IsUnion<string | 'a'>, false>>
-];
+  Expect<Equal<IsUnion<string | 'a'>, false>>,
+  Expect<Equal<IsUnion<never>, false>>,
+]

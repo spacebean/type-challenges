@@ -26,6 +26,7 @@ type Obj = {
 type cases = [
   Expect<Equal<DeepPick<Obj, ''>, unknown>>,
   Expect<Equal<DeepPick<Obj, 'a'>, { a: number }>>,
+  Expect<Equal<DeepPick<Obj, 'a' | ''>, { a: number } & unknown>>,
   Expect<Equal<DeepPick<Obj, 'a' | 'obj.e'>, { a: number } & { obj: { e: string } }>>,
   Expect<
     Equal<

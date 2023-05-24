@@ -1,17 +1,18 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Awaited } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
 
-type X = Promise<string>;
-type Y = Promise<{ field: number }>;
-type Z = Promise<Promise<string | number>>;
+type X = Promise<string>
+type Y = Promise<{ field: number }>
+type Z = Promise<Promise<string | number>>
+type Z1 = Promise<Promise<Promise<string | boolean>>>
+type T = { then: (onfulfilled: (arg: number) => any) => any }
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
-  Expect<Equal<Awaited<X>, string>>,
-  Expect<Equal<Awaited<Y>, { field: number }>>,
-  Expect<Equal<Awaited<Z>, string | number>>
-];
+  Expect<Equal<MyAwaited<X>, string>>,
+  Expect<Equal<MyAwaited<Y>, { field: number }>>,
+  Expect<Equal<MyAwaited<Z>, string | number>>,
+  Expect<Equal<MyAwaited<Z1>, string | boolean>>,
+  Expect<Equal<MyAwaited<T>, number>>,
+]
 
 // @ts-expect-error
-// noinspection JSUnusedLocalSymbols
-type error = Awaited<number>;
+type error = MyAwaited<number>

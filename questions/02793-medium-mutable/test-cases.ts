@@ -1,27 +1,24 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Mutable } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
 
 interface Todo1 {
-  title: string;
-  description: string;
-  completed: boolean;
+  title: string
+  description: string
+  completed: boolean
   meta: {
-    author: string;
-  };
+    author: string
+  }
 }
 
-type List = [1, 2, 3];
+type List = [1, 2, 3]
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Mutable<Readonly<Todo1>>, Todo1>>,
-  Expect<Equal<Mutable<Readonly<List>>, List>>
-];
+  Expect<Equal<Mutable<Readonly<List>>, List>>,
+]
 
-// noinspection JSUnusedLocalSymbols
 type errors = [
   // @ts-expect-error
   Mutable<'string'>,
   // @ts-expect-error
-  Mutable<0>
-];
+  Mutable<0>,
+]

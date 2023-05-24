@@ -1,13 +1,13 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { ObjectFromEntries } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
 
 interface Model {
-  name: string;
-  age: number;
-  locations: string[] | null;
+  name: string
+  age: number
+  locations: string[] | null
 }
 
-type ModelEntries = ['name', string] | ['age', number] | ['locations', string[] | null];
+type ModelEntries = ['name', string] | ['age', number] | ['locations', string[] | null]
 
-// noinspection JSUnusedLocalSymbols
-type cases = [Expect<Equal<ObjectFromEntries<ModelEntries>, Model>>];
+type cases = [
+  Expect<Equal<ObjectFromEntries<ModelEntries>, Model>>,
+]
