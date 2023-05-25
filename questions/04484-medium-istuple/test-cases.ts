@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { IsTuple } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { IsTuple } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<IsTuple<[]>, true>>,
   Expect<Equal<IsTuple<[number]>, true>>,
@@ -9,4 +8,4 @@ type cases = [
   Expect<Equal<IsTuple<{ length: 1 }>, false>>,
   Expect<Equal<IsTuple<number[]>, false>>,
   Expect<Equal<IsTuple<never>, false>>
-];
+]

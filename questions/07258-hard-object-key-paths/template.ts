@@ -7,5 +7,5 @@ export type ObjectKeyPaths<T extends object> = keyof {
               ? I
               : never
             : never}`
-    : K]: never;
-};
+    : K]: never
+}

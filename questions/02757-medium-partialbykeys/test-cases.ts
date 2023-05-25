@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { PartialByKeys } from './template'
 
 interface User {
   name: string
@@ -23,5 +24,5 @@ type cases = [
   Expect<Equal<PartialByKeys<User, 'name' | 'age'>, UserPartialNameAndAge>>,
   Expect<Equal<PartialByKeys<User>, Partial<User>>>,
   // @ts-expect-error
-  Expect<Equal<PartialByKeys<User, 'name' | 'unknown'>, UserPartialName>>,
+  Expect<Equal<PartialByKeys<User, 'name' | 'unknown'>, UserPartialName>>
 ]

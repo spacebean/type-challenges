@@ -1,3 +1,3 @@
-import { GetOptional } from '../00059-hard-get-optional/template';
+import type { GetOptional } from '../00059-hard-get-optional/template'
 
-export type OptionalKeys<T> = keyof GetOptional<T>;
+export type OptionalKeys<T> = keyof GetOptional<T>

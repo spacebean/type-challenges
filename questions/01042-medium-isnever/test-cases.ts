@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { IsNever } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { IsNever } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<IsNever<never>, true>>,
   Expect<Equal<IsNever<never | string>, false>>,
@@ -10,4 +9,4 @@ type cases = [
   Expect<Equal<IsNever<null>, false>>,
   Expect<Equal<IsNever<[]>, false>>,
   Expect<Equal<IsNever<{}>, false>>
-];
+]

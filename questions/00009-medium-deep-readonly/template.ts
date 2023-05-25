@@ -5,5 +5,5 @@ export type DeepReadonly<T> = {
     ? T[K]
     : T[K] extends object
     ? DeepReadonly<T[K]>
-    : T[K];
-};
+    : T[K]
+}

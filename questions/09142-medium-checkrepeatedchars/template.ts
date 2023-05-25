@@ -1,1 +1,1 @@
-type CheckRepeatedChars<T extends string> = any
+export type CheckRepeatedChars<T extends string> = any

@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { ReplaceAll } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { ReplaceAll } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<ReplaceAll<'foobar', 'bar', 'foo'>, 'foofoo'>>,
   Expect<Equal<ReplaceAll<'foobar', 'bag', 'foo'>, 'foobar'>>,
@@ -12,4 +11,4 @@ type cases = [
   Expect<Equal<ReplaceAll<'foobarfoobar', 'ob', 'b'>, 'fobarfobar'>>,
   Expect<Equal<ReplaceAll<'foboorfoboar', 'bo', 'b'>, 'foborfobar'>>,
   Expect<Equal<ReplaceAll<'', '', ''>, ''>>
-];
+]

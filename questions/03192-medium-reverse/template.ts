@@ -1,1 +1,1 @@
-export type Reverse<T> = T extends [infer First, ...infer Rest] ? [...Reverse<Rest>, First] : [];
+export type Reverse<T> = T extends [infer First, ...infer Rest] ? [...Reverse<Rest>, First] : []

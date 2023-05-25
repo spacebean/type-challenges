@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { KebabCase } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { KebabCase } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<KebabCase<'FooBarBaz'>, 'foo-bar-baz'>>,
   Expect<Equal<KebabCase<'fooBarBaz'>, 'foo-bar-baz'>>,
@@ -12,4 +11,4 @@ type cases = [
   Expect<Equal<KebabCase<'-'>, '-'>>,
   Expect<Equal<KebabCase<''>, ''>>,
   Expect<Equal<KebabCase<'😎'>, '😎'>>
-];
+]

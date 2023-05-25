@@ -4,4 +4,4 @@ export type IsTuple<T> = T extends
   | []
   | readonly []
   ? true
-  : false;
+  : false

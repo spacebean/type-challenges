@@ -1,1 +1,1 @@
-type Maximum<T extends any[]> = any
+export type Maximum<T extends any[]> = any

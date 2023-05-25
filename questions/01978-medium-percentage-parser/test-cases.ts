@@ -1,20 +1,19 @@
-import type { Equal, Expect } from '@type-challenges/utils';
-import { PercentageParser } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { PercentageParser } from './template'
 
-type Case0 = ['', '', ''];
-type Case1 = ['+', '', ''];
-type Case2 = ['+', '1', ''];
-type Case3 = ['+', '100', ''];
-type Case4 = ['+', '100', '%'];
-type Case5 = ['', '100', '%'];
-type Case6 = ['-', '100', '%'];
-type Case7 = ['-', '100', ''];
-type Case8 = ['-', '1', ''];
-type Case9 = ['', '', '%'];
-type Case10 = ['', '1', ''];
-type Case11 = ['', '100', ''];
+type Case0 = ['', '', '']
+type Case1 = ['+', '', '']
+type Case2 = ['+', '1', '']
+type Case3 = ['+', '100', '']
+type Case4 = ['+', '100', '%']
+type Case5 = ['', '100', '%']
+type Case6 = ['-', '100', '%']
+type Case7 = ['-', '100', '']
+type Case8 = ['-', '1', '']
+type Case9 = ['', '', '%']
+type Case10 = ['', '1', '']
+type Case11 = ['', '100', '']
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<PercentageParser<''>, Case0>>,
   Expect<Equal<PercentageParser<'+'>, Case1>>,
@@ -28,4 +27,4 @@ type cases = [
   Expect<Equal<PercentageParser<'%'>, Case9>>,
   Expect<Equal<PercentageParser<'1'>, Case10>>,
   Expect<Equal<PercentageParser<'100'>, Case11>>
-];
+]

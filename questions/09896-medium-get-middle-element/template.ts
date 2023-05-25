@@ -1,1 +1,1 @@
-type GetMiddleElement<T> = any
+export type GetMiddleElement<T> = any

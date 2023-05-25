@@ -1,14 +1,13 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { MyReadonly } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { MyReadonly } from './template'
 
 interface Todo1 {
-  title: string;
-  description: string;
-  completed: boolean;
+  title: string
+  description: string
+  completed: boolean
   meta: {
-    author: string;
-  };
+    author: string
+  }
 }
 
-// noinspection JSUnusedLocalSymbols
-type cases = [Expect<Equal<MyReadonly<Todo1>, Readonly<Todo1>>>];
+type cases = [Expect<Equal<MyReadonly<Todo1>, Readonly<Todo1>>>]

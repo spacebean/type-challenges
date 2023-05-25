@@ -1,5 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
-import { ExpectFalse, NotEqual } from '@type-challenges/utils'
+import type { CapitalizeNestObjectKeys } from './template'
 
 type foo = {
   foo: string
@@ -14,5 +14,5 @@ type Foo = {
 }
 
 type cases = [
-  Expect<Equal<Foo, CapitalizeNestObjectKeys<foo>>>,
+  Expect<Equal<Foo, CapitalizeNestObjectKeys<foo>>>
 ]

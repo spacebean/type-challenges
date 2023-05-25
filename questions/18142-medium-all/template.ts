@@ -1,1 +1,1 @@
-type All = any
+export type All = any

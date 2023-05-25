@@ -15,4 +15,4 @@ export type LengthOfString<
   ? LengthOfString<C, [...Temp, A, B]>
   : S extends `${infer A}${infer B}`
   ? LengthOfString<B, [...Temp, A]>
-  : Temp['length'];
+  : Temp['length']

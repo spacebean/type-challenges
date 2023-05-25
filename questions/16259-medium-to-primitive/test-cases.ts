@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { ToPrimitive } from './template'
 
 type PersonInfo = {
   name: 'Tom'

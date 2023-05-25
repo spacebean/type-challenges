@@ -1,1 +1,1 @@
-type Path<T> = any
+export type Path<T> = any

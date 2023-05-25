@@ -1,9 +1,8 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Slice } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { Slice } from './template'
 
-type Arr = [1, 2, 3, 4, 5];
+type Arr = [1, 2, 3, 4, 5]
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   // basic
   Expect<Equal<Slice<Arr, 0, 1>, [1]>>,
@@ -24,4 +23,4 @@ type cases = [
   Expect<Equal<Slice<Arr, 10>, []>>,
   Expect<Equal<Slice<Arr, 1, 0>, []>>,
   Expect<Equal<Slice<Arr, 10, 20>, []>>
-];
+]

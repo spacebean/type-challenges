@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { InclusiveRange } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { InclusiveRange } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<InclusiveRange<200, 1>, []>>,
   Expect<Equal<InclusiveRange<10, 5>, []>>,
@@ -346,4 +345,4 @@ type cases = [
       ]
     >
   >
-];
+]

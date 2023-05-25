@@ -12,9 +12,9 @@ type Parser<T> = T extends `${' ' | '\n'}${infer R}`
   ? JArray<R>
   : T extends `{${infer R}`
   ? JObject<R>
-  : undefined;
+  : undefined
 
-type ControlChars = { r: '\r'; n: '\n'; b: '\b'; f: '\f' };
+type ControlChars = { r: '\r' n: '\n' b: '\b' f: '\f' }
 
 type JString<T, S extends string = ''> = T extends `"${infer R}`
   ? [S, R]
@@ -28,7 +28,7 @@ type JString<T, S extends string = ''> = T extends `"${infer R}`
   ? JString<R, `${S}${F extends keyof ControlChars ? ControlChars[F] : undefined}`>
   : T extends `${infer F}${infer R}`
   ? JString<R, `${S}${F}`>
-  : undefined;
+  : undefined
 
 type JArray<T, A extends unknown[] = []> = T extends `]${infer R}`
   ? [A, R]
@@ -36,11 +36,11 @@ type JArray<T, A extends unknown[] = []> = T extends `]${infer R}`
   ? JArray<R, A>
   : Parser<T> extends [infer F, infer R]
   ? JArray<R, [...A, F]>
-  : undefined;
+  : undefined
 
 type Merge<T> = {
-  [K in keyof T]: T[K];
-};
+  [K in keyof T]: T[K]
+}
 
 type JObject<T, S extends string = '', O extends object = {}> = T extends `${' ' | '\n'}${infer R}`
   ? JObject<R, S, O>
@@ -56,6 +56,6 @@ type JObject<T, S extends string = '', O extends object = {}> = T extends `${' '
   ? Parser<R> extends [infer F, infer R]
     ? JObject<R, '', Merge<{ [_ in S]: F } & O>>
     : undefined
-  : undefined;
+  : undefined
 
-export type Parse<S extends string> = Parser<S> extends [infer R, unknown] ? R : never;
+export type Parse<S extends string> = Parser<S> extends [infer R, unknown] ? R : never

@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Sum } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { Sum } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Sum<2, 3>, '5'>>,
   Expect<Equal<Sum<'13', '21'>, '34'>>,
@@ -12,4 +11,4 @@ type cases = [
   Expect<Equal<Sum<728, 0>, '728'>>,
   Expect<Equal<Sum<'0', 213>, '213'>>,
   Expect<Equal<Sum<0, '0'>, '0'>>
-];
+]

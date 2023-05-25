@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { Assign } from './template'
 
 // case1
 type Case1Target = {}
@@ -88,5 +89,5 @@ type cases = [
   Expect<Equal<Assign<Case1Target, [Case1Origin1, Case1Origin2, Case1Origin3]>, Case1Answer>>,
   Expect<Equal<Assign<Case2Target, [Case2Origin1, Case2Origin2]>, Case2Answer>>,
   Expect<Equal<Assign<Case3Target, [Case3Origin1, Case3Origin2]>, Case3Answer>>,
-  Expect<Equal<Assign<Case4Target, ['', 0]>, Case4Answer>>,
+  Expect<Equal<Assign<Case4Target, ['', 0]>, Case4Answer>>
 ]

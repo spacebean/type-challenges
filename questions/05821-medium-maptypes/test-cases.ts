@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { MapTypes } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { MapTypes } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<
     Equal<
@@ -58,4 +57,4 @@ type cases = [
       { name: boolean; date: string }
     >
   >
-];
+]

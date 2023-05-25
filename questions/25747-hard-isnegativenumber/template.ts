@@ -1,1 +1,1 @@
-type IsNegativeNumber<T extends number> = any
+export type IsNegativeNumber<T extends number> = any

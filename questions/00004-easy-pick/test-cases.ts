@@ -1,25 +1,24 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { MyPick } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { MyPick } from './template'
 
 interface Todo {
-  title: string;
-  description: string;
-  completed: boolean;
+  title: string
+  description: string
+  completed: boolean
 }
 
 interface Expected1 {
-  title: string;
+  title: string
 }
 
 interface Expected2 {
-  title: string;
-  completed: boolean;
+  title: string
+  completed: boolean
 }
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Expected1, MyPick<Todo, 'title'>>>,
   Expect<Equal<Expected2, MyPick<Todo, 'title' | 'completed'>>>,
   // @ts-expect-error
   MyPick<Todo, 'title' | 'completed' | 'invalid'>
-];
+]

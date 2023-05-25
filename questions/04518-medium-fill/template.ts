@@ -2,9 +2,9 @@ type Or<X extends boolean, Y extends boolean> = X extends true
   ? true
   : Y extends true
   ? true
-  : false;
+  : false
 
-type Fill<
+export type Fill<
   T extends unknown[],
   N,
   Start extends number = 0,
@@ -19,4 +19,4 @@ type Fill<
   ? Or<Index['length'] extends Start ? true : false, InRange> extends true
     ? [N, ...Fill<Rest, N, Start, End, true, [...Index, unknown]>]
     : [First, ...Fill<Rest, N, Start, End, false, [...Index, unknown]>]
-  : T;
+  : T

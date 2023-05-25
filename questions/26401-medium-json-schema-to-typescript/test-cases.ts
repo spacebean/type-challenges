@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { JSONSchema2TS } from './template'
 
 // + Primitive types
 type Type1 = JSONSchema2TS<{
@@ -130,16 +131,16 @@ type Result13 = Expect<Equal<Type13, Expected13>>
 type Type14 = JSONSchema2TS<{
   type: 'object'
   properties: {
-    req1: { type: 'string' }
+    req1: { type: 'string' },
     req2: {
-      type: 'object'
+      type: 'object',
       properties: {
         a: {
           type: 'number'
         }
-      }
+      },
       required: ['a']
-    }
+    },
     add1: { type: 'string' }
     add2: {
       type: 'array'

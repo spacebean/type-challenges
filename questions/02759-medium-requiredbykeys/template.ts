@@ -3,6 +3,6 @@ export type RequiredByKeys<T, U extends string | number | symbol = keyof T> = Re
 > &
   Omit<T, U> extends infer I
   ? {
-      [K in keyof I]: I[K];
+      [K in keyof I]: I[K]
     }
-  : never;
+  : never

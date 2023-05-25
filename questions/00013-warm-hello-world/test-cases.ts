@@ -1,5 +1,4 @@
-import { Equal, Expect, NotAny } from '@type-challenges/utils';
-import { HelloWorld } from './template';
+import type { Equal, Expect, NotAny } from '@type-challenges/utils'
+import type { HelloWorld } from './template'
 
-// noinspection JSUnusedLocalSymbols
-type cases = [Expect<NotAny<HelloWorld>>, Expect<Equal<HelloWorld, string>>];
+type cases = [Expect<NotAny<HelloWorld>>, Expect<Equal<HelloWorld, string>>]

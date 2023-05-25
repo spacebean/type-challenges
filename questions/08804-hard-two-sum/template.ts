@@ -1,1 +1,1 @@
-type TwoSum<T extends number[], U extends number> = any;
+export type TwoSum<T extends number[], U extends number> = any

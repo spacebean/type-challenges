@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { Multiply } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { Multiply } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<Multiply<2, 3>, '6'>>,
   Expect<Equal<Multiply<3, '5'>, '15'>>,
@@ -19,4 +18,4 @@ type cases = [
   Expect<Equal<Multiply<728, 0>, '0'>>,
   Expect<Equal<Multiply<'0', 213>, '0'>>,
   Expect<Equal<Multiply<0, '0'>, '0'>>
-];
+]

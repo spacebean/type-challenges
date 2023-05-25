@@ -1,1 +1,1 @@
-type SnakeCase<T> = any
+export type SnakeCase<T> = any

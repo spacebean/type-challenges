@@ -1,8 +1,8 @@
-import { Last } from '../00015-medium-last/template';
+import type { Last } from '../00015-medium-last/template'
 
 type _Repeat<N extends number, T extends unknown[] = []> = T['length'] extends N
   ? [...T, T['length']]
-  : { __rec: _Repeat<N, [...T, T['length']]> };
+  : { __rec: _Repeat<N, [...T, T['length']]> }
 
 type _Recurse<T> = T extends { __rec: never }
   ? never
@@ -10,13 +10,13 @@ type _Recurse<T> = T extends { __rec: never }
   ? { __rec: _Recurse<U> }
   : T extends { __rec: infer U }
   ? U
-  : T;
+  : T
 
-type Recurse<T> = T extends { __rec: unknown } ? Recurse<_Recurse<T>> : T;
+type Recurse<T> = T extends { __rec: unknown } ? Recurse<_Recurse<T>> : T
 
-type Repeat<N extends number> = Recurse<_Repeat<N>>;
+type Repeat<N extends number> = Recurse<_Repeat<N>>
 
-type IsArray<T> = T extends unknown[] ? T : never;
+type IsArray<T> = T extends unknown[] ? T : never
 
 export type InclusiveRange<
   Lower extends number,
@@ -25,4 +25,4 @@ export type InclusiveRange<
   HigherTuple = Repeat<Higher>
 > = HigherTuple extends [...IsArray<LowerTuple>, ...infer R]
   ? [Last<IsArray<LowerTuple>>, ...R]
-  : [];
+  : []

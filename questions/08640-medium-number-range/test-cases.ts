@@ -1,7 +1,8 @@
-import type { Equal, Expect } from '@type-challenges/utils';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { NumberRange } from './template'
 
-type Result1 = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
-type Result2 = 0 | 1 | 2;
+type Result1 = 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+type Result2 = 0 | 1 | 2
 type Result3 =
   | 0
   | 1
@@ -143,9 +144,9 @@ type Result3 =
   | 137
   | 138
   | 139
-  | 140;
+  | 140
 type cases = [
   Expect<Equal<NumberRange<2, 9>, Result1>>,
   Expect<Equal<NumberRange<0, 2>, Result2>>,
   Expect<Equal<NumberRange<0, 140>, Result3>>
-];
+]

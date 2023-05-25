@@ -1,9 +1,8 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { UnionToTuple } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { UnionToTuple } from './template'
 
-type ExtractValuesOfTuple<T extends unknown[]> = T[keyof T & number];
+type ExtractValuesOfTuple<T extends unknown[]> = T[keyof T & number]
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<UnionToTuple<0 | 1 | 2 | 3>, [0, 1, 2, 3]>>,
   Expect<Equal<ExtractValuesOfTuple<UnionToTuple<'a' | 'b'>>, 'a' | 'b'>>,
@@ -21,4 +20,4 @@ type cases = [
       'f' | 'e' | 1 | 2 | 'g' | 'c' | 'd' | 'a' | 'b'
     >
   >
-];
+]

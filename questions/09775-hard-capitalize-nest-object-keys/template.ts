@@ -1,1 +1,1 @@
-type CapitalizeNestObjectKeys<T> = any
+export type CapitalizeNestObjectKeys<T> = any

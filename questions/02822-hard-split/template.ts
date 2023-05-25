@@ -6,4 +6,4 @@ export type Split<S extends string, SEP extends string> = S extends ''
   ? [First, ...Split<Rest, SEP>]
   : [string] extends [S]
   ? string[]
-  : [S];
+  : [S]

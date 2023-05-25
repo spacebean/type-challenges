@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { FlattenDepth } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { FlattenDepth } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<FlattenDepth<[]>, []>>,
   Expect<Equal<FlattenDepth<[1, 2, 3, 4]>, [1, 2, 3, 4]>>,
@@ -10,4 +9,4 @@ type cases = [
   Expect<Equal<FlattenDepth<[1, 2, [3, 4], [[[5]]]]>, [1, 2, 3, 4, [[5]]]>>,
   Expect<Equal<FlattenDepth<[1, [2, [3, [4, [5]]]]], 3>, [1, 2, 3, 4, [5]]>>,
   Expect<Equal<FlattenDepth<[1, [2, [3, [4, [5]]]]], 19260817>, [1, 2, 3, 4, 5]>>
-];
+]

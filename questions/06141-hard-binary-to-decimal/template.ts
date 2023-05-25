@@ -1,4 +1,4 @@
-type Doubling<T extends unknown[]> = [...T, ...T];
+type Doubling<T extends unknown[]> = [...T, ...T]
 
 export type BinaryToDecimal<
   S extends string,
@@ -7,4 +7,4 @@ export type BinaryToDecimal<
   ? First extends '0'
     ? BinaryToDecimal<Rest, Doubling<Result>>
     : BinaryToDecimal<Rest, [...Doubling<Result>, unknown]>
-  : Result['length'];
+  : Result['length']

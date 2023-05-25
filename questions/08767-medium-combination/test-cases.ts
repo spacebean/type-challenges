@@ -1,4 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { Combination } from './template'
 
 type cases = [
   Expect<
@@ -7,4 +8,4 @@ type cases = [
       'foo' | 'bar' | 'baz' | 'foo bar baz' | 'bar foo' | 'baz foo' | 'baz bar'
     >
   >
-];
+]

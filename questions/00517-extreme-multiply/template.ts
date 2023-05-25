@@ -1,18 +1,18 @@
-import {
+import type {
   DigitsToTuples,
   Longer,
   ProcessSum,
   Tuple0_9,
   TuplesToNumber,
-} from '../00476-extreme-sum/template';
+} from '../00476-extreme-sum/template'
 
-type IsArray<T> = T extends unknown[] ? T : never;
+type IsArray<T> = T extends unknown[] ? T : never
 
 type SingleMultiply<
   X extends unknown[],
   Y extends unknown[],
   Result extends unknown[] = []
-> = Y extends [unknown, ...infer Rest] ? SingleMultiply<X, Rest, [...X, ...Result]> : Result;
+> = Y extends [unknown, ...infer Rest] ? SingleMultiply<X, Rest, [...X, ...Result]> : Result
 
 type SplitSingleMultiply<T extends unknown[], Temp extends unknown[] = []> = T extends [
   ...infer Reminder,
@@ -20,7 +20,7 @@ type SplitSingleMultiply<T extends unknown[], Temp extends unknown[] = []> = T e
   ...Tuple0_9[9]
 ]
   ? SplitSingleMultiply<Reminder, [unknown, ...Temp]>
-  : [Temp, T];
+  : [Temp, T]
 
 type MultipleWithSingleMultiply<
   X extends unknown[],
@@ -39,7 +39,7 @@ type MultipleWithSingleMultiply<
     : never
   : Reminder extends []
   ? Temp
-  : [Reminder, ...Temp];
+  : [Reminder, ...Temp]
 
 type ListOfMultiplies<
   X extends unknown[],
@@ -55,14 +55,14 @@ type ListOfMultiplies<
         [[], ...Zeroes],
         [[...MultipleWithSingleMultiply<X, IsArray<Y0>>, ...Zeroes], ...Result]
       >
-  : Result;
+  : Result
 
 type ProcessMultiply<T extends unknown[], Result extends unknown[] = []> = T extends [
   ...infer Rest,
   infer First
 ]
   ? ProcessMultiply<Rest, ProcessSum<IsArray<First>, Result>>
-  : Result;
+  : Result
 
 export type Multiply<
   A extends string | number | bigint,
@@ -77,4 +77,4 @@ export type Multiply<
     >
   : TuplesToNumber<
       ProcessMultiply<ListOfMultiplies<DigitsToTuples<`${B}`>, DigitsToTuples<`${A}`>>>
-    >;
+    >

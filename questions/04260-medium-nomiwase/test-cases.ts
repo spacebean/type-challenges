@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { AllCombinations } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { AllCombinations } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<AllCombinations<''>, ''>>,
   Expect<Equal<AllCombinations<'A'>, '' | 'A'>>,
@@ -97,4 +96,4 @@ type cases = [
       | 'DCBA'
     >
   >
-];
+]

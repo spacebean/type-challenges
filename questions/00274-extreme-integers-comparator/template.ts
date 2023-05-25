@@ -1,18 +1,18 @@
-import { Absolute } from '../00529-medium-absolute/template';
+import type { Absolute } from '../00529-medium-absolute/template'
 
 export enum Comparison {
   Greater,
   Equal,
-  Lower,
+  Lower
 }
 
 type StringToTuple<S extends string> = S extends `${string}${infer Rest}`
   ? [unknown, ...StringToTuple<Rest>]
-  : [];
+  : []
 
 type CharToTuple<S extends string, Result extends unknown[] = []> = `${Result['length']}` extends S
   ? Result
-  : CharToTuple<S, [unknown, ...Result]>;
+  : CharToTuple<S, [unknown, ...Result]>
 
 type CompareByDigits<A, B> = A extends `${infer X}${infer XS}`
   ? B extends `${infer Y}${infer YS}`
@@ -22,7 +22,7 @@ type CompareByDigits<A, B> = A extends `${infer X}${infer XS}`
       ? Comparison.Lower
       : CompareByDigits<XS, YS>
     : never
-  : never;
+  : never
 
 type Compare<
   A extends string,
@@ -33,7 +33,7 @@ type Compare<
   ? Comparison.Lower
   : Y extends [unknown, ...unknown[], ...X]
   ? Comparison.Greater
-  : CompareByDigits<A, B>;
+  : CompareByDigits<A, B>
 
 type ComparatorImpl<A extends number, B extends number> = A extends B
   ? Comparison.Equal
@@ -45,6 +45,6 @@ type ComparatorImpl<A extends number, B extends number> = A extends B
     : Comparison.Lower
   : `${B}` extends `-${string}`
   ? Comparison.Greater
-  : Compare<`${A}`, `${B}`>;
+  : Compare<`${A}`, `${B}`>
 
-export type Comparator<A extends number, B extends number> = ComparatorImpl<A, B>;
+export type Comparator<A extends number, B extends number> = ComparatorImpl<A, B>

@@ -4,4 +4,4 @@ export type KebabCase<S extends string> = S extends `${infer First}${infer Rest}
       ? `${First}${KebabCase<Rest>}`
       : `${Uncapitalize<First>}-${KebabCase<Uncapitalize<Rest>>}`
     : `${Uncapitalize<First>}${KebabCase<Rest>}`
-  : S;
+  : S

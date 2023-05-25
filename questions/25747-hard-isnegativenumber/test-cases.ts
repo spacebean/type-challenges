@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { IsNegativeNumber } from './template'
 
 type cases = [
   Expect<Equal<IsNegativeNumber<0>, false>>,
@@ -9,5 +10,5 @@ type cases = [
   Expect<Equal<IsNegativeNumber<-100_000_000>, true>>,
   Expect<Equal<IsNegativeNumber<1>, false>>,
   Expect<Equal<IsNegativeNumber<1.9>, false>>,
-  Expect<Equal<IsNegativeNumber<100_000_000>, false>>,
+  Expect<Equal<IsNegativeNumber<100_000_000>, false>>
 ]

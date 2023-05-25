@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { DeepMutable } from './template'
 
 interface Test1 {
   readonly title: string
@@ -56,7 +57,7 @@ type DeepMutableTest2 = {
         'hi',
         {
           m: ['hey']
-        },
+        }
       ]
     }
   }

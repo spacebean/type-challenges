@@ -1,28 +1,27 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { DeepPick } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { DeepPick } from './template'
 
 type Obj = {
-  a: number;
-  b: string;
-  c: boolean;
+  a: number
+  b: string
+  c: boolean
   obj: {
-    d: number;
-    e: string;
-    f: boolean;
+    d: number
+    e: string
+    f: boolean
     obj2: {
-      g: number;
-      h: string;
-      i: boolean;
-    };
-  };
+      g: number
+      h: string
+      i: boolean
+    }
+  }
   obj3: {
-    j: number;
-    k: string;
-    l: boolean;
-  };
-};
+    j: number
+    k: string
+    l: boolean
+  }
+}
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<DeepPick<Obj, ''>, unknown>>,
   Expect<Equal<DeepPick<Obj, 'a'>, { a: number }>>,
@@ -34,4 +33,4 @@ type cases = [
       { a: number } & { obj: { e: string } } & { obj: { obj2: { i: boolean } } }
     >
   >
-];
+]

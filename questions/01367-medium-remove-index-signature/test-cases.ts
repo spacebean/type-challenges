@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { RemoveIndexSignature } from './template'
 
 type Foo = {
   [key: string]: any
@@ -24,7 +25,7 @@ type Baz = {
 
 type cases = [
   Expect<Equal<RemoveIndexSignature<Foo>, { foo(): void }>>,
-  Expect<Equal<RemoveIndexSignature<Bar>, { bar(): void; 0: string }>>,
+  Expect<Equal<RemoveIndexSignature<Bar>, { bar(): void, 0: string }>>,
   Expect<Equal<RemoveIndexSignature<FooBar>, { [foobar](): void }>>,
-  Expect<Equal<RemoveIndexSignature<Baz>, { bar(): void; baz: string }>>,
+  Expect<Equal<RemoveIndexSignature<Baz>, { bar(): void, baz: string }>>
 ]

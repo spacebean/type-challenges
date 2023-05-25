@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { ClassPublicKeys } from './template'
 
 class A {
   public str: string

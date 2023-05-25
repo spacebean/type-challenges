@@ -1,1 +1,1 @@
-type FizzBuzz<N extends number> = any
+export type FizzBuzz<N extends number> = any

@@ -1,4 +1,5 @@
 import type { ExpectExtends, ExpectFalse, ExpectTrue } from '@type-challenges/utils'
+import type { Path } from './template'
 
 declare const example: {
   foo: {

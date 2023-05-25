@@ -1,8 +1,9 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { DeepReadonly } from './template'
 
 type cases = [
   Expect<Equal<DeepReadonly<X1>, Expected1>>,
-  Expect<Equal<DeepReadonly<X2>, Expected2>>,
+  Expect<Equal<DeepReadonly<X2>, Expected2>>
 ]
 
 type X1 = {

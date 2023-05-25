@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { Camelize } from './template'
 
 type cases = [
   Expect<Equal<
@@ -20,5 +21,5 @@ type cases = [
         { yetAnotherElement: string },
       ]
     }
-  >>,
+  >>
 ]

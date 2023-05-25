@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { RLE } from './template'
 
 type cases = [
   // Raw string -> encoded string

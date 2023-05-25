@@ -1,4 +1,5 @@
 import type { Equal, Expect, IsTrue } from '@type-challenges/utils'
+import type { Tag, UnTag, GetTags, HasTag, HasTags, HasExactTags } from './template'
 
 /**
  * Tests of assignable of tagged variables.
@@ -157,5 +158,5 @@ type cases = [
   Expect<Equal<HasExactTags<Tag<{}, 'foo'>, ['bar']>, false>>,
   Expect<Equal<HasExactTags<Tag<Tag<Tag<{}, 'foo'>, 'bar'>, 'baz'>, ['foo', 'bar']>, false>>,
   Expect<Equal<HasExactTags<Tag<Tag<Tag<{}, 'foo'>, 'bar'>, 'baz'>, ['foo', 'bar', 'baz']>, true>>,
-  Expect<Equal<HasExactTags<Tag<Tag<void, 'foo'>, 'bar'>, ['foo', 'bar']>, true>>,
+  Expect<Equal<HasExactTags<Tag<Tag<void, 'foo'>, 'bar'>, ['foo', 'bar']>, true>>
 ]

@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { StringToUnion } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { StringToUnion } from './template'
 
-// noinspection JSUnusedLocalSymbols, TypeScriptDuplicateUnionOrIntersectionType
 type cases = [
   Expect<Equal<StringToUnion<''>, never>>,
   Expect<Equal<StringToUnion<'t'>, 't'>>,
@@ -12,4 +11,4 @@ type cases = [
       'c' | 'o' | 'r' | 'o' | 'n' | 'a' | 'v' | 'i' | 'r' | 'u' | 's'
     >
   >
-];
+]

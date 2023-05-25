@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { IsUnion } from "./template"
 
 type cases = [
   Expect<Equal<IsUnion<string>, false>>,

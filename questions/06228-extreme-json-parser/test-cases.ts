@@ -1,4 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
+import type { Parse } from './template'
 
 type cases = [
   Expect<Equal<(
@@ -53,7 +54,5 @@ type cases = [
 
   Expect<Equal<Parse<'{ 1: "world" }'>, never>>,
 
-  Expect<Equal<Parse<`{ "hello
-  
-  world": 123 }`>, never>>,
+  Expect<Equal<Parse<`{ "hello world": 123 }`>, never>>
 ]

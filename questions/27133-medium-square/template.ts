@@ -1,1 +1,1 @@
-type Square<N extends number> = number
+export type Square<N extends number> = number

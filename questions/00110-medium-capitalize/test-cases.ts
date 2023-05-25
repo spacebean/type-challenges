@@ -1,7 +1,6 @@
-import { Equal, Expect } from '@type-challenges/utils';
-import { MyCapitalize } from './template';
+import type { Equal, Expect } from '@type-challenges/utils'
+import type { MyCapitalize } from './template'
 
-// noinspection JSUnusedLocalSymbols
 type cases = [
   Expect<Equal<MyCapitalize<'foobar'>, 'Foobar'>>,
   Expect<Equal<MyCapitalize<'FOOBAR'>, 'FOOBAR'>>,
@@ -33,4 +32,4 @@ type cases = [
   Expect<Equal<MyCapitalize<'x'>, 'X'>>,
   Expect<Equal<MyCapitalize<'y'>, 'Y'>>,
   Expect<Equal<MyCapitalize<'z'>, 'Z'>>
-];
+]
