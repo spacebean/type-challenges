@@ -1,5 +1,5 @@
 export type RemoveIndexSignature<T> = {
-  [K in keyof T as number extends K
+    [K in keyof T as number extends K
     ? never
     : string extends K
     ? never

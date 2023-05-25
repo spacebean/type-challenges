@@ -1,80 +1,80 @@
 import type {
-  DigitsToTuples,
-  Longer,
-  ProcessSum,
-  Tuple0_9,
-  TuplesToNumber,
+    DigitsToTuples,
+    Longer,
+    ProcessSum,
+    Tuple0_9,
+    TuplesToNumber,
 } from '../00476-extreme-sum/template'
 
 type IsArray<T> = T extends unknown[] ? T : never
 
 type SingleMultiply<
-  X extends unknown[],
-  Y extends unknown[],
-  Result extends unknown[] = []
-> = Y extends [unknown, ...infer Rest] ? SingleMultiply<X, Rest, [...X, ...Result]> : Result
+    X extends unknown[],
+    Y extends unknown[],
+    Result extends unknown[] = []
+    > = Y extends [unknown, ...infer Rest] ? SingleMultiply<X, Rest, [...X, ...Result]> : Result
 
 type SplitSingleMultiply<T extends unknown[], Temp extends unknown[] = []> = T extends [
-  ...infer Reminder,
-  unknown,
-  ...Tuple0_9[9]
+    ...infer Reminder,
+    unknown,
+    ...Tuple0_9[9]
 ]
-  ? SplitSingleMultiply<Reminder, [unknown, ...Temp]>
-  : [Temp, T]
+    ? SplitSingleMultiply<Reminder, [unknown, ...Temp]>
+    : [Temp, T]
 
 type MultipleWithSingleMultiply<
-  X extends unknown[],
-  Y extends unknown[],
-  Reminder extends unknown[] = [],
-  Temp extends unknown[] = []
-> = Y extends []
-  ? []
-  : X extends [...infer Rest, infer Last]
-  ? Last extends unknown[]
+    X extends unknown[],
+    Y extends unknown[],
+    Reminder extends unknown[] = [],
+    Temp extends unknown[] = []
+    > = Y extends []
+    ? []
+    : X extends [...infer Rest, infer Last]
+    ? Last extends unknown[]
     ? SplitSingleMultiply<[...SingleMultiply<Last, Y>, ...Reminder]> extends infer R
-      ? R extends unknown[][]
-        ? MultipleWithSingleMultiply<Rest, Y, R[0], [R[1], ...Temp]>
-        : never
-      : never
+    ? R extends unknown[][]
+    ? MultipleWithSingleMultiply<Rest, Y, R[0], [R[1], ...Temp]>
     : never
-  : Reminder extends []
-  ? Temp
-  : [Reminder, ...Temp]
+    : never
+    : never
+    : Reminder extends []
+    ? Temp
+    : [Reminder, ...Temp]
 
 type ListOfMultiplies<
-  X extends unknown[],
-  Y extends unknown[],
-  Zeroes extends unknown[] = [],
-  Result extends unknown[] = []
-> = Y extends [...infer YS, infer Y0]
-  ? Y0 extends []
+    X extends unknown[],
+    Y extends unknown[],
+    Zeroes extends unknown[] = [],
+    Result extends unknown[] = []
+    > = Y extends [...infer YS, infer Y0]
+    ? Y0 extends []
     ? ListOfMultiplies<X, YS, [[], ...Zeroes], [[], ...Result]>
     : ListOfMultiplies<
         X,
         YS,
         [[], ...Zeroes],
         [[...MultipleWithSingleMultiply<X, IsArray<Y0>>, ...Zeroes], ...Result]
-      >
-  : Result
+    >
+    : Result
 
 type ProcessMultiply<T extends unknown[], Result extends unknown[] = []> = T extends [
-  ...infer Rest,
-  infer First
+    ...infer Rest,
+    infer First
 ]
-  ? ProcessMultiply<Rest, ProcessSum<IsArray<First>, Result>>
-  : Result
+    ? ProcessMultiply<Rest, ProcessSum<IsArray<First>, Result>>
+    : Result
 
 export type Multiply<
-  A extends string | number | bigint,
-  B extends string | number | bigint
-> = `${A}` extends `${0}`
-  ? '0'
-  : `${B}` extends `${0}`
-  ? `${B}`
-  : Longer<`${A}`, `${B}`> extends true
-  ? TuplesToNumber<
-      ProcessMultiply<ListOfMultiplies<DigitsToTuples<`${A}`>, DigitsToTuples<`${B}`>>>
+    A extends string | number | bigint,
+    B extends string | number | bigint
+    > = `${A}` extends `${0}`
+    ? '0'
+    : `${B}` extends `${0}`
+    ? `${B}`
+    : Longer<`${A}`, `${B}`> extends true
+    ? TuplesToNumber<
+        ProcessMultiply<ListOfMultiplies<DigitsToTuples<`${A}`>, DigitsToTuples<`${B}`>>>
     >
-  : TuplesToNumber<
-      ProcessMultiply<ListOfMultiplies<DigitsToTuples<`${B}`>, DigitsToTuples<`${A}`>>>
+    : TuplesToNumber<
+        ProcessMultiply<ListOfMultiplies<DigitsToTuples<`${B}`>, DigitsToTuples<`${A}`>>>
     >

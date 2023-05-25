@@ -1,5 +1,5 @@
 export type DeepReadonly<T> = {
-  readonly [K in keyof T]: T[K] extends Function
+    readonly [K in keyof T]: T[K] extends Function
     ? T[K]
     : T[K] extends [any]
     ? T[K]

@@ -1,3 +1,3 @@
 export type TupleToObject<T extends readonly string[]> = {
-  [K in T[number]]: K
+    [K in T[number]]: K
 }

@@ -15,16 +15,16 @@ type Case10 = ['', '1', '']
 type Case11 = ['', '100', '']
 
 type cases = [
-  Expect<Equal<PercentageParser<''>, Case0>>,
-  Expect<Equal<PercentageParser<'+'>, Case1>>,
-  Expect<Equal<PercentageParser<'+1'>, Case2>>,
-  Expect<Equal<PercentageParser<'+100'>, Case3>>,
-  Expect<Equal<PercentageParser<'+100%'>, Case4>>,
-  Expect<Equal<PercentageParser<'100%'>, Case5>>,
-  Expect<Equal<PercentageParser<'-100%'>, Case6>>,
-  Expect<Equal<PercentageParser<'-100'>, Case7>>,
-  Expect<Equal<PercentageParser<'-1'>, Case8>>,
-  Expect<Equal<PercentageParser<'%'>, Case9>>,
-  Expect<Equal<PercentageParser<'1'>, Case10>>,
-  Expect<Equal<PercentageParser<'100'>, Case11>>
+    Expect<Equal<PercentageParser<''>, Case0>>,
+    Expect<Equal<PercentageParser<'+'>, Case1>>,
+    Expect<Equal<PercentageParser<'+1'>, Case2>>,
+    Expect<Equal<PercentageParser<'+100'>, Case3>>,
+    Expect<Equal<PercentageParser<'+100%'>, Case4>>,
+    Expect<Equal<PercentageParser<'100%'>, Case5>>,
+    Expect<Equal<PercentageParser<'-100%'>, Case6>>,
+    Expect<Equal<PercentageParser<'-100'>, Case7>>,
+    Expect<Equal<PercentageParser<'-1'>, Case8>>,
+    Expect<Equal<PercentageParser<'%'>, Case9>>,
+    Expect<Equal<PercentageParser<'1'>, Case10>>,
+    Expect<Equal<PercentageParser<'100'>, Case11>>
 ]

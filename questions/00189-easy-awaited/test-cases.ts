@@ -8,11 +8,11 @@ type Z1 = Promise<Promise<Promise<string | boolean>>>
 type T = { then: (onfulfilled: (arg: number) => any) => any }
 
 type cases = [
-  Expect<Equal<Awaited<X>, string>>,
-  Expect<Equal<Awaited<Y>, { field: number }>>,
-  Expect<Equal<Awaited<Z>, string | number>>,
-  Expect<Equal<Awaited<Z1>, string | boolean>>,
-  Expect<Equal<Awaited<T>, number>>
+    Expect<Equal<Awaited<X>, string>>,
+    Expect<Equal<Awaited<Y>, { field: number }>>,
+    Expect<Equal<Awaited<Z>, string | number>>,
+    Expect<Equal<Awaited<Z1>, string | boolean>>,
+    Expect<Equal<Awaited<T>, number>>
 ]
 
 // @ts-expect-error

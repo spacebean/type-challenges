@@ -2,42 +2,42 @@ import type { Equal, Expect } from '@type-challenges/utils'
 import { defineStore } from './template'
 
 const store = defineStore({
-  id: '',
-  state: () => ({
-    num: 0,
-    str: '',
-  }),
-  getters: {
-    stringifiedNum() {
-      // @ts-expect-error
-      this.num += 1
+    id: '',
+    state: () => ({
+        num: 0,
+        str: '',
+    }),
+    getters: {
+        stringifiedNum() {
+            // @ts-expect-error
+            this.num += 1
 
-      return this.num.toString()
+            return this.num.toString()
+        },
+        parsedNum() {
+            return parseInt(this.stringifiedNum)
+        }
     },
-    parsedNum() {
-      return parseInt(this.stringifiedNum)
+    actions: {
+        init() {
+            this.reset()
+            this.increment()
+        },
+        increment(step = 1) {
+            this.num += step
+        },
+        reset() {
+            this.num = 0
+
+            // @ts-expect-error
+            this.parsedNum = 0
+
+            return true
+        },
+        setNum(value: number) {
+            this.num = value
+        }
     }
-  },
-  actions: {
-    init() {
-      this.reset()
-      this.increment()
-    },
-    increment(step = 1) {
-      this.num += step
-    },
-    reset() {
-      this.num = 0
-
-      // @ts-expect-error
-      this.parsedNum = 0
-
-      return true
-    },
-    setNum(value: number) {
-      this.num = value
-    }
-  }
 })
 
 // @ts-expect-error
@@ -59,9 +59,9 @@ store.setNum(3)
 const r = store.reset()
 
 type cases = [
-  Expect<Equal<typeof store.num, number>>,
-  Expect<Equal<typeof store.str, string>>,
-  Expect<Equal<typeof store.stringifiedNum, string>>,
-  Expect<Equal<typeof store.parsedNum, number>>,
-  Expect<Equal<typeof r, true>>
+    Expect<Equal<typeof store.num, number>>,
+    Expect<Equal<typeof store.str, string>>,
+    Expect<Equal<typeof store.stringifiedNum, string>>,
+    Expect<Equal<typeof store.parsedNum, number>>,
+    Expect<Equal<typeof r, true>>
 ]

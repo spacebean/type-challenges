@@ -1,5 +1,5 @@
 export type Permutation<T, U = T> = [T] extends [never]
-  ? []
-  : U extends unknown
-  ? [U, ...Permutation<Exclude<T, U>>]
-  : []
+    ? []
+    : U extends unknown
+    ? [U, ...Permutation<Exclude<T, U>>]
+    : []

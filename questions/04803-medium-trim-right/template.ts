@@ -1,3 +1,3 @@
 export type TrimRight<S extends string> = S extends `${infer R}${' ' | '\n' | '\t'}`
-  ? TrimRight<R>
-  : S
+    ? TrimRight<R>
+    : S

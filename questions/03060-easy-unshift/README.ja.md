@@ -8,5 +8,4 @@
 type Result = Unshift<[1, 2], 0> // [0, 1, 2,]
 ```
 
-
 <!--info-footer-start--><br><a href="../../README.ja.md" target="_blank"><img src="https://img.shields.io/badge/-%E6%88%BB%E3%82%8B-grey" alt="戻る"/></a> <a href="https://tsch.js.org/3060/answer/ja" target="_blank"><img src="https://img.shields.io/badge/-%E8%A7%A3%E7%AD%94%E3%82%92%E5%85%B1%E6%9C%89-teal" alt="解答を共有"/></a> <a href="https://tsch.js.org/3060/solutions" target="_blank"><img src="https://img.shields.io/badge/-%E8%A7%A3%E7%AD%94%E3%82%92%E7%A2%BA%E8%AA%8D-de5a77?logo=awesome-lists&logoColor=white" alt="解答を確認"/></a> <hr><h3>関連する課題</h3><a href="https://github.com/type-challenges/type-challenges/blob/main/questions/00533-easy-concat/README.ja.md" target="_blank"><img src="https://img.shields.io/badge/-533%E3%83%BBConcat-7aad0c" alt="533・Concat"/></a>  <a href="https://github.com/type-challenges/type-challenges/blob/main/questions/03057-easy-push/README.ja.md" target="_blank"><img src="https://img.shields.io/badge/-3057%E3%83%BBPush-7aad0c" alt="3057・Push"/></a> <!--info-footer-end-->
