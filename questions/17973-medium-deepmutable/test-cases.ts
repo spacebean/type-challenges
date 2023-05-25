@@ -26,7 +26,7 @@ type Test2 = {
                 'hi',
                 {
                     readonly m: readonly ['hey']
-                },
+                }
             ]
         }
     }
@@ -65,12 +65,12 @@ type DeepMutableTest2 = {
 
 type cases = [
     Expect<Equal<DeepMutable<Test1>, DeepMutableTest1>>,
-    Expect<Equal<DeepMutable<Test2>, DeepMutableTest2>>,
+    Expect<Equal<DeepMutable<Test2>, DeepMutableTest2>>
 ]
 
 type errors = [
     // @ts-expect-error
     DeepMutable<'string'>,
     // @ts-expect-error
-    DeepMutable<0>,
+    DeepMutable<0>
 ]
