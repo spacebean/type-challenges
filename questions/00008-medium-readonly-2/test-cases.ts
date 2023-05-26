@@ -1,3 +1,4 @@
+import type { Expect } from '@type-challenges/utils'
 import type { Alike } from '@type-challenges/utils'
 import type { MyReadonly2 } from './template'
 
