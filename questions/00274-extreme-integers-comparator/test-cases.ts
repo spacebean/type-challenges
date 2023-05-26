@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Comparator } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Comparator } from './template';
 
 type cases = [
     Expect<Equal<Comparator<5, 5>, Comparison.Equal>>,
@@ -34,4 +34,4 @@ type cases = [
     Expect<Equal<Comparator<9007199254740992, 9007199254740991>, Comparison.Greater>>,
     Expect<Equal<Comparator<-9007199254740992, -9007199254740991>, Comparison.Lower>>,
     Expect<Equal<Comparator<-9007199254740991, -9007199254740992>, Comparison.Greater>>
-]
+];

@@ -1,18 +1,18 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { CapitalizeNestObjectKeys } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { CapitalizeNestObjectKeys } from './template';
 
 type foo = {
-    foo: string
-    bars: [{ foo: string }]
-}
+    foo: string;
+    bars: [{ foo: string; }];
+};
 
 type Foo = {
-    Foo: string
+    Foo: string;
     Bars: [{
-        Foo: string
-    }]
-}
+        Foo: string;
+    }];
+};
 
 type cases = [
     Expect<Equal<Foo, CapitalizeNestObjectKeys<foo>>>
-]
+];

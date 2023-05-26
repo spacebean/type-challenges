@@ -1,1 +1,1 @@
-export type Subsequence<T extends any[]> = any
+export type Subsequence<T extends any[]> = any;

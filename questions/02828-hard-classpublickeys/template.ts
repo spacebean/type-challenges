@@ -1,1 +1,1 @@
-export type ClassPublicKeys<T> = keyof T
+export type ClassPublicKeys<T> = keyof T;

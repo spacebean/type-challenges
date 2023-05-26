@@ -1,5 +1,5 @@
-import type { Equal, Expect, ExpectExtends } from '@type-challenges/utils'
-import type { ObjectKeyPaths } from './template'
+import type { Equal, Expect, ExpectExtends } from '@type-challenges/utils';
+import type { ObjectKeyPaths } from './template';
 
 const ref = {
     count: 1,
@@ -13,15 +13,15 @@ const ref = {
             }
         ]
     }
-}
+};
 
 type cases = [
-    Expect<Equal<ObjectKeyPaths<{ name: string, age: number }>, 'name' | 'age'>>,
+    Expect<Equal<ObjectKeyPaths<{ name: string, age: number; }>, 'name' | 'age'>>,
     Expect<
         Equal<
             ObjectKeyPaths<{
-                refCount: number
-                person: { name: string, age: number }
+                refCount: number;
+                person: { name: string, age: number; };
             }>,
             'refCount' | 'person' | 'person.name' | 'person.age'
         >
@@ -42,4 +42,4 @@ type cases = [
     Expect<Equal<ExpectExtends<ObjectKeyPaths<typeof ref>, 'person.name.'>, false>>,
     Expect<Equal<ExpectExtends<ObjectKeyPaths<typeof ref>, '.person.name'>, false>>,
     Expect<Equal<ExpectExtends<ObjectKeyPaths<typeof ref>, 'person.pets.[0]type'>, false>>
-]
+];

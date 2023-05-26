@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Sum } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Sum } from './template';
 
 type cases = [
     Expect<Equal<Sum<2, 3>, '5'>>,
@@ -11,4 +11,4 @@ type cases = [
     Expect<Equal<Sum<728, 0>, '728'>>,
     Expect<Equal<Sum<'0', 213>, '213'>>,
     Expect<Equal<Sum<0, '0'>, '0'>>
-]
+];

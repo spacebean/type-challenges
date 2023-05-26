@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { FilterOut } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { FilterOut } from './template';
 
 type cases = [
     Expect<Equal<FilterOut<[], never>, []>>,
@@ -18,4 +18,4 @@ type cases = [
             [number | null | undefined]
         >
     >
-]
+];

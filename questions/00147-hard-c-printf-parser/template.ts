@@ -5,11 +5,11 @@ type ControlsMap = {
     o: 'oct',
     h: 'hex',
     f: 'float',
-    p: 'pointer'
-}
+    p: 'pointer';
+};
 
 export type ParsePrintFormat<S extends string> = S extends `${string}%${infer First}${infer Rest}`
     ? First extends keyof ControlsMap
     ? [ControlsMap[First], ...ParsePrintFormat<Rest>]
     : ParsePrintFormat<Rest>
-    : []
+    : [];

@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { IsAny } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { IsAny } from './template';
 
 type cases = [
     Expect<Equal<IsAny<any>, true>>,
@@ -7,4 +7,4 @@ type cases = [
     Expect<Equal<IsAny<unknown>, false>>,
     Expect<Equal<IsAny<never>, false>>,
     Expect<Equal<IsAny<string>, false>>
-]
+];

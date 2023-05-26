@@ -3,4 +3,4 @@ export type AllCombinations<
     E extends string = ''
     > = S extends `${infer F}${infer R}`
     ? `${F}${AllCombinations<`${R}${E}`>}` | AllCombinations<R, `${E}${F}`>
-    : ''
+    : '';

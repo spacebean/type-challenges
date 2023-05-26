@@ -1,4 +1,4 @@
-import type { UnionToIntersection } from 'utility-types'
+import type { UnionToIntersection } from 'utility-types';
 
 type Get<T, S extends string> = S extends `${infer First}.${infer Rest}`
     ? First extends keyof T
@@ -6,6 +6,6 @@ type Get<T, S extends string> = S extends `${infer First}.${infer Rest}`
     : never
     : S extends keyof T
     ? { [_ in S]: T[S] }
-    : never
+    : never;
 
-export type DeepPick<T, U> = UnionToIntersection<U extends string ? Get<T, U> : never>
+export type DeepPick<T, U> = UnionToIntersection<U extends string ? Get<T, U> : never>;

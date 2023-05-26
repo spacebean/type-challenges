@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { IsPalindrome } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { IsPalindrome } from './template';
 
 type cases = [
     Expect<Equal<IsPalindrome<'abc'>, false>>,
@@ -8,4 +8,4 @@ type cases = [
     Expect<Equal<IsPalindrome<'abcba'>, true>>,
     Expect<Equal<IsPalindrome<121>, true>>,
     Expect<Equal<IsPalindrome<19260817>, false>>
-]
+];

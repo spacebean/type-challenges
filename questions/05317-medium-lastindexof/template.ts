@@ -5,4 +5,4 @@ export type LastIndexOf<T extends unknown[], U extends number> = T extends [
     ? Last extends U
     ? Head['length']
     : LastIndexOf<Head, U>
-    : -1
+    : -1;

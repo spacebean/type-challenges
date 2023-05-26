@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Replace } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Replace } from './template';
 
 type cases = [
     Expect<Equal<Replace<'foobar', 'bar', 'foo'>, 'foofoo'>>,
@@ -7,4 +7,4 @@ type cases = [
     Expect<Equal<Replace<'foobarbar', 'bra', 'foo'>, 'foobarbar'>>,
     Expect<Equal<Replace<'foobarbar', '', 'foo'>, 'foobarbar'>>,
     Expect<Equal<Replace<'', '', ''>, ''>>
-]
+];

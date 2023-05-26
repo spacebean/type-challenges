@@ -6,7 +6,7 @@ type SplitAt<
     ? R
     : T extends [infer First, ...infer Rest]
     ? SplitAt<Rest, N, [Rest, [...R[1], First]]>
-    : R
+    : R;
 
 export type Chunk<
     T extends unknown[],
@@ -19,4 +19,4 @@ export type Chunk<
     ? Chunk<Temp[0], N, [...R, Temp[1]]>
     : Temp extends [[], [...unknown[]]]
     ? [...R, Temp[1]]
-    : R
+    : R;

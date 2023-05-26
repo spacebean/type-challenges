@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { IndexOf } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { IndexOf } from './template';
 
 type cases = [
     Expect<Equal<IndexOf<[1, 2, 3], 2>, 1>>,
@@ -9,4 +9,4 @@ type cases = [
     Expect<Equal<IndexOf<[string, 1, number, 'a', any], any>, 4>>,
     Expect<Equal<IndexOf<[string, 'a'], 'a'>, 1>>,
     Expect<Equal<IndexOf<[any, 1], 1>, 1>>
-]
+];

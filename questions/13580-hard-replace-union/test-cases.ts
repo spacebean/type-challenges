@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { UnionReplace } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { UnionReplace } from './template';
 
 type cases = [
     // string -> null
@@ -7,4 +7,4 @@ type cases = [
 
     // Date -> string; Function -> undefined
     Expect<Equal<UnionReplace<Function | Date | object, [[Date, string], [Function, undefined]]>, undefined | string | object>>
-]
+];

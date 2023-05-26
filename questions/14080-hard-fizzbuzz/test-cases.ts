@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { FizzBuzz } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { FizzBuzz } from './template';
 
 type cases = [
     Expect<Equal<FizzBuzz<1>, ['1']>>,
@@ -128,4 +128,4 @@ type cases = [
         'Fizz',
         'Buzz',
     ]>>,
-]
+];

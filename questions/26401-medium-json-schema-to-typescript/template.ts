@@ -1,1 +1,1 @@
-export type JSONSchema2TS<T> = any
+export type JSONSchema2TS<T> = any;

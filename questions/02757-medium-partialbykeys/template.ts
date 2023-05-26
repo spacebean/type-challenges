@@ -5,4 +5,4 @@ export type PartialByKeys<T, U extends string | number | symbol = keyof T> = Par
     ? {
         [K in keyof I]: I[K]
     }
-    : never
+    : never;

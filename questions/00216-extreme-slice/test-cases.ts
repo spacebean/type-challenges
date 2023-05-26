@@ -1,7 +1,7 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Slice } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Slice } from './template';
 
-type Arr = [1, 2, 3, 4, 5]
+type Arr = [1, 2, 3, 4, 5];
 
 type cases = [
     // basic
@@ -23,4 +23,4 @@ type cases = [
     Expect<Equal<Slice<Arr, 10>, []>>,
     Expect<Equal<Slice<Arr, 1, 0>, []>>,
     Expect<Equal<Slice<Arr, 10, 20>, []>>
-]
+];

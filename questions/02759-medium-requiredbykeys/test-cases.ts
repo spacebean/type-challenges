@@ -1,22 +1,22 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { RequiredByKeys } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { RequiredByKeys } from './template';
 
 interface User {
-    name?: string
-    age?: number
-    address?: string
+    name?: string;
+    age?: number;
+    address?: string;
 }
 
 interface UserRequiredName {
-    name: string
-    age?: number
-    address?: string
+    name: string;
+    age?: number;
+    address?: string;
 }
 
 interface UserRequiredNameAndAge {
-    name: string
-    age: number
-    address?: string
+    name: string;
+    age: number;
+    address?: string;
 }
 
 type cases = [
@@ -25,4 +25,4 @@ type cases = [
     Expect<Equal<RequiredByKeys<User>, Required<User>>>,
     // @ts-expect-error
     Expect<Equal<RequiredByKeys<User, 'name' | 'unknown'>, UserRequiredName>>
-]
+];

@@ -6,13 +6,13 @@ type IndexMatches<
     ? true
     : `${Index}` extends `${Head['length']}`
     ? true
-    : false
+    : false;
 
 type Or<X extends boolean, Y extends boolean> = X extends true
     ? true
     : Y extends true
     ? true
-    : false
+    : false;
 
 type SliceImpl<
     Start extends number,
@@ -27,10 +27,10 @@ type SliceImpl<
     : Or<IndexMatches<Head, Tail, Start>, InRange> extends true
     ? SliceImpl<Start, End, [...Head, First], Rest, [...Result, First], true>
     : SliceImpl<Start, End, [...Head, First], Rest, Result>
-    : Result
+    : Result;
 
 export type Slice<
     Arr extends unknown[],
     Start extends number = 0,
     End extends number = Arr['length']
-    > = SliceImpl<Start, End, [], Arr, []>
+    > = SliceImpl<Start, End, [], Arr, []>;

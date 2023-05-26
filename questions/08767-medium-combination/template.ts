@@ -1,1 +1,1 @@
-export type Combination<T extends string[]> = any
+export type Combination<T extends string[]> = any;

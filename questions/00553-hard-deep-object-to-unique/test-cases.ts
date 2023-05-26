@@ -1,20 +1,20 @@
-import type { Equal, IsFalse, IsTrue } from '@type-challenges/utils'
-import type { DeepObjectToUniq } from './template'
+import type { Equal, IsFalse, IsTrue } from '@type-challenges/utils';
+import type { DeepObjectToUniq } from './template';
 
-type Quz = { quz: 4 }
+type Quz = { quz: 4; };
 
-type Foo = { foo: 2, baz: Quz, bar: Quz }
-type Bar = { foo: 2, baz: Quz, bar: Quz & { quzz?: 0 } }
+type Foo = { foo: 2, baz: Quz, bar: Quz; };
+type Bar = { foo: 2, baz: Quz, bar: Quz & { quzz?: 0; }; };
 
-type UniqQuz = DeepObjectToUniq<Quz>
-type UniqFoo = DeepObjectToUniq<Foo>
-type UniqBar = DeepObjectToUniq<Bar>
+type UniqQuz = DeepObjectToUniq<Quz>;
+type UniqFoo = DeepObjectToUniq<Foo>;
+type UniqBar = DeepObjectToUniq<Bar>;
 
-declare let foo: Foo
-declare let uniqFoo: UniqFoo
+declare let foo: Foo;
+declare let uniqFoo: UniqFoo;
 
-uniqFoo = foo
-foo = uniqFoo
+uniqFoo = foo;
+foo = uniqFoo;
 
 type cases = [
     IsFalse<Equal<UniqQuz, Quz>>,
@@ -26,4 +26,4 @@ type cases = [
     IsFalse<Equal<UniqBar['baz'], UniqFoo['baz']>>,
     IsTrue<Equal<keyof UniqBar['baz'], keyof UniqFoo['baz']>>,
     IsTrue<Equal<keyof Foo, keyof UniqFoo & string>>
-]
+];

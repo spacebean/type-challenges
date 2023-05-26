@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Join } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Join } from './template';
 
 type cases = [
     Expect<Equal<Join<['a', 'p', 'p', 'l', 'e'], '-'>, 'a-p-p-l-e'>>,
@@ -7,4 +7,4 @@ type cases = [
     Expect<Equal<Join<['2', '2', '2'], 1>, '21212'>>,
     Expect<Equal<Join<['o'], 'u'>, 'o'>>,
     Expect<Equal<Join<[], 'u'>, ''>>
-]
+];

@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { RLE } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { RLE } from './template';
 
 type cases = [
     // Raw string -> encoded string
@@ -7,4 +7,4 @@ type cases = [
 
     // Encoded string -> decoded string
     Expect<Equal<RLE.Decode<'3AB2C6XY'>, 'AAABCCXXXXXXY'>>,
-]
+];

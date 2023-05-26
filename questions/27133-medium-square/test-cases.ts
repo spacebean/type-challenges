@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Square } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Square } from './template';
 
 type cases = [
     Expect<Equal<Square<0>, 0>>,
@@ -13,4 +13,4 @@ type cases = [
     Expect<Equal<Square<-5>, 25>>,
     Expect<Equal<Square<-31>, 961>>,
     Expect<Equal<Square<-50>, 2500>>
-]
+];

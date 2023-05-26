@@ -1,1 +1,1 @@
-export type Pop<T extends any[]> = T extends [...infer R, unknown] ? R : []
+export type Pop<T extends any[]> = T extends [...infer R, unknown] ? R : [];

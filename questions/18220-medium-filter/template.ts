@@ -1,1 +1,1 @@
-export type Filter<T extends any[], P> = []
+export type Filter<T extends any[], P> = [];

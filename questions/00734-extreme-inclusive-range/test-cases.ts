@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { InclusiveRange } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { InclusiveRange } from './template';
 
 type cases = [
     Expect<Equal<InclusiveRange<200, 1>, []>>,
@@ -345,4 +345,4 @@ type cases = [
             ]
         >
     >
-]
+];

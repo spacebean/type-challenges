@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { ConstructTuple } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { ConstructTuple } from './template';
 
 type cases = [
     Expect<Equal<ConstructTuple<0>, []>>,
@@ -7,4 +7,4 @@ type cases = [
     Expect<Equal<ConstructTuple<999>['length'], 999>>,
     // @ts-expect-error
     Expect<Equal<ConstructTuple<1000>['length'], 1000>>
-]
+];

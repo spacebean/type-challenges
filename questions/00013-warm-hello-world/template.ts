@@ -1,1 +1,1 @@
-export type HelloWorld = string
+export type HelloWorld = string;

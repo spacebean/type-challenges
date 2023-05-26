@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { StringToUnion } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { StringToUnion } from './template';
 
 type cases = [
     Expect<Equal<StringToUnion<''>, never>>,
@@ -11,4 +11,4 @@ type cases = [
             'c' | 'o' | 'r' | 'o' | 'n' | 'a' | 'v' | 'i' | 'r' | 'u' | 's'
         >
     >
-]
+];

@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { LastIndexOf } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { LastIndexOf } from './template';
 
 type cases = [
     Expect<Equal<LastIndexOf<[1, 2, 3, 2, 1], 2>, 3>>,
@@ -7,4 +7,4 @@ type cases = [
     Expect<Equal<LastIndexOf<[0, 0, 0], 2>, -1>>,
     Expect<Equal<LastIndexOf<[string, 2, number, 'a', number, 1], number>, 4>>,
     Expect<Equal<LastIndexOf<[string, any, 1, number, 'a', any, 1], any>, 5>>
-]
+];

@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { CamelCase } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { CamelCase } from './template';
 
 type cases = [
     Expect<Equal<CamelCase<'foobar'>, 'foobar'>>,
@@ -15,4 +15,4 @@ type cases = [
     Expect<Equal<CamelCase<'-'>, '-'>>,
     Expect<Equal<CamelCase<''>, ''>>,
     Expect<Equal<CamelCase<'😎'>, '😎'>>
-]
+];

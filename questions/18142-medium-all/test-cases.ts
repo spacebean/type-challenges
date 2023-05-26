@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { All } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { All } from './template';
 
 type cases = [
     Expect<Equal<All<[1, 1, 1], 1>, true>>,
@@ -16,4 +16,4 @@ type cases = [
     Expect<Equal<All<[unknown], unknown>, true>>,
     Expect<Equal<All<[any], unknown>, false>>,
     Expect<Equal<All<[unknown], any>, false>>
-]
+];

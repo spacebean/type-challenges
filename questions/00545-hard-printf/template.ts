@@ -4,4 +4,4 @@ export type Format<S extends string> = S extends `${string}%${infer First}${infe
     : First extends 'd'
     ? (arg: number) => Format<Rest>
     : Format<Rest>
-    : string
+    : string;

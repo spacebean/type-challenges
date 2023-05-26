@@ -1,60 +1,60 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { MapTypes } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { MapTypes } from './template';
 
 type cases = [
     Expect<
         Equal<
-            MapTypes<{ stringToArray: string }, { mapFrom: string; mapTo: [] }>,
-            { stringToArray: [] }
+            MapTypes<{ stringToArray: string; }, { mapFrom: string; mapTo: []; }>,
+            { stringToArray: []; }
         >
     >,
     Expect<
         Equal<
-            MapTypes<{ stringToNumber: string }, { mapFrom: string; mapTo: number }>,
-            { stringToNumber: number }
-        >
-    >,
-    Expect<
-        Equal<
-            MapTypes<
-                { stringToNumber: string; skipParsingMe: boolean },
-                { mapFrom: string; mapTo: number }
-            >,
-            { stringToNumber: number; skipParsingMe: boolean }
+            MapTypes<{ stringToNumber: string; }, { mapFrom: string; mapTo: number; }>,
+            { stringToNumber: number; }
         >
     >,
     Expect<
         Equal<
             MapTypes<
-                { date: string },
-                { mapFrom: string; mapTo: Date } | { mapFrom: string; mapTo: null }
+                { stringToNumber: string; skipParsingMe: boolean; },
+                { mapFrom: string; mapTo: number; }
             >,
-            { date: null | Date }
-        >
-    >,
-    Expect<
-        Equal<
-            MapTypes<{ date: string }, { mapFrom: string; mapTo: Date | null }>,
-            { date: null | Date }
+            { stringToNumber: number; skipParsingMe: boolean; }
         >
     >,
     Expect<
         Equal<
             MapTypes<
-                { fields: Record<string, boolean> },
-                { mapFrom: Record<string, boolean>; mapTo: string[] }
+                { date: string; },
+                { mapFrom: string; mapTo: Date; } | { mapFrom: string; mapTo: null; }
             >,
-            { fields: string[] }
+            { date: null | Date; }
         >
     >,
-    Expect<Equal<MapTypes<{ name: string }, { mapFrom: boolean; mapTo: never }>, { name: string }>>,
+    Expect<
+        Equal<
+            MapTypes<{ date: string; }, { mapFrom: string; mapTo: Date | null; }>,
+            { date: null | Date; }
+        >
+    >,
     Expect<
         Equal<
             MapTypes<
-                { name: string; date: Date },
-                { mapFrom: string; mapTo: boolean } | { mapFrom: Date; mapTo: string }
+                { fields: Record<string, boolean>; },
+                { mapFrom: Record<string, boolean>; mapTo: string[]; }
             >,
-            { name: boolean; date: string }
+            { fields: string[]; }
+        >
+    >,
+    Expect<Equal<MapTypes<{ name: string; }, { mapFrom: boolean; mapTo: never; }>, { name: string; }>>,
+    Expect<
+        Equal<
+            MapTypes<
+                { name: string; date: Date; },
+                { mapFrom: string; mapTo: boolean; } | { mapFrom: Date; mapTo: string; }
+            >,
+            { name: boolean; date: string; }
         >
     >
-]
+];

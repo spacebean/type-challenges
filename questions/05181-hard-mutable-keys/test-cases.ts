@@ -1,14 +1,14 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { MutableKeys } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { MutableKeys } from './template';
 
 type cases = [
-    Expect<Equal<MutableKeys<{ a: number, readonly b: string }>, 'a'>>,
-    Expect<Equal<MutableKeys<{ a: undefined, readonly b: undefined }>, 'a'>>,
+    Expect<Equal<MutableKeys<{ a: number, readonly b: string; }>, 'a'>>,
+    Expect<Equal<MutableKeys<{ a: undefined, readonly b: undefined; }>, 'a'>>,
     Expect<
         Equal<
-            MutableKeys<{ a: undefined, readonly b?: undefined, c: string, d: null }>,
+            MutableKeys<{ a: undefined, readonly b?: undefined, c: string, d: null; }>,
             'a' | 'c' | 'd'
         >
     >,
     Expect<Equal<MutableKeys<{}>, never>>
-]
+];

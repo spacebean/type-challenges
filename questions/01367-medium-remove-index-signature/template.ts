@@ -6,4 +6,4 @@ export type RemoveIndexSignature<T> = {
     : symbol extends K
     ? never
     : K]: T[K]
-}
+};

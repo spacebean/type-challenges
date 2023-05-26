@@ -1,1 +1,1 @@
-export type ToPrimitive = any
+export type ToPrimitive = any;

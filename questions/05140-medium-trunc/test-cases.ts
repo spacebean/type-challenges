@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { Trunc } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { Trunc } from './template';
 
 type cases = [
     Expect<Equal<Trunc<0.1>, '0'>>,
@@ -11,4 +11,4 @@ type cases = [
     Expect<Equal<Trunc<'1.234'>, '1'>>,
     Expect<Equal<Trunc<'-10.234'>, '-10'>>,
     Expect<Equal<Trunc<10>, '10'>>
-]
+];

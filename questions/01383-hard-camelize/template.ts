@@ -6,4 +6,4 @@ export type Camelize<T> = {
     : T[K] extends object
     ? Camelize<T[K]>
     : T[K]
-}
+};

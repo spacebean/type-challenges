@@ -1,1 +1,1 @@
-export type Transpose<M extends number[][]> = any
+export type Transpose<M extends number[][]> = any;

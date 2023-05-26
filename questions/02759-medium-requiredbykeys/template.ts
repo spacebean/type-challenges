@@ -5,4 +5,4 @@ export type RequiredByKeys<T, U extends string | number | symbol = keyof T> = Re
     ? {
         [K in keyof I]: I[K]
     }
-    : never
+    : never;

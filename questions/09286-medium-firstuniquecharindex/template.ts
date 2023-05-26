@@ -1,1 +1,1 @@
-export type FirstUniqueCharIndex<T extends string> = any
+export type FirstUniqueCharIndex<T extends string> = any;

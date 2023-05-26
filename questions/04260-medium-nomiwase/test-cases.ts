@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { AllCombinations } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { AllCombinations } from './template';
 
 type cases = [
     Expect<Equal<AllCombinations<''>, ''>>,
@@ -96,4 +96,4 @@ type cases = [
             | 'DCBA'
         >
     >
-]
+];

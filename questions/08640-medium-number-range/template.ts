@@ -1,1 +1,1 @@
-export type NumberRange<L, H> = any
+export type NumberRange<L, H> = any;

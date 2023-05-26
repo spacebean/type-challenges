@@ -1,1 +1,1 @@
-export type FindEles<T extends any[]> = any
+export type FindEles<T extends any[]> = any;

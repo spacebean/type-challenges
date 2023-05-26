@@ -4,4 +4,4 @@ export type Get<T, S extends string> = S extends `${infer First}.${infer Rest}`
     : never
     : S extends keyof T
     ? T[S]
-    : never
+    : never;

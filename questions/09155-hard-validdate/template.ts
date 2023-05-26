@@ -1,1 +1,1 @@
-export type ValidDate<T extends string> = any
+export type ValidDate<T extends string> = any;

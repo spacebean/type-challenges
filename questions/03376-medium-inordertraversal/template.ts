@@ -1,7 +1,7 @@
 interface TreeNode {
-    val: number
-    left: TreeNode | null
-    right: TreeNode | null
+    val: number;
+    left: TreeNode | null;
+    right: TreeNode | null;
 }
 
 export type InorderTraversal<
@@ -11,4 +11,4 @@ export type InorderTraversal<
     ? []
     : T extends TreeNode
     ? [...InorderTraversal<NT['left']>, NT['val'], ...InorderTraversal<NT['right']>]
-    : never
+    : never;

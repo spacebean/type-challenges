@@ -2,4 +2,4 @@ export type MyParameters<T extends (...args: keyof unknown) => unknown> = T exte
     ...args: infer I
 ) => unknown
     ? I
-    : never
+    : never;

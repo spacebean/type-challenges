@@ -1,1 +1,1 @@
-export type Integer<T> = any
+export type Integer<T> = any;

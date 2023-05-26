@@ -1,1 +1,1 @@
-export type DeepMutable = any
+export type DeepMutable = any;

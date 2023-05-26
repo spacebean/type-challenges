@@ -1,5 +1,5 @@
-import type { Equal, Expect } from '@type-challenges/utils'
-import type { ReplaceFirst } from './template'
+import type { Equal, Expect } from '@type-challenges/utils';
+import type { ReplaceFirst } from './template';
 
 type cases = [
     Expect<Equal<ReplaceFirst<[1, 2, 3], 3, 4>, [1, 2, 4]>>,
@@ -8,4 +8,4 @@ type cases = [
     Expect<Equal<ReplaceFirst<[string, boolean, number], boolean, string>, [string, string, number]>>,
     Expect<Equal<ReplaceFirst<[1, 'two', 3], string, 2>, [1, 2, 3]>>,
     Expect<Equal<ReplaceFirst<['six', 'eight', 'ten'], 'eleven', 'twelve'>, ['six', 'eight', 'ten']>>
-]
+];

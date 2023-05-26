@@ -8,4 +8,4 @@ export type ObjectKeyPaths<T extends object> = keyof {
     : never
     : never}`
     : K]: never
-}
+};
