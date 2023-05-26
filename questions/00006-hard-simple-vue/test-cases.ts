@@ -1,5 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils'
-import type { SimpleVue } from './template'
+import { SimpleVue } from './template'
 
 SimpleVue({
     data() {
