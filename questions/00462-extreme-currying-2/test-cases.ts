@@ -1,5 +1,5 @@
 import type { Equal, Expect } from '@type-challenges/utils';
-import type { DynamicParamsCurrying } from './template';
+import { DynamicParamsCurrying } from './template';
 
 const curried1 = DynamicParamsCurrying((_a: string, _b: number, _c: boolean) => true);
 const curried2 = DynamicParamsCurrying(
