@@ -4,8 +4,7 @@ Implement a type DeepPick, that extends Utility types `Pick`. A type takes two a
 
 For example:
 
-```
-
+```ts
 type obj = {
   name: 'hoge', 
   age: 20,

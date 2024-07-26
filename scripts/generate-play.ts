@@ -1,6 +1,6 @@
-import path from 'path'
-import { argv } from 'process'
-import crypto from 'crypto'
+import path from 'node:path'
+import process from 'node:process'
+import crypto from 'node:crypto'
 import fs from 'fs-extra'
 import c from 'picocolors'
 import prompts from 'prompts'
@@ -66,7 +66,7 @@ function readPlaygroundCache(playgroundCachePath: string): Snapshot {
   }
   catch (err) {
     console.log(c.red('Playground cache corrupted. '
-      + 'Cannot generate playground without keeping your changes intact'))
+    + 'Cannot generate playground without keeping your changes intact'))
     console.log(c.cyan('Please ensure you have run this: "pnpm generate"'))
     process.exit(1)
   }
@@ -94,7 +94,7 @@ async function generatePlayground() {
   const playgroundPath = path.join(__dirname, '../playground')
   const playgroundCachePath = path.join(__dirname, '../.playgroundcache')
 
-  let locale = supportedLocales.find(locale => locale === argv[2])!
+  let locale = supportedLocales.find(locale => locale === process.argv[2])!
 
   console.log(c.bold(c.cyan('Generating local playground...\n')))
 
@@ -103,8 +103,8 @@ async function generatePlayground() {
   const currentPlaygroundCache = readPlaygroundCache(playgroundCachePath)
   let playgroundSnapshot: Snapshot
 
-  if (argv.length === 3 && (argv[2] === '--keep-changes' || argv[2] === '-K')) {
-    console.log(c.bold(c.cyan('We will keep your chanegs while generating.\n')))
+  if (process.argv.length === 3 && (process.argv[2] === '--keep-changes' || process.argv[2] === '-K')) {
+    console.log(c.bold(c.cyan('We will keep your changes while generating.\n')))
     keepChanges = true
 
     playgroundSnapshot = await takeSnapshot(playgroundPath)
@@ -149,12 +149,17 @@ async function generatePlayground() {
     const { difficulty, title } = resolveInfo(quiz, locale) as QuizMetaInfo & { difficulty: string }
     const code = formatToCode(quiz, locale)
 
+    if (difficulty === undefined || title === undefined) {
+      console.log(c.yellow(`${quiz.no} has no ${locale.toUpperCase()} version. Skipping`))
+      continue
+    }
+
     const quizesPathByDifficulty = path.join(playgroundPath, difficulty)
 
     const quizFileName = `${getQuestionFullName(quiz.no, difficulty, title)}.ts`
     const quizPathFull = path.join(quizesPathByDifficulty, quizFileName)
 
-    if (!keepChanges || (keepChanges && isQuizWritable(quizPathFull, overridableFiles!, playgroundSnapshot!))) {
+    if (!keepChanges || (keepChanges && isQuizWritable(quizFileName, overridableFiles!, playgroundSnapshot!))) {
       if (!fs.existsSync(quizesPathByDifficulty))
         fs.mkdirSync(quizesPathByDifficulty)
       await fs.writeFile(quizPathFull, code, 'utf-8')

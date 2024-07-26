@@ -7,7 +7,8 @@ export const messages = {
   'zh-CN': require('./locales/zh-CN.json'),
   ja: require('./locales/ja.json'),
   ko: require('./locales/ko.json'),
-};
+  'pt-BR': require('./locales/pt-BR.json'),
+}
 
 export type SupportedLocale = keyof typeof messages;
 

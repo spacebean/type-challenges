@@ -1,4 +1,3 @@
-import type { Equal, IsFalse, IsTrue } from '@type-challenges/utils';
 import type { DeepObjectToUniq } from './template';
 
 type Quz = { quz: 4; };

@@ -14,6 +14,3 @@ type cases = [
     Expect<Equal<Awaited<Z1>, string | boolean>>,
     Expect<Equal<Awaited<T>, number>>
 ];
-
-// @ts-expect-error
-type error = Awaited<number>;

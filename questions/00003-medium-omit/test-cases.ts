@@ -1,8 +1,23 @@
 import type { Equal, Expect } from '@type-challenges/utils';
 import type { MyOmit } from './template';
 
+type cases = [
+    Expect<Equal<Expected1, MyOmit<Todo, 'description'>>>,
+    Expect<Equal<Expected2, MyOmit<Todo, 'description' | 'completed'>>>,
+    Expect<Equal<Expected3, MyOmit<Todo1, 'description' | 'completed'>>>
+];
+
+// @ts-expect-error
+type error = MyOmit<Todo, 'description' | 'invalid'>;
+
 interface Todo {
     title: string;
+    description: string;
+    completed: boolean;
+}
+
+interface Todo1 {
+    readonly title: string;
     description: string;
     completed: boolean;
 }
@@ -16,10 +31,6 @@ interface Expected2 {
     title: string;
 }
 
-// @ts-expect-error
-type error = MyOmit<Todo, 'description' | 'invalid'>;
-
-type cases = [
-    Expect<Equal<Expected1, MyOmit<Todo, 'description'>>>,
-    Expect<Equal<Expected2, MyOmit<Todo, 'description' | 'completed'>>>
-];
+interface Expected3 {
+    readonly title: string;
+}

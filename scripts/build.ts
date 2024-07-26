@@ -21,7 +21,7 @@ export async function build() {
   supportedLocales
     .filter((locale) => locale !== defaultLocale)
     .forEach((locale) => {
-      redirects.push([`/${locale}`, `${REPO}/blob/master/README.${locale}.md`, 302]);
+      redirects.push([`/${locale}`, `${REPO}/blob/main/README.${locale}.md`, 302]);
     });
 
   supportedLocales.forEach((locale) => {

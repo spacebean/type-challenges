@@ -2,8 +2,7 @@
 ignore = "git diff --quiet HEAD^ HEAD .."
 
 [build.environment]
-NPM_FLAGS = "--prefix=/dev/null"
-NODE_VERSION = "14"
+NODE_VERSION = "20"
 
 [[redirects]]
 from = "/"
@@ -12,5 +11,6 @@ status = 200
 
 [[headers]]
 for = "/*"
+
 [headers.values]
 Access-Control-Allow-Origin = "*"
